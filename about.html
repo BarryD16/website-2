@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Orchestrate Digital</title>
+  <meta name="description" content="Learn about Orchestrate Digital and our mission to help North East England businesses thrive in the digital age.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== STORY ===== */
+    .about-intro { background: var(--bg); position: relative; overflow: hidden; }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+
+    .about-art {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+    .about-art svg { display: block; width: 100%; height: auto; }
+
+    /* ===== VALUES ===== */
+    .values { background: var(--bg); position: relative; overflow: hidden; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .value-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-top: 4px solid transparent;
+      background-clip: padding-box;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), #0096A6);
+    }
+    .value-card:hover { box-shadow: var(--shadow-card); transform: translateY(-4px); }
+    .value-icon {
+      width: 48px; height: 48px;
+      background: var(--primary-light);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    .value-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
+    .value-card p { color: var(--text-medium); font-size: 0.88rem; line-height: 1.7; }
+
+    /* ===== NORTH EAST ===== */
+    .ne-section { background: var(--bg); position: relative; overflow: hidden; }
+    .ne-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+
+    .ne-art {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .ne-art svg { display: block; width: 100%; height: auto; }
+
+    /* ===== MISSION STRIP ===== */
+    .mission-strip {
+      background: linear-gradient(135deg, var(--primary) 0%, #0B6E60 100%);
+      padding: 72px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .mission-strip::before {
+      content: '"';
+      position: absolute;
+      top: -20px; left: 40px;
+      font-size: 200px;
+      color: rgba(255,255,255,0.06);
+      font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .mission-inner { text-align: center; max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .mission-inner blockquote {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: white;
+      line-height: 1.45;
+      margin-bottom: 24px;
+    }
+    .mission-inner cite {
+      font-style: normal;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px) {
+      .about-layout, .ne-layout { grid-template-columns: 1fr; gap: 40px; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .mission-inner blockquote { font-size: 1.4rem; }
+    }
+    @media (max-width: 600px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg>
+        </div>
+        <div style="line-height:1.15;">
+          <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:var(--text-dark);">Digital</span></div>
+          <div style="font-size:0.6rem;color:var(--text-light);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/><circle cx="300" cy="20" r="5" fill="white"/><circle cx="900" cy="180" r="5" fill="white"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/><circle cx="300" cy="20" r="5" fill="white"/><circle cx="900" cy="180" r="5" fill="white"/></svg>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">Our Story</div>
+      <h1>About Orchestrate Digital</h1>
+      <p>We're on a mission to make AI and digital technology work for businesses in the North East of England — practically, accessibly, and on your terms.</p>
+    </div>
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,28 C360,54 1080,0 1440,28 L1440,54 L0,54 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="about-intro">
+    <div class="container">
+      <div class="about-layout">
+        <div class="reveal">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Born in the North East of England, built for <span class="gradient-text">Local businesses</span></h2>
+          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">Orchestrate Digital was founded with a simple belief: that the benefits of AI and digital technology shouldn't only be available to big corporations with large IT teams. Small and medium-sized businesses deserve exactly the same access to these powerful tools — and the support to use them well.</p>
+          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">We saw too many North East England businesses feeling left behind by the pace of technological change — overwhelmed by the choices, unsure where to start, and worried about getting it wrong. We set out to change that.</p>
+          <p style="color:var(--text-medium); line-height:1.85;">Our approach is practical, jargon-free, and always tailored to the specific needs and circumstances of the businesses we work with. We meet you where you are, face to face, and help you take the right steps forward.</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:28px;">Work With Us →</a>
+        </div>
+
+        <!-- Story illustration -->
+        <div class="about-art reveal reveal-delay-2">
+          <svg viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="storyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E6F7F5"/>
+                <stop offset="100%" stop-color="#BEE8E3"/>
+              </linearGradient>
+              <linearGradient id="storyCard" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1A9E8A"/>
+                <stop offset="100%" stop-color="#0B6E60"/>
+              </linearGradient>
+            </defs>
+            <rect width="420" height="380" rx="20" fill="url(#storyBg)"/>
+
+            <!-- Large decorative quote mark -->
+            <text x="28" y="100" font-size="120" fill="#1A9E8A" opacity="0.12" font-family="Georgia, serif">"</text>
+
+            <!-- Quote card -->
+            <rect x="30" y="60" width="360" height="130" rx="14" fill="white" opacity="0.85"/>
+            <rect x="30" y="60" width="6" height="130" rx="3" fill="url(#storyCard)"/>
+            <text x="56" y="90" font-size="11.5" fill="#1E2D3A" font-weight="bold" font-family="Poppins, sans-serif">AI and digital technology should work</text>
+            <text x="56" y="108" font-size="11.5" fill="#1E2D3A" font-weight="bold" font-family="Poppins, sans-serif">for every business —</text>
+            <text x="56" y="126" font-size="11.5" fill="#1A9E8A" font-weight="bold" font-family="Poppins, sans-serif">not just the big ones.</text>
+            <text x="56" y="155" font-size="9.5" fill="#8FA0AC" font-family="sans-serif">The founding principle of Orchestrate Digital</text>
+            <rect x="56" y="166" width="70" height="14" rx="5" fill="#E6F7F5"/>
+            <text x="91" y="177" text-anchor="middle" font-size="8" fill="#1A9E8A" font-weight="bold" font-family="sans-serif">North East England</text>
+
+            <!-- Illustration: people + tech -->
+            <g transform="translate(30, 210)">
+              <!-- Person 1 (business owner) -->
+              <circle cx="70" cy="30" r="22" fill="#1A9E8A" opacity="0.12"/>
+              <circle cx="70" cy="18" r="12" fill="#1A9E8A" opacity="0.4"/>
+              <path d="M48,52 Q70,40 92,52" stroke="#1A9E8A" stroke-width="2" fill="none" opacity="0.4"/>
+              <rect x="48" y="55" width="44" height="14" rx="5" fill="#E6F7F5"/>
+              <text x="70" y="66" text-anchor="middle" font-size="8" fill="#1A9E8A" font-weight="bold" font-family="sans-serif">SME Owner</text>
+
+              <!-- Arrow right -->
+              <path d="M104 36 L128 36" stroke="#1A9E8A" stroke-width="2" stroke-dasharray="4,3"/>
+              <path d="M124 30 L132 36 L124 42" stroke="#1A9E8A" stroke-width="2" fill="none"/>
+
+              <!-- Expert (us) -->
+              <circle cx="175" cy="30" r="28" fill="url(#storyCard)"/>
+              <text x="175" y="26" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="bold">Orchestrate</text>
+              <text x="175" y="40" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.85)" font-family="sans-serif">Digital</text>
+
+              <!-- Arrow right -->
+              <path d="M214 36 L238 36" stroke="#1A9E8A" stroke-width="2" stroke-dasharray="4,3"/>
+              <path d="M234 30 L242 36 L234 42" stroke="#1A9E8A" stroke-width="2" fill="none"/>
+
+              <!-- Growth result -->
+              <circle cx="285" cy="30" r="22" fill="#10B981" opacity="0.15"/>
+              <text x="285" y="24" text-anchor="middle" font-size="20">📈</text>
+              <text x="285" y="44" text-anchor="middle" font-size="9" fill="#10B981" font-weight="bold" font-family="sans-serif">Growth</text>
+              <rect x="264" y="55" width="42" height="14" rx="5" fill="#ECFDF5"/>
+              <text x="285" y="66" text-anchor="middle" font-size="8" fill="#10B981" font-weight="bold" font-family="sans-serif">Results</text>
+            </g>
+
+            <!-- Location pill at bottom -->
+            <rect x="110" y="320" width="200" height="36" rx="18" fill="white" opacity="0.9"/>
+            <circle cx="134" cy="338" r="12" fill="#E6F7F5"/>
+            <text x="134" y="343" text-anchor="middle" font-size="11">📍</text>
+            <text x="220" y="335" text-anchor="middle" font-size="10" fill="#1E2D3A" font-weight="bold" font-family="sans-serif">North East England</text>
+            <text x="220" y="349" text-anchor="middle" font-size="8.5" fill="#5A6E7C" font-family="sans-serif">Proudly local. Thinking bigger.</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION STRIP -->
+  <section class="mission-strip">
+    <div class="container">
+      <div class="mission-inner reveal">
+        <blockquote>"Making the digital future accessible for every business in the North East of England  — whatever your size, whatever your sector."</blockquote>
+        <cite>— The Orchestrate Digital Mission</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="dot-bg"></div>
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">What We Stand For</div>
+        <h2 class="section-title">Our Values</h2>
+        <p class="section-subtitle">The principles that guide how we work with every client, every day.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon">🤝</div>
+          <h3>People First</h3>
+          <p>Technology is a tool — people are what matter. We always start by understanding your team, your culture and your goals before recommending any solution.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-icon">🎯</div>
+          <h3>Practical Impact</h3>
+          <p>We focus on outcomes that make a real difference. No vanity projects, no unnecessary complexity — just solutions that genuinely improve how you work.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-icon">💬</div>
+          <h3>Plain Speaking</h3>
+          <p>Technology doesn't have to be complicated. We explain everything in plain English, without the jargon, so you can make confident, informed decisions.</p>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-icon">🌱</div>
+          <h3>Long-Term Partnership</h3>
+          <p>We're not interested in one-off engagements. We build lasting relationships, supporting you as your needs evolve and technology continues to change.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-icon">🔒</div>
+          <h3>Trust &amp; Responsibility</h3>
+          <p>We take data security and responsible AI use seriously, helping you adopt technology safely so you understand the risks as well as the opportunities.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-icon">🌍</div>
+          <h3>Community Commitment</h3>
+          <p>We're proud to be based in the North East of England and invested in seeing the region's businesses grow. What's good for our clients is good for our community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NORTH EAST FOCUS -->
+  <section class="ne-section">
+    <div class="container">
+      <div class="ne-layout">
+        <!-- NE Map illustration -->
+        <div class="ne-art reveal">
+          <svg viewBox="0 0 500 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mapBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1A9E8A"/>
+                <stop offset="100%" stop-color="#0B6E60"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Background -->
+            <rect width="500" height="460" rx="20" fill="url(#mapBg2)"/>
+            <circle cx="460" cy="45" r="110" fill="rgba(255,255,255,0.04)"/>
+            <circle cx="45" cy="415" r="130" fill="rgba(255,255,255,0.03)"/>
+
+            <!-- ═══ REGION OUTLINES ═══ -->
+
+            <!-- Cumbria (mint dashed) -->
+            <path d="M55,105 L90,88 L128,95 L156,116 L166,153 L163,193 L164,238 L158,279 L148,316 L124,331 L97,321 L72,301 L52,266 L46,229 L47,191 L45,154 L52,125 Z"
+              fill="rgba(127,221,204,0.13)" stroke="#7FDDCC" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+            <!-- North East England (solid white) -->
+            <path d="M164,45 L208,32 L258,38 L309,59 L349,91 L363,128 L347,158 L327,185 L309,219 L298,258 L270,275 L240,283 L207,274 L190,258 L170,233 L158,208 L156,173 L156,141 L159,109 L161,79 Z"
+              fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.36)" stroke-width="1.5"/>
+
+            <!-- North Yorkshire (gold dashed) -->
+            <path d="M131,293 L168,277 L210,270 L240,283 L270,275 L298,258 L328,265 L359,263 L393,274 L421,301 L433,333 L416,366 L386,391 L340,403 L280,409 L218,401 L170,385 L145,358 L128,329 Z"
+              fill="rgba(255,213,128,0.11)" stroke="#FFD580" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+            <!-- Region name labels -->
+            <text x="80" y="140" text-anchor="middle" font-size="9.5" fill="rgba(127,221,204,0.88)" font-weight="700" font-family="Poppins,sans-serif">Cumbria</text>
+            <text x="228" y="70" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.52)" font-family="sans-serif">Northumberland</text>
+            <text x="192" y="112" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,0.42)" font-family="sans-serif">Tyne &amp; Wear</text>
+            <text x="338" y="383" text-anchor="middle" font-size="9.5" fill="rgba(255,213,128,0.88)" font-weight="700" font-family="Poppins,sans-serif">North Yorkshire</text>
+
+            <!-- ═══ CUMBRIA TOWNS (mint) ═══ -->
+
+            <!-- Carlisle -->
+            <circle cx="107" cy="194" r="6.5" fill="white" opacity="0.92"/>
+            <circle cx="107" cy="194" r="3.5" fill="#7FDDCC"/>
+            <rect x="115" y="183" width="53" height="18" rx="5" fill="rgba(0,72,64,0.72)"/>
+            <text x="141" y="196" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Carlisle</text>
+
+            <!-- Penrith -->
+            <circle cx="127" cy="236" r="6" fill="white" opacity="0.92"/>
+            <circle cx="127" cy="236" r="3" fill="#7FDDCC"/>
+            <rect x="135" y="225" width="50" height="18" rx="5" fill="rgba(0,72,64,0.72)"/>
+            <text x="160" y="238" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Penrith</text>
+
+            <!-- Keswick (small dot) -->
+            <circle cx="84" cy="249" r="4.5" fill="#7FDDCC" opacity="0.82"/>
+            <circle cx="84" cy="249" r="2" fill="rgba(0,72,64,0.9)"/>
+            <text x="67" y="245" text-anchor="middle" font-size="7.5" fill="rgba(127,221,204,0.82)" font-family="sans-serif">Keswick</text>
+
+            <!-- Kendal -->
+            <circle cx="128" cy="300" r="6" fill="white" opacity="0.92"/>
+            <circle cx="128" cy="300" r="3" fill="#7FDDCC"/>
+            <rect x="55" y="289" width="50" height="18" rx="5" fill="rgba(0,72,64,0.72)"/>
+            <text x="80" y="302" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Kendal</text>
+
+            <!-- ═══ NORTH EAST TOWNS (white/teal) ═══ -->
+
+            <!-- Newcastle (largest pin) -->
+            <circle cx="254" cy="179" r="9" fill="white"/>
+            <circle cx="254" cy="179" r="5" fill="#1A9E8A"/>
+            <rect x="193" y="158" width="58" height="18" rx="5" fill="rgba(0,72,64,0.72)"/>
+            <text x="222" y="171" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Newcastle</text>
+
+            <!-- Gateshead (small dot) -->
+            <circle cx="263" cy="188" r="4" fill="rgba(255,255,255,0.62)"/>
+            <circle cx="263" cy="188" r="2" fill="#1A9E8A"/>
+
+            <!-- Sunderland -->
+            <circle cx="284" cy="200" r="7.5" fill="white"/>
+            <circle cx="284" cy="200" r="4" fill="#1A9E8A"/>
+            <rect x="292" y="189" width="60" height="18" rx="5" fill="rgba(0,72,64,0.72)"/>
+            <text x="322" y="202" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Sunderland</text>
+
+            <!-- Durham -->
+            <circle cx="257" cy="217" r="7" fill="white"/>
+            <circle cx="257" cy="217" r="3.5" fill="#1A9E8A"/>
+            <rect x="198" y="206" width="50" height="18" rx="5" fill="rgba(0,72,64,0.72)"/>
+            <text x="223" y="219" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Durham</text>
+
+            <!-- Middlesbrough -->
+            <circle cx="296" cy="253" r="7" fill="white"/>
+            <circle cx="296" cy="253" r="3.5" fill="#1A9E8A"/>
+            <rect x="304" y="242" width="78" height="18" rx="5" fill="rgba(0,72,64,0.72)"/>
+            <text x="343" y="255" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Middlesbrough</text>
+
+            <!-- ═══ NORTH YORKSHIRE TOWNS (gold) ═══ -->
+
+            <!-- Richmond -->
+            <circle cx="216" cy="291" r="6" fill="white" opacity="0.92"/>
+            <circle cx="216" cy="291" r="3" fill="#FFD580"/>
+            <rect x="144" y="280" width="57" height="18" rx="5" fill="rgba(70,52,0,0.72)"/>
+            <text x="172" y="293" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Richmond</text>
+
+            <!-- Northallerton -->
+            <circle cx="274" cy="296" r="6" fill="white" opacity="0.92"/>
+            <circle cx="274" cy="296" r="3" fill="#FFD580"/>
+            <rect x="282" y="285" width="85" height="18" rx="5" fill="rgba(70,52,0,0.72)"/>
+            <text x="324" y="298" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Northallerton</text>
+
+            <!-- Whitby -->
+            <circle cx="366" cy="269" r="6" fill="white" opacity="0.92"/>
+            <circle cx="366" cy="269" r="3" fill="#FFD580"/>
+            <rect x="374" y="258" width="46" height="18" rx="5" fill="rgba(70,52,0,0.72)"/>
+            <text x="397" y="271" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Whitby</text>
+
+            <!-- Scarborough -->
+            <circle cx="390" cy="307" r="6" fill="white" opacity="0.92"/>
+            <circle cx="390" cy="307" r="3" fill="#FFD580"/>
+            <rect x="398" y="296" width="75" height="18" rx="5" fill="rgba(70,52,0,0.72)"/>
+            <text x="435" y="309" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Scarborough</text>
+
+            <!-- Ripon (small dot) -->
+            <circle cx="264" cy="333" r="4.5" fill="#FFD580" opacity="0.82"/>
+            <circle cx="264" cy="333" r="2" fill="rgba(70,52,0,0.9)"/>
+            <text x="256" y="326" text-anchor="middle" font-size="7.5" fill="rgba(255,213,128,0.82)" font-family="sans-serif">Ripon</text>
+
+            <!-- Harrogate -->
+            <circle cx="262" cy="358" r="6" fill="white" opacity="0.92"/>
+            <circle cx="262" cy="358" r="3" fill="#FFD580"/>
+            <rect x="194" y="347" width="60" height="18" rx="5" fill="rgba(70,52,0,0.72)"/>
+            <text x="224" y="360" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">Harrogate</text>
+
+            <!-- York -->
+            <circle cx="314" cy="366" r="6" fill="white" opacity="0.92"/>
+            <circle cx="314" cy="366" r="3" fill="#FFD580"/>
+            <rect x="322" y="355" width="38" height="18" rx="5" fill="rgba(70,52,0,0.72)"/>
+            <text x="341" y="368" text-anchor="middle" font-size="8.5" fill="white" font-weight="700" font-family="Poppins,sans-serif">York</text>
+
+            <!-- ═══ BARNARD CASTLE — OUR BASE ═══ -->
+
+            <!-- Animated pulse rings -->
+            <circle cx="220" cy="255" r="14" fill="none" stroke="#FFD580" stroke-width="2">
+              <animate attributeName="r" from="14" to="34" dur="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.7" to="0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="220" cy="255" r="14" fill="none" stroke="#FFD580" stroke-width="1.5">
+              <animate attributeName="r" from="14" to="34" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" from="0.5" to="0" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+            </circle>
+
+            <!-- Main pin -->
+            <circle cx="220" cy="255" r="11" fill="#FFD580"/>
+            <circle cx="220" cy="255" r="6.5" fill="white"/>
+            <circle cx="220" cy="255" r="3.5" fill="#FFD580"/>
+
+            <!-- Label -->
+            <rect x="231" y="239" width="94" height="31" rx="7" fill="rgba(0,0,0,0.62)" stroke="#FFD580" stroke-width="1.5"/>
+            <text x="278" y="251" text-anchor="middle" font-size="8" fill="#FFD580" font-weight="700" font-family="Poppins,sans-serif">★ OUR BASE</text>
+            <text x="278" y="264" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.92)" font-family="sans-serif">Barnard Castle</text>
+
+            <!-- ═══ LEGEND ═══ -->
+            <rect x="10" y="420" width="480" height="32" rx="10" fill="rgba(255,255,255,0.10)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <circle cx="30" cy="436" r="5" fill="white"/>
+            <text x="40" y="440" font-size="8.5" fill="white" font-family="sans-serif">North East England</text>
+            <circle cx="175" cy="436" r="5" fill="#7FDDCC"/>
+            <text x="185" y="440" font-size="8.5" fill="white" font-family="sans-serif">Cumbria</text>
+            <circle cx="255" cy="436" r="5" fill="#FFD580"/>
+            <text x="265" y="440" font-size="8.5" fill="white" font-family="sans-serif">North Yorkshire</text>
+            <text x="398" y="440" font-size="8.5" fill="#FFD580" font-weight="700" font-family="sans-serif">★ Our base</text>
+          </svg>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="section-label">Our Coverage Area</div>
+          <h2 class="section-title">Where We <span class="gradient-text">Work</span></h2>
+          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">Based in the North East England, we work with businesses right across the region — from Northumberland in the north down through Tyne &amp; Wear, County Durham and Teesside. We also serve businesses in North Yorkshire and Cumbria.</p>
+          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">We believe that by helping SMEs across this broad northern region embrace AI and digital technology, we can contribute to economic growth, job creation, and improved competitiveness for everyone.</p>
+          <p style="color:var(--text-medium); line-height:1.85;">We understand the specific challenges facing businesses here — because we're part of this community too, and genuinely invested in its future. Online support means we can help wherever you are.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;">
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Newcastle</span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Sunderland</span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Durham</span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Teesside</span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Northumberland</span>
+            <span style="background:#FFFAEC; color:#B8860B; padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 North Yorkshire</span>
+            <span style="background:#FFFAEC; color:#B8860B; padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Cumbria</span>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:32px;">Work With Us →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+      </div>
+    </div>
+    <div class="container reveal">
+      <h2>Want to work with us?</h2>
+      <p>We'd love to hear about your business and explore how we can help. Start with a free, no-obligation conversation.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-white">Get in Touch →</a>
+        <a href="services.html" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.4);">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom:18px; display:flex;">
+            <div class="logo-icon"><svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg></div>
+            <div style="line-height:1.15;">
+              <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:white;">Digital</span></div>
+              <div style="font-size:0.6rem;color:rgba(255,255,255,0.4);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+            </div>
+          </a>
+          <p>Helping small and medium-sized businesses across the North East of England adopt AI and digital technology.</p>
+        </div>
+        <div class="footer-links"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-links"><h4>Services</h4><ul><li><a href="services.html#ai">AI Adoption &amp; Training</a></li><li><a href="services.html#transformation">Digital Transformation</a></li><li><a href="services.html#workshops">Workshops &amp; Events</a></li><li><a href="services.html#consultancy">1-to-1 Consultancy</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Orchestrate Digital. All rights reserved.</span><span>orchestratedigital.co.uk</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

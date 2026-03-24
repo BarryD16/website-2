@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Concepts — Orchestrate Digital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #111820;
+      color: #E8EDF2;
+      padding: 56px 24px 80px;
+      min-height: 100vh;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 64px;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .header-label {
+      display: inline-block;
+      background: rgba(26,158,138,0.15);
+      color: #1A9E8A;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+    }
+    .page-header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: white;
+    }
+    .page-header h1 span { color: #1A9E8A; }
+    .page-header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.97rem;
+      line-height: 1.8;
+    }
+
+    /* Grid */
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .concept-card {
+      background: #1A2535;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+    .concept-card:hover {
+      border-color: rgba(26,158,138,0.4);
+      transform: translateY(-4px);
+    }
+
+    /* Preview area */
+    .concept-preview {
+      padding: 56px 36px 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      justify-content: center;
+    }
+    .preview-dark  { background: #0D1520; }
+    .preview-teal  { background: linear-gradient(145deg, #0B4A40, #0E6558); }
+    .preview-mid   { background: #141E2A; }
+    .preview-rich  { background: linear-gradient(145deg, #111820, #1A2535); }
+    .preview-warm  { background: linear-gradient(145deg, #1A1510, #2A2018); }
+
+    /* Background glow */
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .glow-teal { background: radial-gradient(circle, rgba(26,158,138,0.18) 0%, transparent 70%); }
+    .glow-warm { background: radial-gradient(circle, rgba(255,130,67,0.12) 0%, transparent 70%); }
+
+    /* Divider line between mark and lockup */
+    .preview-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Wordmark styles */
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .wm {
+      font-family: 'Poppins', sans-serif;
+    }
+    .wm-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: white;
+    }
+    .wm-name .highlight { color: #1A9E8A; }
+    .wm-tagline {
+      font-size: 0.63rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 3px;
+    }
+
+    /* Info section */
+    .concept-info {
+      padding: 26px 30px 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .concept-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #1A9E8A;
+      margin-bottom: 6px;
+    }
+    .concept-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .concept-desc {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+    }
+    .concept-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .ctag {
+      background: rgba(26,158,138,0.12);
+      color: #1A9E8A;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 50px;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 64px;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.85rem;
+      line-height: 1.75;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-note strong { color: rgba(255,255,255,0.55); }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <div class="header-label">Logo Concepts</div>
+    <h1>Orchestrate <span>Digital</span></h1>
+    <p>Five orchestral-inspired directions — each exploring the idea of many complex, distinct parts working together in harmony under skilled direction.</p>
+  </div>
+
+  <div class="concepts-grid">
+
+    <!-- ===================================================
+         CONCEPT 1: THE SCORE
+         Musical staff lines + ascending melody notes
+         Many individual parts making up a whole composition
+    ================================================== -->
+    <div class="concept-card">
+      <div class="concept-preview preview-dark">
+        <div class="glow glow-teal" style="width:300px;height:300px;top:-80px;left:-40px;"></div>
+
+        <!-- MARK: Large version -->
+        <svg width="140" height="100" viewBox="0 0 140 100" fill="none">
+          <defs>
+            <linearGradient id="scoreNoteGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1A9E8A" stop-opacity="0.5"/>
+              <stop offset="60%" stop-color="#1A9E8A"/>
+              <stop offset="100%" stop-color="#1A9E8A" stop-opacity="0.2"/>
+            </linearGradient>
+            <linearGradient id="scoreLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1A9E8A" stop-opacity="0.15"/>
+              <stop offset="40%" stop-color="#1A9E8A" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#1A9E8A" stop-opacity="0.08"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Staff lines (5 lines of a musical stave) -->
+          <line x1="4"   y1="28" x2="136" y2="28" stroke="url(#scoreLineGrad)" stroke-width="1.2"/>
+          <line x1="4"   y1="40" x2="136" y2="40" stroke="url(#scoreLineGrad)" stroke-width="1.2"/>
+          <line x1="4"   y1="52" x2="136" y2="52" stroke="url(#scoreLineGrad)" stroke-width="1.2"/>
+          <line x1="4"   y1="64" x2="136" y2="64" stroke="url(#scoreLineGrad)" stroke-width="1.2"/>
+          <line x1="4"   y1="76" x2="136" y2="76" stroke="url(#scoreLineGrad)" stroke-width="1.2"/>
+
+          <!-- Bar lines (vertical) -->
+          <line x1="4"   y1="28" x2="4"   y2="76" stroke="#1A9E8A" stroke-width="1.5" opacity="0.4"/>
+          <line x1="50"  y1="28" x2="50"  y2="76" stroke="#1A9E8A" stroke-width="1" opacity="0.2"/>
+          <line x1="96"  y1="28" x2="96"  y2="76" stroke="#1A9E8A" stroke-width="1" opacity="0.2"/>
+          <line x1="134" y1="28" x2="134" y2="76" stroke="#1A9E8A" stroke-width="2" opacity="0.3"/>
+          <line x1="136" y1="28" x2="136" y2="76" stroke="#1A9E8A" stroke-width="1" opacity="0.3"/>
+
+          <!-- Treble clef (simplified elegant shape) -->
+          <path d="M14,72 Q8,60 12,50 Q16,38 20,32 Q22,24 18,20 Q12,18 10,24 Q8,30 14,34 Q20,36 22,30"
+            stroke="#1A9E8A" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.85"/>
+          <circle cx="14" cy="70" r="3" fill="#1A9E8A" opacity="0.7"/>
+
+          <!-- Notes forming an ascending melody across 4 bars -->
+          <!-- Bar 1: slow opening -->
+          <ellipse cx="30" cy="70" rx="5" ry="4" fill="#1A9E8A" opacity="0.7" transform="rotate(-20,30,70)"/>
+          <line x1="35" y1="70" x2="35" y2="48" stroke="#1A9E8A" stroke-width="1.5" opacity="0.7"/>
+
+          <ellipse cx="42" cy="64" rx="5" ry="4" fill="#1A9E8A" opacity="0.8" transform="rotate(-20,42,64)"/>
+          <line x1="47" y1="64" x2="47" y2="42" stroke="#1A9E8A" stroke-width="1.5" opacity="0.8"/>
+
+          <!-- Bar 2: building -->
+          <ellipse cx="58" cy="58" rx="5" ry="4" fill="#1A9E8A" opacity="0.85" transform="rotate(-20,58,58)"/>
+          <line x1="63" y1="58" x2="63" y2="36" stroke="#1A9E8A" stroke-width="1.5" opacity="0.85"/>
+          <!-- Beam line connecting 2 quavers -->
+          <line x1="63" y1="36" x2="75" y2="32" stroke="#1A9E8A" stroke-width="2.5" opacity="0.85"/>
+
+          <ellipse cx="70" cy="52" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,70,52)"/>
+          <line x1="75" y1="52" x2="75" y2="32" stroke="#1A9E8A" stroke-width="1.5"/>
+
+          <!-- Bar 3: cresting -->
+          <ellipse cx="82" cy="40" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,82,40)"/>
+          <line x1="87" y1="40" x2="87" y2="20" stroke="#1A9E8A" stroke-width="1.5"/>
+          <!-- Beam: 3 quavers -->
+          <line x1="87" y1="20" x2="111" y2="16" stroke="#1A9E8A" stroke-width="3"/>
+          <line x1="87" y1="24" x2="111" y2="20" stroke="#1A9E8A" stroke-width="2"/>
+
+          <ellipse cx="92" cy="36" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,92,36)"/>
+          <line x1="97" y1="36" x2="97" y2="18" stroke="#1A9E8A" stroke-width="1.5"/>
+
+          <ellipse cx="104" cy="28" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,104,28)"/>
+          <line x1="109" y1="28" x2="109" y2="16" stroke="#1A9E8A" stroke-width="1.5"/>
+
+          <!-- Bar 4: held high note fading -->
+          <ellipse cx="118" cy="22" rx="5.5" ry="4.5" fill="none" stroke="#1A9E8A" stroke-width="1.5" transform="rotate(-20,118,22)"/>
+          <line x1="123" y1="22" x2="123" y2="6" stroke="#1A9E8A" stroke-width="1.5"/>
+          <!-- Dot after (dotted note) -->
+          <circle cx="126" cy="22" r="2" fill="#1A9E8A"/>
+
+          <!-- Dots fading to silence -->
+          <circle cx="132" cy="18" r="2" fill="#1A9E8A" opacity="0.4"/>
+          <circle cx="138" cy="16" r="1.5" fill="#1A9E8A" opacity="0.2"/>
+        </svg>
+
+        <div class="preview-divider"></div>
+
+        <!-- LOCKUP: Small mark + wordmark -->
+        <div class="logo-lockup">
+          <svg width="52" height="38" viewBox="0 0 140 100" fill="none">
+            <line x1="4" y1="28" x2="136" y2="28" stroke="#1A9E8A" stroke-width="1.5" opacity="0.4"/>
+            <line x1="4" y1="40" x2="136" y2="40" stroke="#1A9E8A" stroke-width="1.5" opacity="0.4"/>
+            <line x1="4" y1="52" x2="136" y2="52" stroke="#1A9E8A" stroke-width="1.5" opacity="0.4"/>
+            <line x1="4" y1="64" x2="136" y2="64" stroke="#1A9E8A" stroke-width="1.5" opacity="0.4"/>
+            <line x1="4" y1="76" x2="136" y2="76" stroke="#1A9E8A" stroke-width="1.5" opacity="0.4"/>
+            <ellipse cx="30" cy="70" rx="5" ry="4" fill="#1A9E8A" opacity="0.7" transform="rotate(-20,30,70)"/>
+            <ellipse cx="42" cy="64" rx="5" ry="4" fill="#1A9E8A" opacity="0.8" transform="rotate(-20,42,64)"/>
+            <ellipse cx="58" cy="58" rx="5" ry="4" fill="#1A9E8A" opacity="0.85" transform="rotate(-20,58,58)"/>
+            <ellipse cx="70" cy="52" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,70,52)"/>
+            <ellipse cx="82" cy="40" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,82,40)"/>
+            <ellipse cx="92" cy="36" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,92,36)"/>
+            <ellipse cx="104" cy="28" rx="5" ry="4" fill="#1A9E8A" transform="rotate(-20,104,28)"/>
+            <ellipse cx="118" cy="22" rx="5.5" ry="4.5" fill="none" stroke="#1A9E8A" stroke-width="1.5" transform="rotate(-20,118,22)"/>
+          </svg>
+          <div class="wm">
+            <div class="wm-name"><span class="highlight">Orchestrate</span> Digital</div>
+            <div class="wm-tagline">AI &amp; Digital Skills · North East</div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-info">
+        <div class="concept-num">Concept 01</div>
+        <div class="concept-name">The Score</div>
+        <p class="concept-desc">A full musical stave with notes ascending across four bars — each note a distinct voice, each bar a new development, building toward something greater. Just as an orchestral score coordinates dozens of individual parts into one unified composition, Orchestrate Digital brings together all the different elements of a business's digital journey.</p>
+        <div class="concept-tags">
+          <span class="ctag">Musical</span><span class="ctag">Sophisticated</span><span class="ctag">Narrative</span><span class="ctag">Distinctive</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         CONCEPT 2: THE SYMPHONY
+         Many different lines/parts flowing through a
+         central convergence point — complexity becoming harmony
+    ================================================== -->
+    <div class="concept-card">
+      <div class="concept-preview preview-teal">
+        <div class="glow glow-warm" style="width:260px;height:260px;bottom:-60px;right:-40px;"></div>
+
+        <!-- MARK -->
+        <svg width="110" height="110" viewBox="0 0 110 110" fill="none">
+          <defs>
+            <radialGradient id="symphCentre" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="white" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="white" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- 12 lines of different curvature/weight all passing through centre (55,55) -->
+          <!-- Each represents a different "instrument section" -->
+
+          <!-- Section 1: Violins (thin, high) -->
+          <path d="M 5,5 Q 20,20 55,55 Q 80,75 105,85" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.3"/>
+          <path d="M 10,2 Q 25,22 55,55 Q 78,80 102,92" stroke="white" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.2"/>
+
+          <!-- Section 2: Violas -->
+          <path d="M 30,2 Q 40,25 55,55 Q 68,82 80,108" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.35"/>
+          <path d="M 45,2 Q 50,28 55,55 Q 60,82 65,108" stroke="white" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.25"/>
+
+          <!-- Section 3: Cellos (medium weight) -->
+          <path d="M 108,10 Q 85,28 55,55 Q 32,75 8,90" stroke="#7FDDCC" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <path d="M 108,25 Q 88,38 55,55 Q 28,70 5,78" stroke="#7FDDCC" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+          <!-- Section 4: Double bass (thicker, deeper) -->
+          <path d="M 108,55 Q 85,55 55,55 Q 25,55 2,55" stroke="#A0E8DC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+          <path d="M 108,70 Q 82,65 55,55 Q 28,45 2,40" stroke="#A0E8DC" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.35"/>
+
+          <!-- Section 5: Brass (bold) -->
+          <path d="M 85,108 Q 72,82 55,55 Q 38,28 25,2" stroke="#FFD580" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+          <path d="M 100,100 Q 80,78 55,55 Q 32,32 10,10" stroke="#FFD580" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.3"/>
+
+          <!-- Section 6: Woodwind (flowing curves) -->
+          <path d="M 2,25 Q 22,35 55,55 Q 80,68 108,85" stroke="#9BE8FF" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+          <!-- Section 7: Percussion / timpani (bold diagonal) -->
+          <path d="M 5,108 Q 25,82 55,55 Q 82,28 108,2" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.25"/>
+
+          <!-- Centre glow (the moment of unity) -->
+          <circle cx="55" cy="55" r="22" fill="url(#symphCentre)"/>
+          <!-- Centre mark -->
+          <circle cx="55" cy="55" r="7" fill="white" opacity="0.95"/>
+          <circle cx="55" cy="55" r="3" fill="#0B6E60"/>
+        </svg>
+
+        <div class="preview-divider"></div>
+
+        <div class="logo-lockup">
+          <svg width="42" height="42" viewBox="0 0 110 110" fill="none">
+            <path d="M 5,5 Q 20,20 55,55 Q 80,75 105,85"   stroke="white" stroke-width="1"   fill="none" stroke-linecap="round" opacity="0.3"/>
+            <path d="M 30,2 Q 40,25 55,55 Q 68,82 80,108"  stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.35"/>
+            <path d="M 108,10 Q 85,28 55,55 Q 32,75 8,90"  stroke="#7FDDCC" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <path d="M 108,55 Q 85,55 55,55 Q 25,55 2,55"  stroke="#A0E8DC" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+            <path d="M 85,108 Q 72,82 55,55 Q 38,28 25,2"  stroke="#FFD580" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+            <path d="M 2,25 Q 22,35 55,55 Q 80,68 108,85"  stroke="#9BE8FF" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.4"/>
+            <path d="M 5,108 Q 25,82 55,55 Q 82,28 108,2"  stroke="white" stroke-width="3"   fill="none" stroke-linecap="round" opacity="0.2"/>
+            <circle cx="55" cy="55" r="12" fill="white" opacity="0.15"/>
+            <circle cx="55" cy="55" r="5" fill="white" opacity="0.95"/>
+            <circle cx="55" cy="55" r="2" fill="#0B6E60"/>
+          </svg>
+          <div class="wm">
+            <div class="wm-name"><span class="highlight">Orchestrate</span> Digital</div>
+            <div class="wm-tagline">AI &amp; Digital Skills · North East</div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-info">
+        <div class="concept-num">Concept 02</div>
+        <div class="concept-name">The Symphony</div>
+        <p class="concept-desc">Many distinct lines — each a different weight, colour and path representing a different instrument section — all converging at a single luminous central point. That point of unity is Orchestrate Digital. This logo captures the essential truth: enormous complexity, many moving parts, all brought into one coherent whole.</p>
+        <div class="concept-tags">
+          <span class="ctag">Complex harmony</span><span class="ctag">Convergence</span><span class="ctag">Many voices</span><span class="ctag">Striking</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         CONCEPT 3: THE CONDUCTOR
+         A baton sweeping through air, with concentric arcs
+         radiating outward — directing complexity into order
+    ================================================== -->
+    <div class="concept-card">
+      <div class="concept-preview preview-mid">
+        <div class="glow glow-teal" style="width:320px;height:320px;top:-60px;right:-80px;"></div>
+
+        <!-- MARK -->
+        <svg width="115" height="115" viewBox="0 0 115 115" fill="none">
+          <defs>
+            <linearGradient id="batonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1A9E8A" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#1A9E8A"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Radiating arcs from tip (top-right) — each represents a different orchestral section -->
+          <!-- The arcs get larger and more dispersed = the music spreading out from the baton -->
+          <!-- Arc set 1: tight, near the tip -->
+          <path d="M 88,8 Q 92,28 78,44"  stroke="#1A9E8A" stroke-width="1"   fill="none" stroke-linecap="round" opacity="0.25"/>
+          <!-- Arc set 2 -->
+          <path d="M 95,12 Q 104,38 84,58" stroke="#1A9E8A" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.3"/>
+          <!-- Arc set 3 -->
+          <path d="M 100,20 Q 112,52 88,74" stroke="#1A9E8A" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+          <!-- Arc set 4 -->
+          <path d="M 102,32 Q 115,68 90,90" stroke="#1A9E8A" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <!-- Arc set 5: wide -->
+          <path d="M 98,46 Q 112,82 88,106" stroke="#1A9E8A" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.55"/>
+          <!-- Arc set 6: widest -->
+          <path d="M 90,60 Q 102,90 76,110" stroke="#1A9E8A" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+          <!-- Mirror arcs on the other side (the music fills the space) -->
+          <path d="M 72,6 Q 80,22 68,36"   stroke="#1A9E8A" stroke-width="0.8" fill="none" stroke-linecap="round" opacity="0.2"/>
+          <path d="M 60,8 Q 70,28 54,42"   stroke="#1A9E8A" stroke-width="1"   fill="none" stroke-linecap="round" opacity="0.18"/>
+          <path d="M 44,6 Q 60,28 42,48"   stroke="#1A9E8A" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.15"/>
+
+          <!-- The baton itself: elegant diagonal line, thick handle, thin tip -->
+          <!-- Handle (thick end, bottom-left) -->
+          <line x1="12" y1="103" x2="82" y2="18" stroke="url(#batonGrad)" stroke-width="4" stroke-linecap="round"/>
+          <!-- Refined taper: draw a thinner line on top to create taper effect -->
+          <line x1="40" y1="72" x2="82" y2="18" stroke="url(#batonGrad)" stroke-width="2" stroke-linecap="round"/>
+          <line x1="62" y1="44" x2="82" y2="18" stroke="url(#batonGrad)" stroke-width="1" stroke-linecap="round"/>
+
+          <!-- Baton head: the glowing tip where the music is directed from -->
+          <circle cx="84" cy="16" r="6" fill="#1A9E8A"/>
+          <circle cx="84" cy="16" r="3" fill="white" opacity="0.9"/>
+          <!-- Pulse ring -->
+          <circle cx="84" cy="16" r="10" stroke="#1A9E8A" stroke-width="1.5" fill="none" opacity="0.3"/>
+          <circle cx="84" cy="16" r="15" stroke="#1A9E8A" stroke-width="1" fill="none" opacity="0.15"/>
+
+          <!-- Handle end cap -->
+          <circle cx="11" cy="104" r="4" fill="#1A9E8A" opacity="0.5"/>
+        </svg>
+
+        <div class="preview-divider"></div>
+
+        <div class="logo-lockup">
+          <svg width="44" height="44" viewBox="0 0 115 115" fill="none">
+            <path d="M 95,12 Q 104,38 84,58" stroke="#1A9E8A" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.4"/>
+            <path d="M 100,20 Q 112,52 88,74" stroke="#1A9E8A" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <path d="M 102,32 Q 115,68 90,90" stroke="#1A9E8A" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.55"/>
+            <path d="M 98,46 Q 112,82 88,106" stroke="#1A9E8A" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.45"/>
+            <line x1="12" y1="103" x2="82" y2="18" stroke="#1A9E8A" stroke-width="4" stroke-linecap="round"/>
+            <line x1="50" y1="64" x2="82" y2="18" stroke="#1A9E8A" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="84" cy="16" r="6" fill="#1A9E8A"/>
+            <circle cx="84" cy="16" r="2.5" fill="white" opacity="0.9"/>
+            <circle cx="84" cy="16" r="10" stroke="#1A9E8A" stroke-width="1" fill="none" opacity="0.25"/>
+          </svg>
+          <div class="wm">
+            <div class="wm-name"><span class="highlight">Orchestrate</span> Digital</div>
+            <div class="wm-tagline">AI &amp; Digital Skills · North East</div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-info">
+        <div class="concept-num">Concept 03</div>
+        <div class="concept-name">The Conductor</div>
+        <p class="concept-desc">A conductor's baton — tapered from a thick handle to a precise tip — with waves of sound radiating outward as it moves. The baton is the direct, literal symbol of orchestration: the single guiding hand that shapes how dozens of complex, independent parts perform together. Bold, elegant, and instantly recognisable.</p>
+        <div class="concept-tags">
+          <span class="ctag">Iconic</span><span class="ctag">Direct metaphor</span><span class="ctag">Confident</span><span class="ctag">Elegant</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         CONCEPT 4: THE HARMONICS
+         Overlapping sine waves of different frequencies
+         layered to create a complex composite waveform
+         Like a Fourier synthesis of many musical tones
+    ================================================== -->
+    <div class="concept-card">
+      <div class="concept-preview preview-dark">
+        <div class="glow glow-teal" style="width:280px;height:200px;top:20px;left:50%;transform:translateX(-50%);"></div>
+
+        <!-- MARK -->
+        <svg width="160" height="90" viewBox="0 0 160 90" fill="none">
+          <defs>
+            <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1A9E8A" stop-opacity="0.1"/>
+              <stop offset="30%" stop-color="#1A9E8A" stop-opacity="0.9"/>
+              <stop offset="70%" stop-color="#1A9E8A" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#1A9E8A" stop-opacity="0.1"/>
+            </linearGradient>
+            <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#FFD580" stop-opacity="0.05"/>
+              <stop offset="30%" stop-color="#FFD580" stop-opacity="0.5"/>
+              <stop offset="70%" stop-color="#FFD580" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#FFD580" stop-opacity="0.05"/>
+            </linearGradient>
+            <linearGradient id="waveGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#9BE8FF" stop-opacity="0.05"/>
+              <stop offset="30%" stop-color="#9BE8FF" stop-opacity="0.45"/>
+              <stop offset="70%" stop-color="#9BE8FF" stop-opacity="0.45"/>
+              <stop offset="100%" stop-color="#9BE8FF" stop-opacity="0.05"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Baseline -->
+          <line x1="0" y1="45" x2="160" y2="45" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+          <!-- Wave 5: 5th harmonic (very high freq, quiet) -->
+          <path d="M 0,45 C 8,26 16,26 24,45 C 32,64 40,64 48,45 C 56,26 64,26 72,45 C 80,64 88,64 96,45 C 104,26 112,26 120,45 C 128,64 136,64 144,45 C 152,26 160,26 160,45"
+            stroke="#9BE8FF" stroke-width="0.8" fill="none" opacity="0.25"/>
+
+          <!-- Wave 4: 4th harmonic -->
+          <path d="M 0,45 C 10,21 20,21 30,45 C 40,69 50,69 60,45 C 70,21 80,21 90,45 C 100,69 110,69 120,45 C 130,21 140,21 150,45 C 158,66 160,66 160,45"
+            stroke="#7FDDCC" stroke-width="1" fill="none" opacity="0.3"/>
+
+          <!-- Wave 3: 3rd harmonic (woodwind colour) -->
+          <path d="M 0,45 C 13,14 27,14 40,45 C 53,76 67,76 80,45 C 93,14 107,14 120,45 C 133,76 147,76 160,45"
+            stroke="#9BE8FF" stroke-width="1.4" fill="none" stroke="url(#waveGrad3)" opacity="0.45"/>
+
+          <!-- Wave 2: 2nd harmonic (brass colour) -->
+          <path d="M 0,45 C 20,9 40,9 60,45 C 80,81 100,81 120,45 C 140,9 155,9 160,45"
+            stroke="url(#waveGrad2)" stroke-width="1.8" fill="none" opacity="0.55"/>
+
+          <!-- Wave 1: Fundamental (primary teal — strongest) -->
+          <path d="M 0,45 C 40,3 80,3 80,45 C 80,87 120,87 160,45"
+            stroke="url(#waveGrad1)" stroke-width="3" fill="none"/>
+
+          <!-- Composite envelope (subtle fill showing the combined waveform) -->
+          <path d="M 0,45 C 40,3 80,3 80,45 C 80,87 120,87 160,45"
+            fill="#1A9E8A" fill-opacity="0.06"/>
+
+          <!-- Node dots at wave peaks/troughs -->
+          <circle cx="40"  cy="3"  r="3.5" fill="#1A9E8A"/>
+          <circle cx="80"  cy="45" r="3"   fill="#1A9E8A" opacity="0.6"/>
+          <circle cx="120" cy="87" r="3.5" fill="#1A9E8A"/>
+
+          <!-- Amplitude markers (tiny vertical lines) -->
+          <line x1="40"  y1="5"  x2="40"  y2="14" stroke="#1A9E8A" stroke-width="0.8" opacity="0.4"/>
+          <line x1="120" y1="77" x2="120" y2="86" stroke="#1A9E8A" stroke-width="0.8" opacity="0.4"/>
+
+          <!-- Label: "f" fundamental + harmonics -->
+          <text x="4" y="14" font-size="8" fill="#1A9E8A" font-family="serif" font-style="italic" opacity="0.5">f</text>
+          <text x="4" y="24" font-size="7" fill="#7FDDCC" font-family="serif" font-style="italic" opacity="0.4">2f</text>
+          <text x="4" y="32" font-size="6" fill="#9BE8FF" font-family="serif" font-style="italic" opacity="0.35">3f…</text>
+        </svg>
+
+        <div class="preview-divider"></div>
+
+        <div class="logo-lockup">
+          <svg width="60" height="28" viewBox="0 0 160 90" fill="none">
+            <path d="M 0,45 C 20,9 40,9 60,45 C 80,81 100,81 120,45 C 140,9 155,9 160,45" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M 0,45 C 13,14 27,14 40,45 C 53,76 67,76 80,45 C 93,14 107,14 120,45 C 133,76 147,76 160,45" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.35"/>
+            <path d="M 0,45 C 40,3 80,3 80,45 C 80,87 120,87 160,45" stroke="#1A9E8A" stroke-width="3" fill="none"/>
+            <circle cx="40"  cy="3"  r="3" fill="#1A9E8A"/>
+            <circle cx="120" cy="87" r="3" fill="#1A9E8A"/>
+          </svg>
+          <div class="wm">
+            <div class="wm-name"><span class="highlight">Orchestrate</span> Digital</div>
+            <div class="wm-tagline">AI &amp; Digital Skills · North East</div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-info">
+        <div class="concept-num">Concept 04</div>
+        <div class="concept-name">The Harmonics</div>
+        <p class="concept-desc">In music theory, a rich complex tone is made up of many overlapping sine waves — a fundamental frequency plus harmonics. Each layer adds depth and character. This logo shows exactly that: five layered waveforms in different colours, each representing a different part of the orchestra (or business function), combining into one powerful composite waveform.</p>
+        <div class="concept-tags">
+          <span class="ctag">Mathematical</span><span class="ctag">Musical theory</span><span class="ctag">Layered</span><span class="ctag">Rich depth</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         CONCEPT 5: THE CRESCENDO
+         A bold visual crescendo — the hairpin mark used in
+         music notation — filled with many fine lines
+         representing complexity building to something powerful
+    ================================================== -->
+    <div class="concept-card">
+      <div class="concept-preview preview-warm">
+        <div class="glow glow-warm" style="width:300px;height:300px;top:-50px;right:-60px;"></div>
+        <div class="glow glow-teal" style="width:200px;height:200px;bottom:-40px;left:-30px;"></div>
+
+        <!-- MARK -->
+        <svg width="140" height="100" viewBox="0 0 140 100" fill="none">
+          <defs>
+            <linearGradient id="crescGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1A9E8A" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#1A9E8A"/>
+            </linearGradient>
+            <linearGradient id="crescFill" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#1A9E8A" stop-opacity="0"/>
+              <stop offset="100%" stop-color="#1A9E8A" stop-opacity="0.08"/>
+            </linearGradient>
+          </defs>
+
+          <!-- The crescendo outer shape (two diverging curves) -->
+          <!-- Top arm of the crescendo -->
+          <path d="M 6,50 Q 50,48 134,10" stroke="url(#crescGrad)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Bottom arm -->
+          <path d="M 6,50 Q 50,52 134,90" stroke="url(#crescGrad)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+          <!-- Fill between arms -->
+          <path d="M 6,50 Q 50,48 134,10 L 134,90 Q 50,52 6,50 Z" fill="url(#crescFill)"/>
+
+          <!-- Many internal lines — each one a different "part" or "instrument" -->
+          <!-- These radiate from the point (left) and expand to the right -->
+          <line x1="8"  y1="50" x2="134" y2="18" stroke="#1A9E8A" stroke-width="0.6" opacity="0.2"/>
+          <line x1="8"  y1="50" x2="134" y2="22" stroke="#1A9E8A" stroke-width="0.7" opacity="0.22"/>
+          <line x1="8"  y1="50" x2="134" y2="26" stroke="#1A9E8A" stroke-width="0.8" opacity="0.25"/>
+          <line x1="8"  y1="50" x2="134" y2="30" stroke="#1A9E8A" stroke-width="0.9" opacity="0.28"/>
+          <line x1="8"  y1="50" x2="134" y2="34" stroke="#1A9E8A" stroke-width="1.0" opacity="0.3"/>
+          <line x1="8"  y1="50" x2="134" y2="38" stroke="#1A9E8A" stroke-width="1.1" opacity="0.35"/>
+          <line x1="8"  y1="50" x2="134" y2="42" stroke="#1A9E8A" stroke-width="1.2" opacity="0.38"/>
+          <line x1="8"  y1="50" x2="134" y2="46" stroke="#1A9E8A" stroke-width="1.4" opacity="0.42"/>
+          <line x1="8"  y1="50" x2="134" y2="50" stroke="#1A9E8A" stroke-width="1.5" opacity="0.45"/>
+          <line x1="8"  y1="50" x2="134" y2="54" stroke="#1A9E8A" stroke-width="1.4" opacity="0.42"/>
+          <line x1="8"  y1="50" x2="134" y2="58" stroke="#1A9E8A" stroke-width="1.2" opacity="0.38"/>
+          <line x1="8"  y1="50" x2="134" y2="62" stroke="#1A9E8A" stroke-width="1.1" opacity="0.35"/>
+          <line x1="8"  y1="50" x2="134" y2="66" stroke="#1A9E8A" stroke-width="1.0" opacity="0.3"/>
+          <line x1="8"  y1="50" x2="134" y2="70" stroke="#1A9E8A" stroke-width="0.9" opacity="0.27"/>
+          <line x1="8"  y1="50" x2="134" y2="74" stroke="#1A9E8A" stroke-width="0.8" opacity="0.24"/>
+          <line x1="8"  y1="50" x2="134" y2="78" stroke="#1A9E8A" stroke-width="0.7" opacity="0.2"/>
+          <line x1="8"  y1="50" x2="134" y2="82" stroke="#1A9E8A" stroke-width="0.6" opacity="0.17"/>
+
+          <!-- The focal point (silent, the beginning before the crescendo) -->
+          <circle cx="6" cy="50" r="4" fill="#1A9E8A" opacity="0.8"/>
+          <circle cx="6" cy="50" r="2" fill="white" opacity="0.8"/>
+
+          <!-- The full-force endpoint (dots at right = the full orchestra) -->
+          <circle cx="134" cy="10"  r="3.5" fill="#1A9E8A"/>
+          <circle cx="134" cy="90"  r="3.5" fill="#1A9E8A"/>
+          <circle cx="134" cy="50"  r="4.5" fill="#1A9E8A"/>
+          <circle cx="134" cy="30"  r="2.5" fill="#1A9E8A" opacity="0.7"/>
+          <circle cx="134" cy="70"  r="2.5" fill="#1A9E8A" opacity="0.7"/>
+
+          <!-- Musical notation: p to ff -->
+          <text x="2"   y="68" font-size="9" fill="#1A9E8A" font-family="serif" font-style="italic" opacity="0.5">p</text>
+          <text x="118" y="8"  font-size="9" fill="#1A9E8A" font-family="serif" font-style="italic" opacity="0.7">ff</text>
+        </svg>
+
+        <div class="preview-divider"></div>
+
+        <div class="logo-lockup">
+          <svg width="54" height="34" viewBox="0 0 140 100" fill="none">
+            <path d="M 6,50 Q 50,48 134,10" stroke="#1A9E8A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M 6,50 Q 50,52 134,90" stroke="#1A9E8A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <line x1="8" y1="50" x2="134" y2="30" stroke="#1A9E8A" stroke-width="0.8" opacity="0.3"/>
+            <line x1="8" y1="50" x2="134" y2="38" stroke="#1A9E8A" stroke-width="1" opacity="0.35"/>
+            <line x1="8" y1="50" x2="134" y2="50" stroke="#1A9E8A" stroke-width="1.2" opacity="0.4"/>
+            <line x1="8" y1="50" x2="134" y2="62" stroke="#1A9E8A" stroke-width="1" opacity="0.35"/>
+            <line x1="8" y1="50" x2="134" y2="70" stroke="#1A9E8A" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="6"   cy="50" r="3.5" fill="#1A9E8A" opacity="0.8"/>
+            <circle cx="134" cy="50" r="4"   fill="#1A9E8A"/>
+          </svg>
+          <div class="wm">
+            <div class="wm-name"><span class="highlight">Orchestrate</span> Digital</div>
+            <div class="wm-tagline">AI &amp; Digital Skills · North East</div>
+          </div>
+        </div>
+      </div>
+      <div class="concept-info">
+        <div class="concept-num">Concept 05</div>
+        <div class="concept-name">The Crescendo</div>
+        <p class="concept-desc">The crescendo hairpin (‹) is the most iconic symbol in musical notation — it means: build from quiet to powerful, from one to many, from simple to complex. This mark shows that exact journey: a single point of origin, expanding into many fine lines, each growing bolder, until the full force of every part is heard together. It marks both the musical notation and the journey of digital transformation.</p>
+        <div class="concept-tags">
+          <span class="ctag">Iconic notation</span><span class="ctag">Building complexity</span><span class="ctag">Transformation</span><span class="ctag">Powerful</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    <p>These concepts are all rooted in orchestral theory — the Score, Symphony, Conductor, Harmonics and Crescendo. <strong>A graphic designer can develop your chosen direction into a full brand identity</strong> (logo files, colour palette, typography) via Fiverr or 99designs for around £100–300. Tools like <strong>Looka</strong> or <strong>Adobe Firefly</strong> can also generate variations once you have a direction.</p>
+  </div>
+
+</body>
+</html>

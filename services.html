@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Orchestrate Digital</title>
+  <meta name="description" content="AI adoption, digital transformation, workshops, and 1-to-1 consultancy for businesses across North East England, North Yorkshire and Cumbria.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== SERVICE BLOCKS ===== */
+    .service-block { padding: 88px 0; position: relative; overflow: hidden; }
+    .alt-bg { background: var(--bg); }
+    .white-bg { background: var(--bg); }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .service-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      margin-bottom: 10px;
+    }
+    .service-title { font-size: 1.9rem; margin-bottom: 18px; }
+    .service-desc { color: var(--text-medium); font-size: 0.97rem; line-height: 1.8; margin-bottom: 28px; }
+
+    .feature-list { list-style: none; margin-bottom: 32px; }
+    .feature-list li {
+      padding: 11px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.93rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .check-icon {
+      width: 20px; height: 20px; min-width: 20px;
+      background: var(--primary-light);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    /* Service illustration panels */
+    .service-art {
+      border-radius: var(--radius-lg);
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .service-art svg { display: block; width: 100%; height: auto; }
+
+    /* ===== HOW IT WORKS ===== */
+    .process-section { background: #060E0D; padding: 88px 0; position: relative; overflow: hidden; }
+    .process-section::before {
+      content: '';
+      position: absolute; top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(26,158,138,0.12) 0%, transparent 70%);
+    }
+    .process-section .section-label { background: rgba(26,158,138,0.2); color: var(--primary); }
+    .process-section .section-title { color: white; }
+    .process-section .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 36px; left: 12.5%; right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(26,158,138,0.4), rgba(26,158,138,0.4), transparent);
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 32px 20px 28px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+    .step-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(26,158,138,0.3); }
+
+    .step-num {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: 1.1rem;
+      margin: 0 auto 18px;
+      box-shadow: 0 4px 16px rgba(26,158,138,0.35);
+      position: relative;
+      z-index: 1;
+    }
+    .step-card h3 { font-size: 1rem; color: white; margin-bottom: 10px; }
+    .step-card p { color: rgba(255,255,255,0.6); font-size: 0.87rem; line-height: 1.65; }
+
+    @media (max-width: 960px) {
+      .service-layout { grid-template-columns: 1fr; gap: 40px; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid::before { display: none; }
+    }
+    @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg>
+        </div>
+        <div style="line-height:1.15;">
+          <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:var(--text-dark);">Digital</span></div>
+          <div style="font-size:0.6rem;color:var(--text-light);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <!-- Harmonics wave overlay -->
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/><circle cx="300" cy="20" r="5" fill="white"/><circle cx="900" cy="180" r="5" fill="white"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/><circle cx="300" cy="20" r="5" fill="white"/><circle cx="900" cy="180" r="5" fill="white"/></svg>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">What We Offer</div>
+      <h1>Our Services</h1>
+      <p>Practical, tailored support to help your business embrace AI and digital technology — confidently and at your own pace.</p>
+    </div>
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,28 C360,54 1080,0 1440,28 L1440,54 L0,54 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 01: AI ADOPTION & TRAINING -->
+  <section id="ai" class="service-block white-bg">
+    <div class="container">
+      <div class="service-layout">
+        <div class="reveal">
+          <div class="service-num">Service 01</div>
+          <h2 class="service-title">AI Adoption <span class="gradient-text">&amp; Training</span></h2>
+          <p class="service-desc">AI is transforming how businesses operate — but knowing where to start can feel overwhelming. We cut through the noise, helping you identify the AI tools that genuinely fit your business, and building the confidence and skills to use them safely and effectively.</p>
+          <ul class="feature-list">
+            <li><div class="check-icon">✓</div>AI readiness assessment tailored to your business</li>
+            <li><div class="check-icon">✓</div>Hands-on training with ChatGPT, Microsoft Copilot &amp; others</li>
+            <li><div class="check-icon">✓</div>Safe and responsible AI use guidance</li>
+            <li><div class="check-icon">✓</div>Identifying automation opportunities in your workflows</li>
+            <li><div class="check-icon">✓</div>Ongoing support as AI tools continue to evolve</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Enquire About This Service →</a>
+        </div>
+
+        <!-- SVG Illustration: AI & Robots -->
+        <div class="service-art reveal reveal-delay-2">
+          <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E6F7F5"/>
+                <stop offset="100%" stop-color="#C8EDE9"/>
+              </linearGradient>
+              <linearGradient id="aiCard" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1A9E8A"/>
+                <stop offset="100%" stop-color="#0B6E60"/>
+              </linearGradient>
+            </defs>
+            <rect width="420" height="340" rx="20" fill="url(#aiBg)"/>
+
+            <!-- Brain/network icon background -->
+            <circle cx="210" cy="140" r="90" fill="white" opacity="0.5"/>
+
+            <!-- Neural network nodes -->
+            <!-- Central node -->
+            <circle cx="210" cy="140" r="28" fill="url(#aiCard)"/>
+            <text x="210" y="148" text-anchor="middle" font-size="20" fill="white">🤖</text>
+
+            <!-- Outer nodes -->
+            <circle cx="130" cy="90" r="18" fill="#1A9E8A" opacity="0.75"/>
+            <text x="130" y="98" text-anchor="middle" font-size="13" fill="white">💬</text>
+            <circle cx="290" cy="90" r="18" fill="#1A9E8A" opacity="0.75"/>
+            <text x="290" y="98" text-anchor="middle" font-size="13" fill="white">📝</text>
+            <circle cx="130" cy="190" r="18" fill="#1A9E8A" opacity="0.75"/>
+            <text x="130" y="198" text-anchor="middle" font-size="13" fill="white">🔍</text>
+            <circle cx="290" cy="190" r="18" fill="#1A9E8A" opacity="0.75"/>
+            <text x="290" y="198" text-anchor="middle" font-size="13" fill="white">📊</text>
+
+            <!-- Connections -->
+            <line x1="182" y1="119" x2="148" y2="100" stroke="#1A9E8A" stroke-width="2" opacity="0.4"/>
+            <line x1="238" y1="119" x2="272" y2="100" stroke="#1A9E8A" stroke-width="2" opacity="0.4"/>
+            <line x1="182" y1="161" x2="148" y2="180" stroke="#1A9E8A" stroke-width="2" opacity="0.4"/>
+            <line x1="238" y1="161" x2="272" y2="180" stroke="#1A9E8A" stroke-width="2" opacity="0.4"/>
+
+            <!-- Pulse rings -->
+            <circle cx="210" cy="140" r="42" stroke="#1A9E8A" stroke-width="1.5" fill="none" opacity="0.25"/>
+            <circle cx="210" cy="140" r="58" stroke="#1A9E8A" stroke-width="1" fill="none" opacity="0.15"/>
+
+            <!-- Labels -->
+            <rect x="96" y="62" width="68" height="18" rx="5" fill="#1A9E8A" opacity="0.15"/>
+            <text x="130" y="75" text-anchor="middle" font-size="9" fill="#0B6E60" font-weight="bold" font-family="sans-serif">ChatGPT</text>
+            <rect x="257" y="62" width="66" height="18" rx="5" fill="#1A9E8A" opacity="0.15"/>
+            <text x="290" y="75" text-anchor="middle" font-size="9" fill="#0B6E60" font-weight="bold" font-family="sans-serif">Copilot</text>
+            <rect x="88" y="215" width="84" height="18" rx="5" fill="#1A9E8A" opacity="0.15"/>
+            <text x="130" y="228" text-anchor="middle" font-size="9" fill="#0B6E60" font-weight="bold" font-family="sans-serif">AI Search</text>
+            <rect x="252" y="215" width="76" height="18" rx="5" fill="#1A9E8A" opacity="0.15"/>
+            <text x="290" y="228" text-anchor="middle" font-size="9" fill="#0B6E60" font-weight="bold" font-family="sans-serif">Analytics</text>
+
+            <!-- Bottom banner -->
+            <rect x="20" y="272" width="380" height="50" rx="12" fill="white" opacity="0.8"/>
+            <circle cx="50" cy="297" r="14" fill="var(--primary-light)"/>
+            <text x="50" y="302" text-anchor="middle" font-size="12">⚡</text>
+            <text x="72" y="293" font-size="11" fill="#1E2D3A" font-weight="bold" font-family="sans-serif">Practical AI training for your team</text>
+            <text x="72" y="308" font-size="9.5" fill="#5A6E7C" font-family="sans-serif">No technical background required — just curiosity</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02: DIGITAL TRANSFORMATION -->
+  <section id="transformation" class="service-block alt-bg">
+    <div class="container">
+      <div class="service-layout">
+        <!-- Illustration LEFT -->
+        <div class="service-art reveal">
+          <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="dtBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF3EC"/>
+                <stop offset="100%" stop-color="#FFE0CC"/>
+              </linearGradient>
+            </defs>
+            <rect width="420" height="340" rx="20" fill="url(#dtBg)"/>
+
+            <!-- Before / After layout -->
+            <!-- BEFORE side (left) -->
+            <rect x="24" y="30" width="174" height="200" rx="12" fill="white" opacity="0.7"/>
+            <rect x="24" y="30" width="174" height="32" rx="12" fill="#E8E4DF"/>
+            <text x="111" y="51" text-anchor="middle" font-size="10" fill="#8FA0AC" font-weight="bold" font-family="sans-serif">BEFORE</text>
+            <!-- Messy stack -->
+            <rect x="40" y="78" width="140" height="18" rx="4" fill="#F0EDE8"/>
+            <rect x="40" y="100" width="100" height="18" rx="4" fill="#F0EDE8"/>
+            <rect x="40" y="122" width="120" height="18" rx="4" fill="#F0EDE8"/>
+            <rect x="40" y="144" width="85" height="18" rx="4" fill="#F0EDE8"/>
+            <rect x="40" y="166" width="110" height="18" rx="4" fill="#F0EDE8"/>
+            <rect x="40" y="188" width="70" height="18" rx="4" fill="#F0EDE8"/>
+            <text x="111" y="230" text-anchor="middle" font-size="20" fill="#8FA0AC">😫</text>
+
+            <!-- Arrow -->
+            <path d="M200 145 L222 145" stroke="#FF8243" stroke-width="3" stroke-linecap="round"/>
+            <path d="M218 138 L226 145 L218 152" stroke="#FF8243" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="211" cy="145" r="18" fill="#FF8243" opacity="0.12"/>
+
+            <!-- AFTER side (right) -->
+            <rect x="228" y="30" width="170" height="200" rx="12" fill="white" opacity="0.8"/>
+            <rect x="228" y="30" width="170" height="32" rx="12" fill="url(#aiCard)" opacity="0.85"/>
+            <text x="313" y="51" text-anchor="middle" font-size="10" fill="white" font-weight="bold" font-family="sans-serif">AFTER</text>
+            <!-- Clean dashboard -->
+            <rect x="244" y="78" width="138" height="12" rx="4" fill="#1A9E8A" opacity="0.3"/>
+            <rect x="244" y="95" width="138" height="28" rx="6" fill="#E6F7F5"/>
+            <rect x="244" y="95" width="72" height="28" rx="6" fill="#1A9E8A"/>
+            <text x="280" y="113" text-anchor="middle" font-size="9" fill="white" font-weight="bold" font-family="sans-serif">Automated ✓</text>
+            <rect x="244" y="130" width="138" height="12" rx="4" fill="#1A9E8A" opacity="0.2"/>
+            <rect x="244" y="148" width="138" height="12" rx="4" fill="#1A9E8A" opacity="0.15"/>
+            <rect x="244" y="166" width="90" height="12" rx="4" fill="#1A9E8A" opacity="0.2"/>
+            <!-- Tick marks -->
+            <circle cx="248" cy="136" r="5" fill="#1A9E8A" opacity="0.5"/>
+            <circle cx="248" cy="154" r="5" fill="#1A9E8A" opacity="0.5"/>
+            <circle cx="248" cy="172" r="5" fill="#1A9E8A" opacity="0.5"/>
+            <text x="313" y="220" text-anchor="middle" font-size="20">😊</text>
+
+            <!-- Bottom -->
+            <rect x="20" y="252" width="380" height="68" rx="12" fill="white" opacity="0.8"/>
+            <text x="40" y="274" font-size="10" fill="#5A6E7C" font-family="sans-serif">Time saved per week after transformation</text>
+            <!-- Progress bar -->
+            <rect x="40" y="283" width="260" height="8" rx="4" fill="#E6F7F5"/>
+            <rect x="40" y="283" width="195" height="8" rx="4" fill="url(#aiCard)"/>
+            <text x="316" y="291" font-size="10" fill="#1A9E8A" font-weight="bold" font-family="sans-serif">75%</text>
+            <text x="40" y="308" font-size="9" fill="#8FA0AC" font-family="sans-serif">Before: 4hrs wasted on manual processes weekly</text>
+          </svg>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="service-num">Service 02</div>
+          <h2 class="service-title">Digital <span class="gradient-text">Transformation</span></h2>
+          <p class="service-desc">Digital transformation isn't just about technology — it's about rethinking how your business operates. We help you identify where digital tools can streamline processes, improve customer experience, and drive measurable business outcomes.</p>
+          <ul class="feature-list">
+            <li><div class="check-icon">✓</div>Digital audit of your current processes and tools</li>
+            <li><div class="check-icon">✓</div>Strategy development tailored to your goals and budget</li>
+            <li><div class="check-icon">✓</div>Process improvement and workflow optimisation</li>
+            <li><div class="check-icon">✓</div>Tool selection and implementation guidance</li>
+            <li><div class="check-icon">✓</div>Change management and team engagement support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Enquire About This Service →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03: WORKSHOPS & EVENTS -->
+  <section id="workshops" class="service-block white-bg">
+    <div class="container">
+      <div class="service-layout">
+        <div class="reveal">
+          <div class="service-num">Service 03</div>
+          <h2 class="service-title">Workshops <span class="gradient-text">&amp; Events</span></h2>
+          <p class="service-desc">Learning alongside other business owners can be one of the most powerful ways to build confidence with new technology. Our practical workshops are designed for people who want to learn by doing — no prior technical knowledge needed.</p>
+          <ul class="feature-list">
+            <li><div class="check-icon">✓</div>Beginner-friendly AI and digital skills workshops</li>
+            <li><div class="check-icon">✓</div>In-person events at venues across the North East England</li>
+            <li><div class="check-icon">✓</div>Online sessions for flexible learning from anywhere</li>
+            <li><div class="check-icon">✓</div>Bespoke team training for your organisation</li>
+            <li><div class="check-icon">✓</div>Industry-specific sessions available on request</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Find Out About Upcoming Events →</a>
+        </div>
+
+        <!-- Workshop illustration -->
+        <div class="service-art reveal reveal-delay-2">
+          <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="wsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#EEF4FF"/>
+                <stop offset="100%" stop-color="#D8E8FF"/>
+              </linearGradient>
+            </defs>
+            <rect width="420" height="340" rx="20" fill="url(#wsBg)"/>
+
+            <!-- Presentation screen -->
+            <rect x="60" y="40" width="300" height="170" rx="10" fill="white"/>
+            <rect x="60" y="40" width="300" height="40" rx="10" fill="#6366F1" opacity="0.85"/>
+            <text x="210" y="66" text-anchor="middle" font-size="13" fill="white" font-weight="bold" font-family="sans-serif">AI for Your Business — Workshop</text>
+            <!-- Screen content -->
+            <rect x="80" y="95" width="120" height="8" rx="3" fill="#6366F1" opacity="0.3"/>
+            <rect x="80" y="108" width="90" height="6" rx="3" fill="#6366F1" opacity="0.2"/>
+            <!-- Mini chart on screen -->
+            <rect x="220" y="88" width="16" height="50" rx="3" fill="#6366F1" opacity="0.2"/>
+            <rect x="240" y="72" width="16" height="66" rx="3" fill="#6366F1" opacity="0.35"/>
+            <rect x="260" y="82" width="16" height="56" rx="3" fill="#6366F1" opacity="0.25"/>
+            <rect x="280" y="64" width="16" height="74" rx="3" fill="#6366F1" opacity="0.5"/>
+            <!-- Tick list -->
+            <text x="80" y="140" font-size="11" fill="#5A6E7C" font-family="sans-serif">✓  Understanding AI tools</text>
+            <text x="80" y="158" font-size="11" fill="#5A6E7C" font-family="sans-serif">✓  Hands-on practice</text>
+            <text x="80" y="176" font-size="11" fill="#5A6E7C" font-family="sans-serif">✓  Q&amp;A with experts</text>
+
+            <!-- Attendee avatars -->
+            <g transform="translate(40, 228)">
+              <!-- Person 1 -->
+              <circle cx="35" cy="20" r="20" fill="#6366F1" opacity="0.15"/>
+              <circle cx="35" cy="12" r="8" fill="#6366F1" opacity="0.5"/>
+              <path d="M18,36 Q35,28 52,36" stroke="#6366F1" stroke-width="2" fill="none" opacity="0.5"/>
+              <!-- Person 2 -->
+              <circle cx="95" cy="20" r="20" fill="#1A9E8A" opacity="0.15"/>
+              <circle cx="95" cy="12" r="8" fill="#1A9E8A" opacity="0.5"/>
+              <path d="M78,36 Q95,28 112,36" stroke="#1A9E8A" stroke-width="2" fill="none" opacity="0.5"/>
+              <!-- Person 3 -->
+              <circle cx="155" cy="20" r="20" fill="#FF8243" opacity="0.15"/>
+              <circle cx="155" cy="12" r="8" fill="#FF8243" opacity="0.5"/>
+              <path d="M138,36 Q155,28 172,36" stroke="#FF8243" stroke-width="2" fill="none" opacity="0.5"/>
+              <!-- Person 4 -->
+              <circle cx="215" cy="20" r="20" fill="#6366F1" opacity="0.15"/>
+              <circle cx="215" cy="12" r="8" fill="#6366F1" opacity="0.5"/>
+              <path d="M198,36 Q215,28 232,36" stroke="#6366F1" stroke-width="2" fill="none" opacity="0.5"/>
+              <!-- Person 5 -->
+              <circle cx="275" cy="20" r="20" fill="#1A9E8A" opacity="0.15"/>
+              <circle cx="275" cy="12" r="8" fill="#1A9E8A" opacity="0.5"/>
+              <path d="M258,36 Q275,28 292,36" stroke="#1A9E8A" stroke-width="2" fill="none" opacity="0.5"/>
+            </g>
+            <text x="210" y="298" text-anchor="middle" font-size="9.5" fill="#8FA0AC" font-family="sans-serif">North East England Business Owners — Learning Together</text>
+
+            <!-- Location badge -->
+            <rect x="24" y="220" width="18" height="18" rx="4" fill="#6366F1" opacity="0.2"/>
+            <text x="33" y="233" text-anchor="middle" font-size="11">📍</text>
+
+            <!-- Badge: upcoming -->
+            <rect x="276" y="218" width="120" height="26" rx="13" fill="#6366F1"/>
+            <text x="336" y="235" text-anchor="middle" font-size="9.5" fill="white" font-weight="bold" font-family="sans-serif">Upcoming Events →</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04: 1-TO-1 CONSULTANCY -->
+  <section id="consultancy" class="service-block alt-bg">
+    <div class="container">
+      <div class="service-layout">
+        <!-- Illustration LEFT -->
+        <div class="service-art reveal">
+          <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="csBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFAEC"/>
+                <stop offset="100%" stop-color="#FFEEBB"/>
+              </linearGradient>
+            </defs>
+            <rect width="420" height="340" rx="20" fill="url(#csBg)"/>
+
+            <!-- Roadmap / strategy visual -->
+            <!-- Vertical timeline -->
+            <line x1="210" y1="50" x2="210" y2="280" stroke="#F5A623" stroke-width="2" stroke-dasharray="6,4" opacity="0.5"/>
+
+            <!-- Milestone nodes -->
+            <!-- Step 1 -->
+            <circle cx="210" cy="74" r="22" fill="#F5A623"/>
+            <text x="210" y="82" text-anchor="middle" font-size="14" fill="white">💬</text>
+            <rect x="240" y="56" width="148" height="40" rx="8" fill="white" opacity="0.85"/>
+            <text x="314" y="73" text-anchor="middle" font-size="10" fill="#1E2D3A" font-weight="bold" font-family="sans-serif">Discovery Chat</text>
+            <text x="314" y="87" text-anchor="middle" font-size="8.5" fill="#5A6E7C" font-family="sans-serif">Understand your needs</text>
+
+            <!-- Step 2 -->
+            <circle cx="210" cy="148" r="22" fill="#1A9E8A"/>
+            <text x="210" y="156" text-anchor="middle" font-size="14" fill="white">📋</text>
+            <rect x="32" y="130" width="148" height="40" rx="8" fill="white" opacity="0.85"/>
+            <text x="106" y="147" text-anchor="middle" font-size="10" fill="#1E2D3A" font-weight="bold" font-family="sans-serif">Tailored Plan</text>
+            <text x="106" y="161" text-anchor="middle" font-size="8.5" fill="#5A6E7C" font-family="sans-serif">Built around your goals</text>
+
+            <!-- Step 3 -->
+            <circle cx="210" cy="218" r="22" fill="#F5A623"/>
+            <text x="210" y="226" text-anchor="middle" font-size="14" fill="white">🚀</text>
+            <rect x="240" y="200" width="148" height="40" rx="8" fill="white" opacity="0.85"/>
+            <text x="314" y="217" text-anchor="middle" font-size="10" fill="#1E2D3A" font-weight="bold" font-family="sans-serif">Implementation</text>
+            <text x="314" y="231" text-anchor="middle" font-size="8.5" fill="#5A6E7C" font-family="sans-serif">Hands-on support</text>
+
+            <!-- Bottom strip -->
+            <rect x="20" y="268" width="380" height="54" rx="12" fill="white" opacity="0.8"/>
+            <rect x="36" y="282" width="36" height="26" rx="6" fill="#FFF3EC"/>
+            <text x="54" y="299" text-anchor="middle" font-size="16">🤝</text>
+            <text x="82" y="292" font-size="10" fill="#1E2D3A" font-weight="bold" font-family="sans-serif">Flexible packages — from single sessions</text>
+            <text x="82" y="307" font-size="9" fill="#5A6E7C" font-family="sans-serif">to ongoing monthly retainer support</text>
+          </svg>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="service-num">Service 04</div>
+          <h2 class="service-title">1-to-1 <span class="gradient-text">Consultancy</span></h2>
+          <p class="service-desc">Sometimes you need dedicated, focused attention on your specific business challenges. Our one-to-one consultancy brings experienced digital expertise directly to your organisation, helping you make confident, informed decisions.</p>
+          <ul class="feature-list">
+            <li><div class="check-icon">✓</div>In-depth review of your business needs and digital goals</li>
+            <li><div class="check-icon">✓</div>Personalised AI and digital strategy development</li>
+            <li><div class="check-icon">✓</div>Technology recommendations and vendor selection support</li>
+            <li><div class="check-icon">✓</div>Regular check-ins and progress reviews</li>
+            <li><div class="check-icon">✓</div>Flexible packages to suit your budget and timeframe</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Book a Consultancy Session →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Our Approach</div>
+        <h2 class="section-title">How we work with you</h2>
+        <p class="section-subtitle">A clear, straightforward process designed to understand your needs and deliver real results.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">1</div>
+          <h3>Free Discovery Chat</h3>
+          <p>We start with a no-obligation conversation to understand your business, your challenges, and your goals.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <h3>Tailored Plan</h3>
+          <p>We put together a clear, practical plan of action — built around your specific needs and budget.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <h3>Hands-On Support</h3>
+          <p>We work alongside you, providing training, guidance and practical hands-on support at every stage.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-num">4</div>
+          <h3>Review &amp; Grow</h3>
+          <p>We review progress together and help you keep building your digital capabilities over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+      </div>
+    </div>
+    <div class="container reveal">
+      <h2>Not sure which service is right for you?</h2>
+      <p>Get in touch for a free chat. We'll help you figure out the best starting point — no pressure, no commitment.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-white">Get in Touch →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom:18px; display:flex;">
+            <div class="logo-icon"><svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg></div>
+            <div style="line-height:1.15;">
+              <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:white;">Digital</span></div>
+              <div style="font-size:0.6rem;color:rgba(255,255,255,0.4);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+            </div>
+          </a>
+          <p>Helping small and medium-sized businesses across North East England, North Yorkshire and Cumbria adopt AI and digital technology.</p>
+        </div>
+        <div class="footer-links"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-links"><h4>Services</h4><ul><li><a href="#ai">AI Adoption &amp; Training</a></li><li><a href="#transformation">Digital Transformation</a></li><li><a href="#workshops">Workshops &amp; Events</a></li><li><a href="#consultancy">1-to-1 Consultancy</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Orchestrate Digital. All rights reserved.</span><span>orchestratedigital.co.uk</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
