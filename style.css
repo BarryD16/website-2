@@ -93,12 +93,12 @@ img { max-width: 100%; display: block; }
   100% { background-position: 200% center; }
 }
 @keyframes wave-drift {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 @keyframes wave-drift-slow {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 @keyframes harmonic-draw {
   from { stroke-dashoffset: 600; }
@@ -182,7 +182,6 @@ nav {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
 }
 .harmonics-waves-inner.slow {
   animation-duration: 42s;
@@ -208,7 +207,6 @@ nav {
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  transform: translateZ(0);
 }
 .hero-harmonics-inner svg {
   width: 50%;
