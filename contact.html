@@ -184,7 +184,7 @@
     </div>
     <div class="wave-bottom">
       <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,28 C360,54 1080,0 1440,28 L1440,54 L0,54 Z" fill="#FAF8F4"/>
+        <path d="M0,28 C360,54 1080,0 1440,28 L1440,54 L0,54 Z" fill="#060E0D"/>
       </svg>
     </div>
   </section>
@@ -204,7 +204,7 @@
               <div class="detail-icon">📧</div>
               <div class="detail-text">
                 <strong>Email Us</strong>
-                <span>hello@orchestratedigital.co.uk</span>
+                <a href="mailto:hello@orchestratedigital.co.uk" style="color:var(--primary);text-decoration:none;">hello@orchestratedigital.co.uk</a>
               </div>
             </div>
             <div class="contact-detail">
@@ -274,6 +274,9 @@
           </div>
 
           <form id="contactForm" onsubmit="handleSubmit(event)">
+            <input type="hidden" name="_subject" value="New enquiry from Orchestrate Digital website">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name *</label>
@@ -370,9 +373,31 @@
 
     function handleSubmit(e) {
       e.preventDefault();
-      // To make this form live, connect to Formspree: set action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-      document.getElementById('contactForm').style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
+      const form = document.getElementById('contactForm');
+      const btn = form.querySelector('.submit-btn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      fetch('https://formsubmit.co/ajax/hello@orchestratedigital.co.uk', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success === 'true' || data.success === true) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.textContent = 'Send Message →';
+          btn.disabled = false;
+          alert('Something went wrong. Please email us directly at hello@orchestratedigital.co.uk');
+        }
+      })
+      .catch(() => {
+        btn.textContent = 'Send Message →';
+        btn.disabled = false;
+        alert('Unable to send your message right now. Please email us directly at hello@orchestratedigital.co.uk');
+      });
     }
   </script>
 
