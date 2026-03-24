@@ -75,6 +75,16 @@
       width: 7px; height: 7px;
       background: var(--primary);
       border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @media (max-width: 600px) {
+      .hero-badges {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-badge {
+        width: 100%;
+      }
     }
 
     /* Hero illustration area */
@@ -388,15 +398,15 @@
     <div class="container">
       <div class="hero-layout">
         <div class="hero-text reveal">
-          <div class="section-label">The North East of England's AI &amp; Digital Partner</div>
-          <h1>Helping Businesses in the North East of England <span class="gradient-text">Work Smarter</span> with AI</h1>
-          <p class="hero-sub">We help small and medium-sized businesses across North East of England understand, adopt, and get real results from AI and digital technology — no jargon, no overwhelm, just practical support that makes a real difference.</p>
+          <div class="section-label">North East England's AI &amp; Digital Partner</div>
+          <h1>Helping North East England Businesses <span class="gradient-text">Work Smarter</span> with AI</h1>
+          <p class="hero-sub">We help small and medium-sized businesses across North East England understand, adopt, and get real results from AI and digital technology — no jargon, no overwhelm, just practical support that makes a real difference.</p>
           <div class="btn-group">
             <a href="services.html" class="btn btn-primary">Explore Our Services →</a>
             <a href="contact.html" class="btn btn-outline">Book a Free Chat</a>
           </div>
           <div class="hero-badges">
-            <span class="hero-badge"><span class="hero-badge-dot"></span>Serving North East of England, North Yorkshire &amp; Cumbria</span>
+            <span class="hero-badge"><span class="hero-badge-dot"></span>Serving North East England, North Yorkshire &amp; Cumbria</span>
             <span class="hero-badge"><span class="hero-badge-dot"></span>Practical, hands-on support</span>
             <span class="hero-badge"><span class="hero-badge-dot"></span>Free discovery chat</span>
           </div>
@@ -762,7 +772,7 @@
       <div class="who-layout">
         <div class="reveal">
           <div class="section-label">Who We Work With</div>
-          <h2 class="section-title">Supporting businesses right across <span class="gradient-text">the North East of England</span></h2>
+          <h2 class="section-title">Supporting businesses right across <span class="gradient-text">the North East England</span></h2>
           <p style="color:var(--text-medium); margin-bottom:20px; line-height:1.8;">Whether you're a sole trader taking your first steps with AI, or an established SME looking to transform your operations, we work with businesses of all types across the entire region.</p>
           <div class="audience-tags">
             <span class="tag">Manufacturing</span>

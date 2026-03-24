@@ -179,6 +179,10 @@ nav {
   display: flex;
   align-items: center;
   animation: wave-drift 28s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .harmonics-waves-inner.slow {
   animation-duration: 42s;
@@ -201,6 +205,10 @@ nav {
 .hero-harmonics-inner {
   width: 200%;
   animation: wave-drift 32s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .hero-harmonics-inner svg {
   width: 50%;
