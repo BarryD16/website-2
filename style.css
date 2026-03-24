@@ -202,16 +202,21 @@ nav {
   z-index: 0;
 }
 .hero-harmonics-inner {
-  width: 100%;
+  width: 300%;
+  display: flex;
+  animation: hero-wave-drift 12s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .hero-harmonics-inner svg {
-  display: block;
-  width: 100%;
+  width: 33.333%;
+  flex-shrink: 0;
 }
-@keyframes wave-flow-1 { to { stroke-dashoffset: -1269; } }
-@keyframes wave-flow-2 { to { stroke-dashoffset: -1250; } }
-@keyframes wave-flow-3 { to { stroke-dashoffset: -1212; } }
-@keyframes wave-flow-4 { to { stroke-dashoffset: -1237; } }
+@keyframes hero-wave-drift {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-33.333%, 0, 0); }
+}
 
 .nav-links {
   display: flex;
