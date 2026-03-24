@@ -202,16 +202,16 @@ nav {
   z-index: 0;
 }
 .hero-harmonics-inner {
-  width: 200%;
-  animation: wave-drift 32s linear infinite;
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  width: 100%;
 }
 .hero-harmonics-inner svg {
-  width: 50%;
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
+@keyframes wave-flow-1 { to { stroke-dashoffset: -1269; } }
+@keyframes wave-flow-2 { to { stroke-dashoffset: -1250; } }
+@keyframes wave-flow-3 { to { stroke-dashoffset: -1212; } }
+@keyframes wave-flow-4 { to { stroke-dashoffset: -1237; } }
 
 .nav-links {
   display: flex;
