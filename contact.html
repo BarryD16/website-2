@@ -273,10 +273,8 @@
             <p>Fill in the form below and we'll get back to you shortly.</p>
           </div>
 
-          <form id="contactForm" onsubmit="handleSubmit(event)">
-            <input type="hidden" name="_subject" value="New enquiry from Orchestrate Digital website">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
+          <form id="contactForm" name="contact" data-netlify="true" onsubmit="handleSubmit(event)">
+            <input type="hidden" name="form-name" value="contact">
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name *</label>
@@ -377,20 +375,17 @@
       const btn = form.querySelector('.submit-btn');
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      fetch('https://formsubmit.co/ajax/hello@orchestratedigital.co.uk', {
+      fetch('/', {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form)
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
       })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success === 'true' || data.success === true) {
+      .then(response => {
+        if (response.ok) {
           form.style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
         } else {
-          btn.textContent = 'Send Message →';
-          btn.disabled = false;
-          alert('Something went wrong. Please email us directly at hello@orchestratedigital.co.uk');
+          throw new Error('Submission failed');
         }
       })
       .catch(() => {
