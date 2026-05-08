@@ -133,6 +133,28 @@
     @media (max-width: 600px) {
       .values-grid { grid-template-columns: 1fr; }
     }
+
+    /* ===== CLIENT WORK / PROOF CARDS ===== */
+    .proof-section { background: #060E0D !important; padding: 88px 0; }
+    .proof-grid { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 24px; margin-top: 48px; }
+    .proof-card {
+      background: linear-gradient(145deg, rgba(26,158,138,0.12), rgba(26,158,138,0.05)) !important;
+      border: 1px solid rgba(26,158,138,0.35) !important;
+      border-top: 3px solid #1A9E8A !important;
+      border-radius: 12px; padding: 30px 28px;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .proof-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,158,138,0.22); }
+    .proof-kicker { display: flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: #1A9E8A; margin-bottom: 14px; }
+    .proof-kicker-dot { width: 8px; height: 8px; border-radius: 50%; background: #1A9E8A; flex-shrink: 0; }
+    .proof-card h3 { font-size: 1.08rem; margin-bottom: 12px; color: #E4F2F0; line-height: 1.4; }
+    .proof-card > p { color: #8FBFBB; font-size: 0.93rem; line-height: 1.75; flex: 1; margin-bottom: 0; }
+    .proof-card ul { list-style: none; margin-top: 18px; border-top: 1px solid rgba(26,158,138,0.2); padding-top: 4px; }
+    .proof-card li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.91rem; color: #8FBFBB; line-height: 1.55; }
+    .proof-card li:last-child { border-bottom: none; }
+    .proof-card li strong { color: #1A9E8A; font-weight: 600; }
+    @media (max-width: 960px) { .proof-grid { grid-template-columns: 1fr !important; } }
   </style>
 </head>
 <body>
