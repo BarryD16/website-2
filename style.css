@@ -711,29 +711,38 @@ footer::before {
 /* ===================================
    SAMPLE PROOF SECTIONS
    =================================== */
-.proof-section { background: var(--bg); padding: 88px 0; position: relative; overflow: hidden; }
-.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.proof-section { background: #060E0D; padding: 88px 0; position: relative; overflow: hidden; }
+.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .proof-card {
-  background: var(--white);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(26,158,138,0.18);
+  border-top: 3px solid var(--primary);
   border-radius: var(--radius-md);
-  padding: 28px;
-  box-shadow: var(--shadow-sm);
+  padding: 30px 28px;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
-.proof-card:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
+.proof-card:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(26,158,138,0.4);
+  border-top-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
 .proof-kicker {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 1.8px;
-  text-transform: uppercase; color: var(--primary); margin-bottom: 12px;
+  text-transform: uppercase; color: var(--primary); margin-bottom: 14px;
 }
-.proof-kicker-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
-.proof-card h3 { font-size: 1.08rem; margin-bottom: 12px; }
-.proof-card p, .proof-card li, .proof-note, .quote-role { color: var(--text-medium); }
-.proof-card ul { list-style: none; margin-top: 14px; }
-.proof-card li { padding: 10px 0; border-top: 1px solid var(--border); font-size: 0.92rem; }
-.proof-card li strong { color: var(--text-dark); font-weight: 600; }
-.proof-note { margin-top: 14px; font-size: 0.8rem; }
+.proof-kicker-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.proof-card h3 { font-size: 1.1rem; margin-bottom: 14px; color: var(--text-dark); line-height: 1.4; }
+.proof-card > p { color: var(--text-medium); font-size: 0.93rem; line-height: 1.75; flex: 1; }
+.proof-card ul { list-style: none; margin-top: 18px; border-top: 1px solid rgba(26,158,138,0.15); padding-top: 4px; }
+.proof-card li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.91rem; color: var(--text-medium); line-height: 1.55; }
+.proof-card li:last-child { border-bottom: none; }
+.proof-card li strong { color: var(--primary); font-weight: 600; }
+.proof-note { margin-top: 14px; font-size: 0.8rem; color: var(--text-medium); }
 .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 28px; }
 .quote-card {
   background: linear-gradient(145deg, rgba(26,158,138,0.08), rgba(26,158,138,0.03));
