@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orchestrate Digital | Sales Pipeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── Dashboard-specific overrides ───────────────────────────────────── */
+body { overflow-x: hidden; }
+
+/* Header / Nav (same as site) */
+header {
+  background: rgba(7,16,14,0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 1px 0 rgba(26,158,138,0.18), 0 2px 20px rgba(0,0,0,0.4);
+  position: sticky; top: 0; z-index: 100;
+}
+nav {
+  display: flex; align-items: center; justify-content: space-between; height: 72px;
+}
+.logo { display: flex; align-items: center; gap: 10px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.2rem; }
+.logo-icon {
+  width: 52px; height: 32px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  color: white; font-size: 18px; box-shadow: 0 2px 10px rgba(26,158,138,0.3);
+}
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.sync-badge {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(26,158,138,0.10); border: 1px solid rgba(26,158,138,0.22);
+  padding: 7px 14px; border-radius: 50px; font-size: 0.83rem; font-weight: 500; color: var(--text-medium);
+}
+.sync-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+.sync-dot.loading { background: #FFD580; animation: sync-pulse 1s infinite; }
+.sync-dot.error   { background: #e05c5c; }
+@keyframes sync-pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* Page hero (matches .page-hero from site) */
+.dash-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #0B6E60 100%);
+  padding: 52px 0 64px; text-align: center; position: relative; overflow: hidden;
+}
+.dash-hero::before {
+  content:''; position:absolute; top:-60px; right:-60px; width:300px; height:300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%); pointer-events:none;
+}
+.dash-hero::after {
+  content:''; position:absolute; bottom:-80px; left:-80px; width:260px; height:260px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); pointer-events:none;
+}
+.dash-hero .section-label { position: relative; z-index: 2; background: rgba(255,255,255,0.18); color: white; }
+.dash-hero h1 { color: white; font-size: 2.2rem; margin-bottom: 10px; position: relative; z-index: 2; }
+.dash-hero p  { font-size: 1rem; opacity: .88; position: relative; z-index: 2; }
+
+/* Stats strip */
+.dash-stats-strip {
+  background: #060E0D; padding: 40px 0; position: relative; overflow: hidden;
+  border-bottom: 1px solid rgba(26,158,138,0.12);
+}
+.dash-stats-strip::before {
+  content:''; position:absolute; top:-80px; left:50%; transform:translateX(-50%);
+  width:600px; height:300px;
+  background: radial-gradient(ellipse, rgba(26,158,138,0.15) 0%, transparent 70%); pointer-events:none;
+}
+.dash-stats-grid {
+  display: grid; grid-template-columns: repeat(6,1fr); gap: 0;
+  position: relative; z-index: 2; text-align: center;
+}
+.dash-stat {
+  padding: 16px 12px; border-right: 1px solid rgba(255,255,255,0.07);
+}
+.dash-stat:last-child { border-right: none; }
+.dash-stat-val {
+  font-family: 'Poppins', sans-serif; font-size: 2.2rem; font-weight: 700;
+  color: var(--primary); line-height: 1; margin-bottom: 6px;
+}
+.dash-stat-val.orange { color: #FF8243; }
+.dash-stat-val.green  { color: #4aad7a; }
+.dash-stat-val.amber  { color: #FFD580; }
+.dash-stat-val.red    { color: #e05c5c; }
+.dash-stat-val.blue   { color: #9BE8FF; }
+.dash-stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: .8px; line-height: 1.4; }
+
+/* Main content */
+.dash-main { padding: 56px 0; }
+
+/* Cards (using .card from style.css but with a custom override where needed) */
+.dash-card {
+  background: var(--white); border-radius: var(--radius-md); padding: 28px 28px 24px;
+  box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+  position: relative; overflow: hidden; transition: all var(--transition);
+}
+.dash-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--primary), #0096A6);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+}
+.dash-card:hover::before { transform: scaleX(1); }
+.dash-card:hover { box-shadow: var(--shadow-card); }
+.dash-card h2 { font-size: 1.15rem; margin-bottom: 18px; color: var(--text-dark); }
+
+/* Two-col layout */
+.two-col { display: grid; grid-template-columns: 1fr 340px; gap: 24px; margin-bottom: 28px; }
+
+/* Pipeline */
+.pipeline-section-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-medium); margin-bottom: 12px; font-weight: 600; }
+.pipeline-split { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 4px; }
+.pipeline-stages { display: flex; flex-direction: column; gap: 9px; }
+.pipeline-row { display: flex; align-items: center; gap: 10px; }
+.pipeline-lbl { font-size: 0.78rem; color: var(--text-medium); width: 78px; flex-shrink: 0; }
+.pipeline-track { flex: 1; height: 16px; background: #091412; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+.pipeline-fill  { height: 100%; border-radius: 3px; transition: width .4s ease; }
+.pipeline-num   { font-size: 0.78rem; font-weight: 600; width: 20px; text-align: right; }
+
+/* Follow-ups */
+.followup-list { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; max-height: 310px; overflow-y: auto; }
+.followup-item {
+  background: #091412; border-radius: var(--radius-sm);
+  padding: 12px 14px; border-left: 3px solid #FFD580; font-size: 0.85rem;
+}
+.followup-item.overdue  { border-color: #e05c5c; }
+.followup-item.done     { border-color: #4aad7a; opacity: .6; }
+.followup-item.community{ border-color: #FF8243; }
+.followup-biz  { font-weight: 600; margin-bottom: 2px; color: var(--text-dark); }
+.followup-date { color: var(--text-medium); font-size: 0.78rem; }
+.followup-empty{ color: var(--text-medium); text-align: center; padding: 28px 0; font-size: 0.9rem; }
+
+/* View tabs */
+.dash-tabs { display: flex; gap: 0; margin-bottom: 20px; border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; width: fit-content; }
+.dash-tab { padding: 8px 20px; font-size: 0.85rem; font-weight: 500; background: transparent; border: none; color: var(--text-medium); cursor: pointer; font-family: 'Inter', sans-serif; transition: all .15s; }
+.dash-tab.active { background: rgba(26,158,138,0.12); color: var(--primary); }
+.dash-tab:hover:not(.active) { color: var(--text-dark); }
+
+/* Info banner */
+.info-banner {
+  background: rgba(255,130,67,0.08); border: 1px solid rgba(255,130,67,0.25);
+  border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 18px;
+  font-size: 0.85rem; color: var(--text-medium); display: none;
+}
+.info-banner.visible { display: block; }
+.info-banner strong { color: #FF8243; }
+
+/* Filters */
+.filters { display: flex; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; align-items: center; }
+.filter-input {
+  background: #091412; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  color: var(--text-dark); padding: 9px 14px; font-size: 0.85rem;
+  font-family: 'Inter', sans-serif; outline: none; transition: border-color var(--transition);
+}
+.filter-input:focus { border-color: var(--primary); }
+.filter-input::placeholder { color: var(--text-light); }
+#search { width: 230px; }
+.filter-count { font-size: 0.82rem; color: var(--text-medium); margin-left: auto; }
+
+/* Lead type badge */
+.type-badge {
+  display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; border-radius: 50px; padding: 3px 10px;
+}
+.type-badge.business  { background: rgba(155,232,255,0.10); color: #9BE8FF; }
+.type-badge.community { background: rgba(255,130,67,0.12); color: #FF8243; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+thead th {
+  text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-medium); font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: .8px; white-space: nowrap; font-weight: 600;
+}
+tbody tr { border-bottom: 1px solid var(--border); transition: background var(--transition); }
+tbody tr:hover { background: rgba(26,158,138,0.04); }
+tbody tr.row-community { border-left: 2px solid rgba(255,130,67,0.35); }
+tbody td { padding: 11px 14px; vertical-align: middle; }
+.td-biz { font-weight: 600; max-width: 180px; color: var(--text-dark); }
+.td-biz small { display: block; color: var(--text-medium); font-weight: 400; font-size: 0.75rem; margin-top: 2px; }
+.td-contact small { display: block; color: var(--text-medium); font-size: 0.75rem; margin-top: 2px; }
+
+/* Status pill */
+.status-pill {
+  border: none; border-radius: 50px; padding: 4px 12px; font-size: 0.72rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+  cursor: pointer; font-family: 'Inter', sans-serif; outline: none;
+  transition: all .15s;
+}
+.status-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
+.st-New        { background: rgba(155,232,255,0.12); color: #9BE8FF; }
+.st-Contacted  { background: rgba(255,213,128,0.12); color: #FFD580; }
+.st-Interested { background: rgba(26,158,138,0.15);  color: var(--primary); }
+.st-Proposal   { background: rgba(200,180,255,0.12); color: #c8b4ff; }
+.st-Booked     { background: rgba(255,130,67,0.12);  color: #FF8243; }
+.st-Won        { background: rgba(74,173,122,0.15);  color: #4aad7a; }
+.st-Lost       { background: rgba(224,92,92,0.12);   color: #e05c5c; }
+
+/* Action buttons */
+.icon-btn {
+  background: transparent; border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text-medium); cursor: pointer; padding: 5px 9px; font-size: 0.8rem;
+  transition: all var(--transition); display: inline-block; text-decoration: none;
+}
+.icon-btn:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+.td-actions { display: flex; gap: 6px; }
+
+/* Status modal */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 200; align-items: center; justify-content: center; }
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md);
+  padding: 28px; width: 400px; max-width: 95vw; box-shadow: var(--shadow-lg);
+  position: relative; overflow: hidden;
+}
+.modal-box::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--primary), #0096A6);
+}
+.modal-box h3 { font-size: 1rem; margin-bottom: 4px; }
+.modal-box .modal-sub { font-size: 0.83rem; color: var(--text-medium); margin-bottom: 18px; }
+.status-menu { display: flex; flex-direction: column; gap: 6px; }
+.status-menu-item {
+  padding: 11px 14px; border-radius: var(--radius-sm); cursor: pointer;
+  font-size: 0.88rem; font-weight: 500; transition: background var(--transition);
+  border: 1px solid transparent;
+}
+.status-menu-item:hover { background: rgba(26,158,138,0.08); border-color: var(--border); }
+.status-menu-item.active-status { background: rgba(26,158,138,0.1); border-color: rgba(26,158,138,0.3); }
+.modal-footer { display: flex; justify-content: flex-end; margin-top: 18px; }
+
+/* Loading overlay */
+.loading-overlay {
+  position: fixed; inset: 0; background: var(--bg); z-index: 500;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+}
+.loading-overlay.hidden { display: none; }
+.loading-logo { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; }
+.loading-logo .grad { background: linear-gradient(135deg, #2DCFB4, #7FDDCC); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.loading-spinner { width: 42px; height: 42px; border: 3px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-txt { font-size: 0.88rem; color: var(--text-medium); }
+.error-card { background: var(--white); border: 1px solid rgba(224,92,92,.3); border-radius: var(--radius-md); padding: 28px; max-width: 380px; text-align: center; box-shadow: var(--shadow-md); }
+.error-card h3 { color: #e05c5c; margin-bottom: 10px; font-size: 1rem; }
+.error-card p { font-size: 0.88rem; color: var(--text-medium); line-height: 1.7; }
+
+/* Dashboard header btn override */
+.btn-sm { padding: 9px 20px !important; font-size: 0.85rem !important; }
+
+@media (max-width: 1100px) { .dash-stats-grid { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 900px)  { .two-col { grid-template-columns: 1fr; } .pipeline-split { grid-template-columns: 1fr; } }
+@media (max-width: 700px)  { .dash-stats-grid { grid-template-columns: repeat(2,1fr); } .dash-hero h1 { font-size: 1.7rem; } }
+</style>
+</head>
+<body>
+
+<!-- Loading overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="loading-logo">Orchestrate <span class="grad">Digital</span></div>
+  <div class="loading-spinner"></div>
+  <div class="loading-txt" id="loadingTxt">Connecting to live pipeline…</div>
+  <div class="error-card" id="errorCard" style="display:none">
+    <h3>Connection failed</h3>
+    <p id="errorMsg">Could not load leads from Airtable. Check your internet connection and try refreshing.</p>
+    <button class="btn btn-primary btn-sm" style="margin-top:18px" onclick="location.reload()">Retry</button>
+  </div>
+</div>
+
+<!-- Nav -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <span>Orchestrate<span style="color:var(--primary)">Digital</span></span>
+      </div>
+      <div class="nav-actions">
+        <div class="sync-badge">
+          <div class="sync-dot loading" id="syncDot"></div>
+          <span id="syncLabel">Loading…</span>
+        </div>
+        <a href="https://airtable.com/appPTVipAKzzoJ2Gb/tbl243lHIIaZ7Db25" target="_blank" class="btn btn-outline btn-sm">Open in Airtable ↗</a>
+        <button class="btn btn-primary btn-sm" onclick="loadLeads()">⟳ Refresh</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="dash-hero">
+  <div class="container">
+    <div class="section-label">Live Pipeline</div>
+    <h1>Sales Pipeline Dashboard</h1>
+    <p>Real-time lead tracking, follow-ups and community group presentations</p>
+  </div>
+</div>
+
+<!-- Stats strip -->
+<div class="dash-stats-strip">
+  <div class="container">
+    <div class="dash-stats-grid">
+      <div class="dash-stat"><div class="dash-stat-val" id="statTotal">—</div><div class="dash-stat-label">Total Leads</div></div>
+      <div class="dash-stat"><div class="dash-stat-val blue" id="statBusiness">—</div><div class="dash-stat-label">Business Leads</div></div>
+      <div class="dash-stat"><div class="dash-stat-val orange" id="statCommunity">—</div><div class="dash-stat-label">Community Groups</div></div>
+      <div class="dash-stat"><div class="dash-stat-val green" id="statWon">—</div><div class="dash-stat-label">Won / Booked</div></div>
+      <div class="dash-stat"><div class="dash-stat-val amber" id="statFollowup">—</div><div class="dash-stat-label">Follow-ups Due</div></div>
+      <div class="dash-stat"><div class="dash-stat-val red" id="statLost">—</div><div class="dash-stat-label">Lost</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="dash-main" id="mainContent" style="display:none">
+  <div class="container">
+
+    <!-- Pipeline + Follow-ups -->
+    <div class="two-col" style="margin-bottom:28px">
+      <div class="dash-card">
+        <h2>Pipeline Overview</h2>
+        <div class="pipeline-split" id="pipelineSplit"></div>
+      </div>
+      <div class="dash-card">
+        <h2>Follow-ups</h2>
+        <div class="followup-list" id="followupList"></div>
+      </div>
+    </div>
+
+    <!-- Leads table -->
+    <div class="dash-card">
+
+      <div class="dash-tabs">
+        <button class="dash-tab active" onclick="setView('all',this)">All Leads</button>
+        <button class="dash-tab" onclick="setView('Business',this)">🏢 Business</button>
+        <button class="dash-tab" onclick="setView('Community Group',this)">🤝 Community Groups</button>
+      </div>
+
+      <div class="info-banner" id="communityBanner">
+        <strong>Community Group leads</strong> — offer a <strong>free 30-minute AI skills presentation</strong>. Set status to <strong>Booked</strong> once a date is confirmed.
+      </div>
+
+      <div class="filters">
+        <input type="text" class="filter-input" id="search" placeholder="Search leads…" oninput="renderTable()">
+        <select class="filter-input" id="filterStatus" onchange="renderTable()">
+          <option value="">All Statuses</option>
+          <option>New</option><option>Contacted</option><option>Interested</option>
+          <option>Proposal</option><option>Booked</option><option>Won</option><option>Lost</option>
+        </select>
+        <select class="filter-input" id="filterSector" onchange="renderTable()">
+          <option value="">All Sectors</option>
+          <option>Retail &amp; Hospitality</option><option>Professional Services</option>
+          <option>Healthcare &amp; Social Care</option><option>Rotary Club</option>
+          <option>Freemasons</option><option>Lions Club</option><option>Round Table</option>
+          <option>Networking Group</option><option>Probus Club</option>
+          <option>Women's Institute</option><option>Chamber of Commerce</option>
+          <option>Professional Association</option>
+        </select>
+        <span class="filter-count" id="filterCount"></span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Name / Group</th><th>Type</th><th>Sector</th><th>Contact</th>
+            <th>Location</th><th>Status</th><th>Added</th><th>Follow-up</th><th>Notes</th><th>Actions</th>
+          </tr></thead>
+          <tbody id="leadsBody"></tbody>
+        </table>
+        <div id="emptyState" style="display:none;color:var(--text-medium);text-align:center;padding:48px;font-size:0.9rem">No leads match your filters.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Status modal -->
+<div class="modal-overlay" id="statusModal">
+  <div class="modal-box">
+    <h3 id="statusModalTitle">Update Status</h3>
+    <p class="modal-sub" id="statusModalSub">Select a new pipeline stage</p>
+    <div class="status-menu" id="statusMenu"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline btn-sm" onclick="closeStatusModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const AT_TOKEN  = 'patcdZeXfTAjTeOwK.3108b31f0de43ae1c6096e0f7b2b3c12d5de72506919e833a990ffabd06b7e9d';
+const AT_BASE   = 'appPTVipAKzzoJ2Gb';
+const AT_TABLE  = 'tbl243lHIIaZ7Db25';
+const AT_URL    = `https://api.airtable.com/v0/${AT_BASE}/${AT_TABLE}`;
+const AT_HDR    = { 'Authorization': `Bearer ${AT_TOKEN}`, 'Content-Type': 'application/json' };
+
+const STAGES = ['New','Contacted','Interested','Proposal','Booked','Won','Lost'];
+const S_COLORS = { New:'#9BE8FF', Contacted:'#FFD580', Interested:'#1A9E8A', Proposal:'#c8b4ff', Booked:'#FF8243', Won:'#4aad7a', Lost:'#e05c5c' };
+
+let leads = [];
+let currentView = 'all';
+let statusEditId = null;
+
+async function fetchAllLeads() {
+  let all = [], offset = null;
+  do {
+    const url = AT_URL + '?pageSize=100&filterByFormula=NOT%28%7BBusiness+Name%7D%3D%22%22%29' + (offset ? '&offset=' + offset : '');
+    const res = await fetch(url, { headers: AT_HDR });
+    if (!res.ok) throw new Error(`Airtable ${res.status}`);
+    const data = await res.json();
+    all = all.concat(data.records || []);
+    offset = data.offset;
+  } while (offset);
+  return all;
+}
+
+function mapRecord(rec) {
+  const f = rec.fields;
+  return {
+    recordId:     rec.id,
+    businessName: f['Business Name'] || '',
+    dateAdded:    f['Date Added'] || '',
+    sector:       f['Sector'] || '',
+    leadType:     f['Lead Type'] || 'Business',
+    contactName:  f['Contact Name'] || '',
+    email:        f['Email'] || '',
+    website:      f['Website'] || '',
+    location:     f['Location'] || '',
+    status:       f['Status'] || 'New',
+    followUpDue:  f['Follow-up Due'] || '',
+    followUpSent: f['Follow-up Sent'] || '',
+    notes:        f['Notes'] || ''
+  };
+}
+
+async function loadLeads() {
+  setSyncState('loading','Syncing…');
+  try {
+    const recs = await fetchAllLeads();
+    leads = recs.map(mapRecord);
+    render();
+    setSyncState('ok','Live · '+new Date().toLocaleTimeString());
+    document.getElementById('loadingOverlay').classList.add('hidden');
+    document.getElementById('mainContent').style.display = '';
+  } catch(e) {
+    console.error(e);
+    setSyncState('error','Sync failed');
+    document.getElementById('loadingTxt').style.display = 'none';
+    document.getElementById('errorCard').style.display = '';
+    document.getElementById('errorMsg').textContent = e.message;
+  }
+}
+
+async function patchRecord(recordId, fields) {
+  const res = await fetch(`${AT_URL}/${recordId}`, {
+    method: 'PATCH', headers: AT_HDR, body: JSON.stringify({ fields })
+  });
+  return res.json();
+}
+
+function today() { return new Date().toISOString().split('T')[0]; }
+function isCom(l)  { return (l.leadType||'').toLowerCase().includes('community'); }
+function esc(s)    { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function setSyncState(state, label) {
+  const d = document.getElementById('syncDot');
+  d.className = 'sync-dot' + (state==='loading'?' loading':state==='error'?' error':'');
+  document.getElementById('syncLabel').textContent = label;
+}
+
+function render() { updateStats(); renderPipeline(); renderFollowups(); renderTable(); }
+
+function updateStats() {
+  const biz = leads.filter(l=>!isCom(l));
+  const com = leads.filter(l=>isCom(l));
+  document.getElementById('statTotal').textContent    = leads.length;
+  document.getElementById('statBusiness').textContent = biz.length;
+  document.getElementById('statCommunity').textContent= com.length;
+  document.getElementById('statWon').textContent      = leads.filter(l=>l.status==='Won'||l.status==='Booked').length;
+  document.getElementById('statLost').textContent     = leads.filter(l=>l.status==='Lost').length;
+  document.getElementById('statFollowup').textContent = leads.filter(l=>l.followUpDue&&l.followUpDue<=today()&&!l.followUpSent).length;
+}
+
+function setView(view, btn) {
+  currentView = view;
+  document.querySelectorAll('.dash-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('communityBanner').classList.toggle('visible', view==='Community Group');
+  renderTable();
+}
+
+function renderTable() {
+  const q  = document.getElementById('search').value.toLowerCase();
+  const fs = document.getElementById('filterStatus').value;
+  const fc = document.getElementById('filterSector').value;
+  let pool = leads;
+  if (currentView==='Business')        pool = leads.filter(l=>!isCom(l));
+  if (currentView==='Community Group') pool = leads.filter(l=>isCom(l));
+
+  const filtered = pool.filter(l=>{
+    if (fs && l.status!==fs) return false;
+    if (fc && l.sector!==fc) return false;
+    if (q) { const h=[l.businessName,l.contactName,l.email,l.location,l.sector,l.notes,l.leadType].join(' ').toLowerCase(); if(!h.includes(q)) return false; }
+    return true;
+  });
+
+  document.getElementById('filterCount').textContent = filtered.length+' of '+leads.length+' leads';
+  const tbody = document.getElementById('leadsBody');
+  const empty = document.getElementById('emptyState');
+  if (!filtered.length) { tbody.innerHTML=''; empty.style.display=''; return; }
+  empty.style.display='none';
+
+  tbody.innerHTML = filtered.map(l=>{
+    const overdue = l.followUpDue && l.followUpDue<today() && !l.followUpSent;
+    const sc = 'st-'+l.status.replace(/\s+/g,'');
+    const comL = isCom(l);
+    return `<tr class="${comL?'row-community':''}">
+      <td class="td-biz">${esc(l.businessName)}<small>${esc(l.website)}</small></td>
+      <td><span class="type-badge ${comL?'community':'business'}">${comL?'🤝 Community':'🏢 Business'}</span></td>
+      <td style="color:var(--text-medium);font-size:0.82rem">${esc(l.sector)}</td>
+      <td class="td-contact">${esc(l.contactName)}<small>${esc(l.email)}</small></td>
+      <td style="color:var(--text-medium);font-size:0.82rem">${esc(l.location)}</td>
+      <td><button class="status-pill ${sc}" onclick="openStatusModal('${esc(l.recordId)}','${esc(l.businessName)}','${esc(l.status)}')">${esc(l.status)}</button></td>
+      <td style="font-size:0.78rem;color:var(--text-medium)">${l.dateAdded||''}</td>
+      <td style="font-size:0.78rem;color:${overdue?'#e05c5c':'var(--text-medium)'}">${l.followUpDue||'—'}</td>
+      <td style="font-size:0.78rem;color:var(--text-medium);max-width:160px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(l.notes)}">${esc(l.notes)}</td>
+      <td class="td-actions">
+        ${l.email?`<a href="mailto:${esc(l.email)}" class="icon-btn" title="Email">✉</a>`:''}
+        ${l.website?`<a href="${esc(l.website.startsWith('http')?l.website:'https://'+l.website)}" target="_blank" class="icon-btn" title="Website">↗</a>`:''}
+        <a href="https://airtable.com/${AT_BASE}/${AT_TABLE}/${esc(l.recordId)}" target="_blank" class="icon-btn" title="Edit in Airtable">✏</a>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function renderPipeline() {
+  const biz = leads.filter(l=>!isCom(l));
+  const com = leads.filter(l=>isCom(l));
+  function bars(pool, label) {
+    const counts = STAGES.map(s=>pool.filter(l=>l.status===s).length);
+    const max = Math.max(...counts,1);
+    return `<div>
+      <div class="pipeline-section-label">${label}</div>
+      <div class="pipeline-stages">${STAGES.map((s,i)=>`
+        <div class="pipeline-row">
+          <div class="pipeline-lbl">${s}</div>
+          <div class="pipeline-track"><div class="pipeline-fill" style="width:${Math.round(counts[i]/max*100)}%;background:${S_COLORS[s]}"></div></div>
+          <div class="pipeline-num" style="color:${S_COLORS[s]}">${counts[i]}</div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }
+  document.getElementById('pipelineSplit').innerHTML = bars(biz,'🏢 Business Leads') + bars(com,'🤝 Community Groups');
+}
+
+function renderFollowups() {
+  const t = today();
+  const items = leads.filter(l=>l.followUpDue&&!['Won','Lost'].includes(l.status))
+    .sort((a,b)=>a.followUpDue<b.followUpDue?-1:1).slice(0,12);
+  if (!items.length) { document.getElementById('followupList').innerHTML='<div class="followup-empty">No follow-ups scheduled</div>'; return; }
+  document.getElementById('followupList').innerHTML = items.map(l=>{
+    const overdue=l.followUpDue<t, done=!!l.followUpSent, c=isCom(l);
+    return `<div class="followup-item ${done?'done':overdue?'overdue':c?'community':''}">
+      <div class="followup-biz">${c?'🤝 ':''}${esc(l.businessName)}</div>
+      <div class="followup-date">${done?'✓ Sent '+l.followUpSent:(overdue?'⚠ Overdue: ':'📅 ')+l.followUpDue}</div>
+    </div>`;
+  }).join('');
+}
+
+function openStatusModal(recordId, bizName, current) {
+  statusEditId = recordId;
+  document.getElementById('statusModalTitle').textContent = bizName;
+  document.getElementById('statusModalSub').textContent   = 'Select a new pipeline stage';
+  document.getElementById('statusMenu').innerHTML = STAGES.map(s=>`
+    <div class="status-menu-item ${s===current?'active-status':''}" onclick="applyStatus('${s}')" style="color:${S_COLORS[s]}">
+      ${s===current?'✓ ':''}${s}
+    </div>`).join('');
+  document.getElementById('statusModal').classList.add('open');
+}
+function closeStatusModal() { document.getElementById('statusModal').classList.remove('open'); statusEditId=null; }
+
+async function applyStatus(newStatus) {
+  const recordId = statusEditId;
+  closeStatusModal();
+  const lead = leads.find(l=>l.recordId===recordId);
+  if (!lead) return;
+  lead.status = newStatus;
+  render();
+  setSyncState('loading','Saving…');
+  try {
+    await patchRecord(recordId, { Status: newStatus });
+    setSyncState('ok','Saved · '+new Date().toLocaleTimeString());
+  } catch(e) {
+    setSyncState('error','Save failed');
+    console.error(e);
+  }
+}
+
+loadLeads();
+setInterval(loadLeads, 3*60*1000);
+</script>
+</body>
+</html>
