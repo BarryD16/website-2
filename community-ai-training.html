@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community AI Training in North East England | Orchestrate Digital</title>
+  <meta name="description" content="Free introductory AI training sessions for local groups and community organisations across North East England, North Yorkshire and Cumbria.">
+  <link rel="canonical" href="https://orchestratedigital.co.uk/community-ai-training.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .service-block { padding: 88px 0; position: relative; overflow: hidden; }
+    .service-layout { display:grid; grid-template-columns: 1.1fr 0.9fr; gap:72px; align-items:center; }
+    .service-num { font-family:'Poppins', sans-serif; font-size:0.75rem; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:2.5px; margin-bottom:10px; }
+    .service-title { font-size:1.95rem; margin-bottom:18px; }
+    .service-desc { color:var(--text-medium); font-size:0.97rem; line-height:1.8; margin-bottom:28px; }
+    .feature-list { list-style:none; margin-bottom:32px; }
+    .feature-list li { padding:11px 0; display:flex; align-items:flex-start; gap:12px; font-size:0.93rem; border-bottom:1px solid var(--border); }
+    .feature-list li:last-child { border-bottom:none; }
+    .check-icon { width:20px; height:20px; min-width:20px; background:var(--primary-light); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:0.7rem; font-weight:700; margin-top:1px; }
+    .panel { background: linear-gradient(145deg, rgba(26,158,138,0.12), rgba(13,31,28,0.96)); border:1px solid rgba(26,158,138,0.24); border-radius: var(--radius-lg); padding: 34px; position: relative; overflow:hidden; }
+    .panel::before { content:''; position:absolute; top:-40px; right:-40px; width:180px; height:180px; background: radial-gradient(circle, rgba(155,232,255,0.12) 0%, transparent 70%); }
+    .panel-badge { display:inline-block; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.08); color: white; font-size:0.76rem; padding: 7px 12px; border-radius: 999px; margin-bottom: 18px; }
+    .panel h3 { font-size: 1.35rem; margin-bottom: 10px; }
+    .panel p { color: var(--text-medium); margin-bottom: 18px; line-height: 1.8; }
+    .panel ul { list-style:none; }
+    .panel li { padding: 10px 0; color: var(--text-medium); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .panel li:last-child { border-bottom:none; }
+    .faq-wrap { display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .faq-card { background: var(--white); border:1px solid var(--border); border-radius: var(--radius-md); padding: 24px; }
+    .faq-card h3 { font-size: 1rem; margin-bottom: 10px; }
+    .faq-card p { color: var(--text-medium); font-size: 0.92rem; line-height: 1.7; }
+    @media (max-width: 960px) {
+      .service-layout, .faq-wrap { grid-template-columns: 1fr; gap: 28px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[{"@type": "Question", "name": "Who are these sessions for?", "acceptedAnswer": {"@type": "Answer", "text": "They are well suited to local groups, charities, community organisations and other local audiences who would benefit from a practical introduction to AI."}},{"@type": "Question", "name": "Are the sessions really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. These introductory community sessions are offered free of charge as part of our local commitment."}},{"@type": "Question", "name": "Do people need technical knowledge to join?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sessions are designed to be clear, friendly and jargon-free, with practical examples that help people feel more confident."}}]
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg>
+        </div>
+        <div style="line-height:1.15;">
+          <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:var(--text-dark);">Digital</span></div>
+          <div style="font-size:0.6rem;color:var(--text-light);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html" >About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/></svg>
+      </div>
+    </div>
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Community AI Training</div>
+      <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">Community AI Training</div>
+      <h1>Free AI training sessions for local groups across the North East</h1>
+      <p>Friendly, practical sessions designed to help local groups and community organisations understand AI, explore useful examples and build confidence without jargon.</p>
+    </div>
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,28 C360,54 1080,0 1440,28 L1440,54 L0,54 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="service-block">
+    <div class="container">
+      <div class="service-layout">
+        <div class="reveal">
+          <div class="service-num">Service 01</div>
+          <h2 class="service-title">Community AI Training</h2>
+          <p class="service-desc">Alongside our business services, we also offer free introductory AI training sessions for local groups and community organisations. The focus is on making AI feel approachable, useful and relevant for people who may be exploring it for the first time.</p>
+          <ul class="feature-list">
+            <li><div class="check-icon">✓</div>Free introductory sessions for local groups and community organisations</li>
+<li><div class="check-icon">✓</div>Designed to make AI feel accessible, useful and less intimidating</li>
+<li><div class="check-icon">✓</div>Supports digital confidence across the wider community</li>
+<li><div class="check-icon">✓</div>Reflects our commitment to practical local impact, not just commercial work</li>
+<li><div class="check-icon">✓</div>Suitable for community organisations, charities and local interest groups</li>
+          </ul>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Ask About a Community Session →</a>
+            <a href="services.html" class="btn btn-outline">Back to All Services</a>
+          </div>
+        </div>
+        <div class="panel reveal reveal-delay-1">
+          <div class="panel-badge">Community support</div>
+          <h3>Free AI training sessions for local groups</h3>
+          <p>Alongside our business services, we also offer free introductory AI training sessions for local groups and community organisations. The focus is on making AI feel approachable, useful and relevant for people who may be exploring it for the first time.</p>
+          <ul>
+            <li>Free introductory sessions for local groups and community organisations</li>
+<li>Designed to make AI feel accessible, useful and less intimidating</li>
+<li>Supports digital confidence across the wider community</li>
+<li>Reflects our commitment to practical local impact, not just commercial work</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-block" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2 class="section-title">Helpful answers before you decide <span class="gradient-text">what to do next</span></h2>
+        <p class="section-subtitle">These FAQs are written in the same plain-English style your clients are likely to search for.</p>
+      </div>
+      <div class="faq-wrap">
+        <div class="faq-card reveal">
+          <h3>Who are these sessions for?</h3>
+          <p>They are well suited to local groups, charities, community organisations and other local audiences who would benefit from a practical introduction to AI.</p>
+        </div>
+<div class="faq-card reveal reveal-delay-1">
+          <h3>Are the sessions really free?</h3>
+          <p>Yes. These introductory community sessions are offered free of charge as part of our local commitment.</p>
+        </div>
+<div class="faq-card reveal reveal-delay-2">
+          <h3>Do people need technical knowledge to join?</h3>
+          <p>No. Sessions are designed to be clear, friendly and jargon-free, with practical examples that help people feel more confident.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+      </div>
+    </div>
+    <div class="container reveal">
+      <h2>Would a free session be useful for your group?</h2>
+      <p>Get in touch and we can talk about your group, your audience and whether a free introductory session would be a good fit.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-white">Book a Discovery Call →</a>
+        <a href="services.html" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.4);">See All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom:18px; display:flex;">
+            <div class="logo-icon"><svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg></div>
+            <div style="line-height:1.15;">
+              <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:white;">Digital</span></div>
+              <div style="font-size:0.6rem;color:rgba(255,255,255,0.4);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+            </div>
+          </a>
+          <p>Helping small and medium-sized businesses across North East England, North Yorkshire and Cumbria adopt AI and digital technology to improve performance and productivity.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Popular Services</h4>
+          <ul>
+            <li><a href="community-ai-training.html">Community AI Training</a></li>
+            <li><a href="chatgpt-copilot-training.html">AI Tools Training</a></li>
+            <li><a href="digital-transformation-consulting.html">Digital Transformation</a></li>
+            <li><a href="ai-governance-policy-support.html">AI Governance &amp; Policy Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Orchestrate Digital. All rights reserved.</span>
+        <span>orchestratedigital.co.uk</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const obs = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.hero .reveal').forEach(el => {
+      setTimeout(() => el.classList.add('visible'), 100);
+    });
+  </script>
+
+</body>
+</html>

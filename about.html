@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Orchestrate Digital</title>
-  <meta name="description" content="Learn about Orchestrate Digital and our mission to help North East of England businesses thrive in the digital age.">
+  <title>About Orchestrate Digital | Practical AI & Digital Support for SMEs</title>
+  <meta name="description" content="Learn about Orchestrate Digital, a North East-based business helping SMEs adopt AI and digital tools in a practical, responsible and accessible way.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -62,6 +62,36 @@
       overflow: hidden;
     }
     .ne-art svg { display: block; width: 100%; height: auto; }
+
+
+    /* ===== FOUNDER / CREDIBILITY ===== */
+    .founder-section { background: var(--bg); position: relative; overflow: hidden; }
+    .founder-layout { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 32px; align-items: stretch; }
+    .founder-card, .cred-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .founder-card { padding: 34px; }
+    .cred-card { padding: 28px; }
+    .cred-list { list-style: none; margin-top: 10px; }
+    .cred-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+      color: var(--text-medium);
+    }
+    .cred-list li:last-child { border-bottom: 0; }
+    .cred-mark {
+      width: 26px; height: 26px; min-width: 26px;
+      border-radius: 999px; background: var(--primary-light); color: var(--primary);
+      display: inline-flex; align-items: center; justify-content: center; font-weight: 700;
+    }
+    .impact-strip { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 26px; }
+    .impact-item { background: rgba(26,158,138,0.08); border:1px solid rgba(26,158,138,0.18); border-radius: var(--radius-md); padding: 20px; }
+    .impact-item h3 { font-size: 0.95rem; margin-bottom: 8px; }
+    .impact-item p { color: var(--text-medium); font-size: 0.88rem; line-height: 1.7; }
+    .icon-svg { width: 22px; height: 22px; display: block; color: var(--primary); }
 
     /* ===== MISSION STRIP ===== */
     .mission-strip {
@@ -144,7 +174,7 @@
     <div class="container">
       <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">Our Story</div>
       <h1>About Orchestrate Digital</h1>
-      <p>We're on a mission to make AI and digital technology work for North East of England businesses — practically, accessibly, and on your terms.</p>
+      <p>We help small and medium-sized businesses adopt AI and digital tools in a way that is practical, responsible and genuinely useful day to day.</p>
     </div>
     <div class="wave-bottom">
       <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -158,12 +188,12 @@
     <div class="container">
       <div class="about-layout">
         <div class="reveal">
-          <div class="section-label">Our Story</div>
-          <h2 class="section-title">Born in the North East of England, built for <span class="gradient-text">North East of England businesses</span></h2>
-          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">Orchestrate Digital was founded with a simple belief: that the benefits of AI and digital technology shouldn't only be available to big corporations with large IT teams. Small and medium-sized businesses deserve exactly the same access to these powerful tools — and the support to use them well.</p>
-          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">We saw too many North East of England businesses feeling left behind by the pace of technological change — overwhelmed by the choices, unsure where to start, and worried about getting it wrong. We set out to change that.</p>
-          <p style="color:var(--text-medium); line-height:1.85;">Our approach is practical, jargon-free, and always tailored to the specific needs and circumstances of the businesses we work with. We meet you where you are and help you take the right steps forward.</p>
-          <a href="contact.html" class="btn btn-primary" style="margin-top:28px;">Work With Us →</a>
+          <div class="section-label">Who We Are</div>
+          <h2 class="section-title">A North East business helping other businesses make <span class="gradient-text">practical progress</span></h2>
+          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">Orchestrate Digital exists to help small and medium-sized organisations make sense of AI and digital change without the jargon, hype or unnecessary complexity that often surrounds it.</p>
+          <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">The businesses we support do not need abstract strategy decks. They need practical guidance, useful training, better workflows and a clearer sense of what to do next. That is the space we work in.</p>
+          <p style="color:var(--text-medium); line-height:1.85;">Our work is grounded in the realities of SMEs across North East England, North Yorkshire and Cumbria: limited time, stretched teams, pressure to improve productivity and a need to adopt new tools responsibly.</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top:28px;">Talk to Barry →</a>
         </div>
 
         <!-- Story illustration -->
@@ -218,7 +248,7 @@
 
               <!-- Growth result -->
               <circle cx="285" cy="30" r="22" fill="#10B981" opacity="0.15"/>
-              <text x="285" y="24" text-anchor="middle" font-size="20">📈</text>
+              <g transform="translate(285 30)" fill="#10B981"><rect x="-7" y="1" width="3" height="6" rx="1"/><rect x="-1.5" y="-2" width="3" height="9" rx="1"/><rect x="4" y="-5" width="3" height="12" rx="1"/></g>
               <text x="285" y="44" text-anchor="middle" font-size="9" fill="#10B981" font-weight="bold" font-family="sans-serif">Growth</text>
               <rect x="264" y="55" width="42" height="14" rx="5" fill="#ECFDF5"/>
               <text x="285" y="66" text-anchor="middle" font-size="8" fill="#10B981" font-weight="bold" font-family="sans-serif">Results</text>
@@ -227,7 +257,7 @@
             <!-- Location pill at bottom -->
             <rect x="110" y="320" width="200" height="36" rx="18" fill="white" opacity="0.9"/>
             <circle cx="134" cy="338" r="12" fill="#E6F7F5"/>
-            <text x="134" y="343" text-anchor="middle" font-size="11">📍</text>
+            <g transform="translate(134 338)" fill="#1A9E8A"><path d="M0 5s4.5-4.2 4.5-8.1A4.5 4.5 0 1 0 -4.5 -3.1C-4.5.8 0 5 0 5Z" opacity="0.9"/><circle cx="0" cy="-3.2" r="1.7" fill="white"/></g>
             <text x="220" y="335" text-anchor="middle" font-size="10" fill="#1E2D3A" font-weight="bold" font-family="sans-serif">North East England</text>
             <text x="220" y="349" text-anchor="middle" font-size="8.5" fill="#5A6E7C" font-family="sans-serif">Proudly local. Thinking bigger.</text>
           </svg>
@@ -237,11 +267,76 @@
   </section>
 
   <!-- MISSION STRIP -->
+  <section class="values" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Community Commitment</div>
+        <h2 class="section-title">Supporting local groups with <span class="gradient-text">free AI awareness sessions</span></h2>
+        <p class="section-subtitle">Alongside our work with businesses, we offer free introductory AI sessions for local groups and community organisations who want a friendly, practical introduction to what AI can do.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v9M7.5 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <h3>Accessible learning</h3>
+          <p>Sessions are designed to make AI feel approachable, useful and relevant for people exploring it for the first time.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14.5c2.2 0 3.7-1.3 4.8-2.4 1-1 1.7-1.8 3.2-1.8 1.5 0 2.2.8 3.2 1.8 1.1 1.1 2.6 2.4 4.8 2.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 9.5c2.2 0 3.7-1.3 4.8-2.4 1-1 1.7-1.8 3.2-1.8 1.5 0 2.2.8 3.2 1.8 1.1 1.1 2.6 2.4 4.8 2.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <h3>Practical local impact</h3>
+          <p>It reflects our belief that digital confidence should grow across the wider community, not only inside businesses.</p>
+        </div>
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18.5h12M7.5 18.5V10.5M12 18.5V6.5M16.5 18.5V13.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></div>
+          <h3>Open to local organisations</h3>
+          <p>We welcome conversations with charities, local groups and community organisations who would benefit from a friendly introduction to AI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder-section">
+    <div class="container">
+      <div class="founder-layout">
+        <div class="founder-card reveal">
+          <div class="section-label">Founder-Led Support</div>
+          <h2 class="section-title">Work directly with Barry Divers</h2>
+          <p style="color:var(--text-medium); margin-bottom:16px; line-height:1.85;">Orchestrate Digital is led by Barry Divers, who works directly with organisations that want straightforward support around AI adoption, digital skills, process improvement and responsible use.</p>
+          <p style="color:var(--text-medium); margin-bottom:16px; line-height:1.85;">The approach is deliberately practical: understand where the organisation is now, identify the most useful opportunities, build confidence in the tools, and help people take sensible next steps without overwhelm.</p>
+          <p style="color:var(--text-medium); line-height:1.85;">That means clear conversations, tailored support and recommendations shaped around real operational needs rather than generic playbooks.</p>
+          <div class="impact-strip">
+            <div class="impact-item">
+              <h3>Practical from the start</h3>
+              <p>Focused on real workflows, team confidence and useful outcomes rather than buzzwords.</p>
+            </div>
+            <div class="impact-item">
+              <h3>Tailored to SMEs</h3>
+              <p>Built for organisations that need proportionate support and sensible next steps.</p>
+            </div>
+            <div class="impact-item">
+              <h3>Locally rooted</h3>
+              <p>Based in the North East and committed to helping businesses and communities across the region.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="cred-card reveal reveal-delay-1">
+          <div class="section-label">What Clients Value</div>
+          <h2 class="section-title" style="font-size:1.8rem;">Why the approach works</h2>
+          <ul class="cred-list">
+            <li><span class="cred-mark">1</span><span>Advice is grounded in the day-to-day realities of smaller organisations, not enterprise assumptions.</span></li>
+            <li><span class="cred-mark">2</span><span>Training is designed to be accessible for non-technical teams and immediately useful in real work.</span></li>
+            <li><span class="cred-mark">3</span><span>Support covers both opportunity and responsibility, so adoption feels safer as well as more productive.</span></li>
+            <li><span class="cred-mark">4</span><span>Community sessions for local groups reflect the same belief: digital confidence should be shared more widely.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
   <section class="mission-strip">
     <div class="container">
       <div class="mission-inner reveal">
-        <blockquote>"Making the digital future accessible for every North East of England business — whatever your size, whatever your sector."</blockquote>
-        <cite>— The Orchestrate Digital Mission</cite>
+        <blockquote>"Useful digital change starts with people, practical needs and the confidence to take the next step well."</blockquote>
+        <cite>— Orchestrate Digital</cite>
       </div>
     </div>
   </section>
@@ -257,32 +352,32 @@
       </div>
       <div class="values-grid">
         <div class="value-card reveal">
-          <div class="value-icon">🤝</div>
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12.5 10.5 15a2 2 0 0 0 2.8 0l4.2-4.2a2 2 0 0 1 2.8 0l.2.2a2 2 0 0 1 0 2.8l-4.7 4.7a4 4 0 0 1-5.6 0L6 14.3a2 2 0 0 1 0-2.8l.2-.2a2 2 0 0 1 2.8 0Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4 9.5l2-2a4 4 0 0 1 5.7 0l.3.3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
           <h3>People First</h3>
           <p>Technology is a tool — people are what matter. We always start by understanding your team, your culture and your goals before recommending any solution.</p>
         </div>
         <div class="value-card reveal reveal-delay-1">
-          <div class="value-icon">🎯</div>
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div>
           <h3>Practical Impact</h3>
           <p>We focus on outcomes that make a real difference. No vanity projects, no unnecessary complexity — just solutions that genuinely improve how you work.</p>
         </div>
         <div class="value-card reveal reveal-delay-2">
-          <div class="value-icon">💬</div>
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.5h14a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 19 18.5h-7l-4.5 3v-3H5A2.5 2.5 0 0 1 2.5 16V9A2.5 2.5 0 0 1 5 6.5Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></div>
           <h3>Plain Speaking</h3>
           <p>Technology doesn't have to be complicated. We explain everything in plain English, without the jargon, so you can make confident, informed decisions.</p>
         </div>
         <div class="value-card reveal">
-          <div class="value-icon">🌱</div>
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5V11.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 12.5c0-3.8 2.6-6.3 7-6.8 0 4.8-2.6 7.3-7 7.8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 14.5c0-3-2-5-5.5-5.5 0 3.8 2 5.8 5.5 6.3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
           <h3>Long-Term Partnership</h3>
           <p>We're not interested in one-off engagements. We build lasting relationships, supporting you as your needs evolve and technology continues to change.</p>
         </div>
         <div class="value-card reveal reveal-delay-1">
-          <div class="value-icon">🔒</div>
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="5.5" y="10.5" width="13" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M8.5 10.5V8.7a3.5 3.5 0 0 1 7 0v1.8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></div>
           <h3>Trust &amp; Responsibility</h3>
           <p>We take data security and responsible AI use seriously, helping you adopt technology safely so you understand the risks as well as the opportunities.</p>
         </div>
         <div class="value-card reveal reveal-delay-2">
-          <div class="value-icon">🌍</div>
+          <div class="value-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.5 5.3 3.5 8.5S14.2 18.2 12 20.5M12 3.5c-2.2 2.3-3.5 5.3-3.5 8.5s1.3 6.2 3.5 8.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
           <h3>Community Commitment</h3>
           <p>We're proud to be based in the North East of England and invested in seeing the region's businesses grow. What's good for our clients is good for our community.</p>
         </div>
@@ -468,17 +563,72 @@
           <p style="color:var(--text-medium); margin-bottom:18px; line-height:1.85;">We believe that by helping SMEs across this broad northern region embrace AI and digital technology, we can contribute to economic growth, job creation, and improved competitiveness for everyone.</p>
           <p style="color:var(--text-medium); line-height:1.85;">We understand the specific challenges facing businesses here — because we're part of this community too, and genuinely invested in its future. Online support means we can help wherever you are.</p>
           <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;">
-            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Newcastle</span>
-            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Sunderland</span>
-            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Durham</span>
-            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Teesside</span>
-            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Northumberland</span>
-            <span style="background:#FFFAEC; color:#B8860B; padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 North Yorkshire</span>
-            <span style="background:#FFFAEC; color:#B8860B; padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;">📍 Cumbria</span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;"><span class="location-pill"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg><span>Newcastle</span></span></span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;"><span class="location-pill"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg><span>Sunderland</span></span></span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;"><span class="location-pill"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg><span>Durham</span></span></span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;"><span class="location-pill"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg><span>Teesside</span></span></span>
+            <span style="background:var(--primary-light); color:var(--primary); padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;"><span class="location-pill"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg><span>Northumberland</span></span></span>
+            <span style="background:#FFFAEC; color:#B8860B; padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;"><span class="location-pill"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg><span>North Yorkshire</span></span></span>
+            <span style="background:#FFFAEC; color:#B8860B; padding:7px 14px; border-radius:50px; font-size:0.84rem; font-weight:600;"><span class="location-pill"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg><span>Cumbria</span></span></span>
           </div>
           <a href="contact.html" class="btn btn-primary" style="margin-top:32px;">Work With Us →</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="proof-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Illustrative Client Outcomes</div>
+        <h2 class="section-title">Examples of the kind of <span class="gradient-text">impact we aim to create</span></h2>
+        <p class="section-subtitle">These are sample scenarios written to show what a polished case study or testimonial area can look like on the site today. They should be replaced with real client proof over time.</p>
+      </div>
+      <div class="proof-grid">
+        <article class="proof-card reveal">
+          <div class="proof-kicker"><span class="proof-kicker-dot"></span>Illustrative case study</div>
+          <h3>Professional services firm building confidence with AI</h3>
+          <p>A growing professional services team wanted to explore AI for drafting, internal communication and day-to-day admin, but needed clearer boundaries around safe use and quality control.</p>
+          <ul>
+            <li><strong>Support delivered:</strong> team training, practical use cases and light-touch governance guidance</li>
+            <li><strong>Illustrative outcome:</strong> stronger staff confidence and clearer expectations for responsible use</li>
+          </ul>
+          <div class="proof-note">Sample content — replace with a real client case study when available.</div>
+        </article>
+        <article class="proof-card reveal reveal-delay-1">
+          <div class="proof-kicker"><span class="proof-kicker-dot"></span>Illustrative case study</div>
+          <h3>Manufacturing SME improving internal processes</h3>
+          <p>An established SME wanted to reduce repetitive admin, tighten handovers and make better use of the systems already in place across the business.</p>
+          <ul>
+            <li><strong>Support delivered:</strong> workflow review, process recommendations and practical digital improvement planning</li>
+            <li><strong>Illustrative outcome:</strong> less duplication, clearer processes and better visibility across daily operations</li>
+          </ul>
+          <div class="proof-note">Sample content — replace with a real client case study when available.</div>
+        </article>
+        <article class="proof-card reveal reveal-delay-2">
+          <div class="proof-kicker"><span class="proof-kicker-dot"></span>Illustrative case study</div>
+          <h3>Community group gaining confidence with everyday AI</h3>
+          <p>A local group wanted an accessible introduction to AI for members with mixed levels of digital confidence and a lot of understandable hesitation.</p>
+          <ul>
+            <li><strong>Support delivered:</strong> free community awareness session focused on practical everyday examples and safe use</li>
+            <li><strong>Illustrative outcome:</strong> improved confidence, lower anxiety and a clearer sense of where AI can help</li>
+          </ul>
+          <div class="proof-note">Sample content — replace with a real client case study when available.</div>
+        </article>
+      </div>
+      <div class="testimonial-grid">
+        <article class="quote-card reveal">
+          <div class="quote-mark">“</div>
+          <p class="quote-text">The session made AI feel practical, relevant and much less intimidating for our team.</p>
+          <div class="quote-role"><strong>Sample testimonial</strong> — replace with real client feedback</div>
+        </article>
+        <article class="quote-card reveal reveal-delay-1">
+          <div class="quote-mark">“</div>
+          <p class="quote-text">We came away with clearer priorities, more confidence and a much better sense of where AI fits in our business.</p>
+          <div class="quote-role"><strong>Sample testimonial</strong> — replace with real client feedback</div>
+        </article>
+      </div>
+      <div class="proof-disclaimer reveal">These examples are intentionally labelled as illustrative so the site looks complete and credible now without implying that external organisations have provided endorsements they have not actually given.</div>
     </div>
   </section>
 

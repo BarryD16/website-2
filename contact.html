@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Orchestrate Digital</title>
-  <meta name="description" content="Get in touch with Orchestrate Digital — AI and digital transformation support for businesses across North East England, North Yorkshire and Cumbria.">
+  <title>Contact Orchestrate Digital | AI Training, Consultancy & Digital Support</title>
+  <meta name="description" content="Get in touch with Orchestrate Digital for AI training, digital transformation, AI governance and practical consultancy support across North East England, North Yorkshire and Cumbria.">
+  <link rel="canonical" href="https://orchestratedigital.co.uk/contact.html">
+  <meta property="og:title" content="Contact Orchestrate Digital">
+  <meta property="og:description" content="Book a free discovery conversation about AI training, digital transformation, AI governance or community sessions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchestratedigital.co.uk/contact.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -22,6 +27,12 @@
     .contact-info-wrap { position: sticky; top: 96px; }
 
     .contact-info-title { font-size: 1.75rem; margin-bottom: 14px; }
+    .contact-info-lead { color: var(--text-medium); margin-bottom: 26px; line-height: 1.8; font-size: 0.97rem; }
+    .contact-expectations { margin-top: 24px; background: linear-gradient(145deg, rgba(26,158,138,0.10), rgba(11,110,96,0.06)); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px; }
+    .contact-expectations h3 { font-size: 1rem; margin-bottom: 12px; }
+    .contact-expectations ul { list-style: none; display: grid; gap: 10px; }
+    .contact-expectations li { color: var(--text-medium); font-size: 0.9rem; padding-left: 24px; position: relative; }
+    .contact-expectations li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); position: absolute; left: 0; top: 0.42rem; }
     .contact-info > p { color: var(--text-medium); margin-bottom: 32px; line-height: 1.8; font-size: 0.97rem; }
 
     .contact-detail {
@@ -140,6 +151,22 @@
       .contact-form-card { padding: 28px 22px; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Orchestrate Digital",
+    "url": "https://orchestratedigital.co.uk/contact.html",
+    "description": "Contact page for Orchestrate Digital, offering AI training, digital transformation, governance support and community AI sessions.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Orchestrate Digital",
+      "email": "hello@orchestratedigital.co.uk",
+      "areaServed": ["North East England", "North Yorkshire", "Cumbria"]
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -178,9 +205,9 @@
       </div>
     </div>
     <div class="container">
-      <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">Let's Talk</div>
-      <h1>Get in Touch</h1>
-      <p>Whether you have a question, want to find out more, or are ready to get started — we'd love to hear from you.</p>
+      <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">Start the conversation</div>
+      <h1>Talk to us about AI, digital change or your next practical step</h1>
+      <p>Whether you are exploring AI training, digital transformation, AI governance or a community session, we are happy to start with a straightforward conversation about what would be most useful.</p>
     </div>
     <div class="wave-bottom">
       <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -196,39 +223,48 @@
         <!-- LEFT: Info -->
         <div class="contact-info-wrap reveal">
           <div class="contact-info">
-            <div class="section-label">Contact Us</div>
-            <h2 class="contact-info-title">Let's start a conversation</h2>
-            <p>Not sure where to start? That's completely fine. Get in touch for a free, no-obligation chat and we'll help you figure out the right next step for your business.</p>
+            <div class="section-label">Contact us</div>
+            <h2 class="contact-info-title">A free discovery conversation, without the hard sell</h2>
+            <p class="contact-info-lead">Not sure which service fits best? That is completely fine. Get in touch for a free, no-obligation conversation and we will help you work out the most useful next step for your business, team or local group.</p>
 
             <div class="contact-detail">
-              <div class="detail-icon">📧</div>
+              <div class="detail-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6.5" width="17" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m5.5 8 6.5 5 6.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="detail-text">
                 <strong>Email Us</strong>
                 <a href="mailto:hello@orchestratedigital.co.uk" style="color:var(--primary);text-decoration:none;">hello@orchestratedigital.co.uk</a>
               </div>
             </div>
             <div class="contact-detail">
-              <div class="detail-icon">📍</div>
+              <div class="detail-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 1 0-12 0c0 5.4 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.3" fill="currentColor"/></svg></div>
               <div class="detail-text">
                 <strong>Based In</strong>
                 <span>North East England, North Yorkshire &amp; Cumbria</span>
               </div>
             </div>
             <div class="contact-detail">
-              <div class="detail-icon">🕐</div>
+              <div class="detail-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
               <div class="detail-text">
                 <strong>Response Time</strong>
                 <span>We aim to respond within one working day</span>
               </div>
             </div>
             <div class="contact-detail">
-              <div class="detail-icon">☕</div>
+              <div class="detail-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h9v5.2A3.8 3.8 0 0 1 10.2 18H8.8A3.8 3.8 0 0 1 5 14.2V9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 10h1.8A2.2 2.2 0 0 1 18 12.2v.1a2.2 2.2 0 0 1-2.2 2.2H14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 6.5c0-1 .7-1.5.7-2.5M10 6.5c0-1 .7-1.5.7-2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
               <div class="detail-text">
                 <strong>Free Discovery Chat</strong>
-                <span>Every enquiry starts with a free, no-obligation conversation — no hard sell, just a friendly chat</span>
+                <span>Every enquiry starts with a free, no-obligation conversation focused on what would genuinely help</span>
               </div>
             </div>
           </div>
+            <div class="contact-expectations">
+              <h3>What to expect</h3>
+              <ul>
+                <li>A reply within one working day wherever possible</li>
+                <li>A practical conversation about your goals, team or current challenges</li>
+                <li>Clear guidance on the most relevant service, session or next step</li>
+                <li>No pressure, no jargon and no obligation to proceed</li>
+              </ul>
+            </div>
 
           <!-- Contact illustration -->
           <div class="contact-art">
@@ -269,8 +305,8 @@
         <!-- RIGHT: Form -->
         <div class="contact-form-card reveal reveal-delay-1">
           <div class="form-header">
-            <h3>Send us a message</h3>
-            <p>Fill in the form below and we'll get back to you shortly.</p>
+            <h3>Tell us what you need help with</h3>
+            <p>Share a few details below and we will come back to you with the most relevant next step.</p>
           </div>
 
           <form id="contactForm" name="contact" data-netlify="true" onsubmit="handleSubmit(event)">
@@ -293,8 +329,8 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="business">Business Name</label>
-                <input type="text" id="business" name="business" placeholder="Your business name">
+                <label for="business">Business or organisation name</label>
+                <input type="text" id="business" name="business" placeholder="Your business, organisation or group name">
               </div>
               <div class="form-group">
                 <label for="phone">Phone Number</label>
@@ -307,10 +343,13 @@
               <div class="select-wrap">
                 <select id="service" name="service">
                   <option value="">Select a service (optional)</option>
-                  <option value="ai">AI Adoption &amp; Training</option>
+                  <option value="ai-training">AI Adoption &amp; Training</option>
+                  <option value="ai-tools">ChatGPT, Copilot, Claude &amp; Gemini Training</option>
                   <option value="transformation">Digital Transformation</option>
+                  <option value="governance">AI Governance &amp; Safety</option>
                   <option value="workshops">Workshops &amp; Events</option>
                   <option value="consultancy">1-to-1 Consultancy</option>
+                  <option value="community">Free Community AI Training</option>
                   <option value="general">General Enquiry</option>
                 </select>
               </div>
@@ -318,19 +357,19 @@
 
             <div class="form-group">
               <label for="message">Your Message *</label>
-              <textarea id="message" name="message" required placeholder="Tell us a bit about your business and what you're hoping to achieve…"></textarea>
+              <textarea id="message" name="message" required placeholder="Tell us a little about your goals, your team or the challenge you want to solve…"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary submit-btn">
               Send Message →
             </button>
-            <p class="form-note">* Required fields. We respect your privacy and will never share your details with third parties.</p>
+            <p class="form-note">* Required fields. We will only use your details to respond to your enquiry and will not share them with third parties.</p>
           </form>
 
           <div class="form-success" id="formSuccess">
-            <div class="success-icon">✅</div>
-            <h3>Message received!</h3>
-            <p>Thanks for getting in touch. We'll be back to you within one working day.<br><br>In the meantime, feel free to explore our <a href="services.html" style="color:var(--primary); font-weight:600;">services</a> to find out more about how we can help.</p>
+            <div class="success-icon"><svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 12.2l2.6 2.6L16 9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h3>Thanks for getting in touch</h3>
+            <p>Your message has been received and we will aim to reply within one working day.<br><br>In the meantime, you can explore our <a href="services.html" style="color:var(--primary); font-weight:600;">services</a> or read more <a href="community-ai-training.html" style="color:var(--primary); font-weight:600;">about our community AI sessions</a>.</p>
           </div>
         </div>
 
@@ -358,7 +397,7 @@
           <p>Helping small and medium-sized businesses across North East England, North Yorkshire and Cumbria adopt AI and digital technology.</p>
         </div>
         <div class="footer-links"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer-links"><h4>Services</h4><ul><li><a href="services.html#ai">AI Adoption &amp; Training</a></li><li><a href="services.html#transformation">Digital Transformation</a></li><li><a href="services.html#workshops">Workshops &amp; Events</a></li><li><a href="services.html#consultancy">1-to-1 Consultancy</a></li></ul></div>
+        <div class="footer-links"><h4>Services</h4><ul><li><a href="ai-training-for-businesses.html">AI Adoption &amp; Training</a></li><li><a href="chatgpt-copilot-training.html">AI Tools Training</a></li><li><a href="digital-transformation-consulting.html">Digital Transformation</a></li><li><a href="ai-governance-policy-support.html">AI Governance &amp; Safety</a></li></ul></div>
       </div>
       <div class="footer-bottom"><span>&copy; 2026 Orchestrate Digital. All rights reserved.</span><span>orchestratedigital.co.uk</span></div>
     </div>
