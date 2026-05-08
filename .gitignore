@@ -1,0 +1,28 @@
+# Data & leads files
+*.csv
+leads*.html
+
+# Config & API keys
+airtable-config.json
+*-config.json
+
+# Logs & reports
+*.md
+!README.md
+
+# Email drafts
+email_drafts*.txt
+email-drafts*.md
+draft-emails*.md
+followup_emails*.md
+reply-watcher-report*.md
+
+# Archives & zips
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
