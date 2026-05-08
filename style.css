@@ -714,8 +714,8 @@ footer::before {
 .proof-section { background: #060E0D; padding: 88px 0; position: relative; overflow: hidden; }
 .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .proof-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(26,158,138,0.18);
+  background: linear-gradient(145deg, rgba(26,158,138,0.10) 0%, rgba(26,158,138,0.04) 100%);
+  border: 1px solid rgba(26,158,138,0.28);
   border-top: 3px solid var(--primary);
   border-radius: var(--radius-md);
   padding: 30px 28px;
@@ -724,11 +724,11 @@ footer::before {
   flex-direction: column;
 }
 .proof-card:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(26,158,138,0.4);
+  background: linear-gradient(145deg, rgba(26,158,138,0.16) 0%, rgba(26,158,138,0.08) 100%);
+  border-color: rgba(26,158,138,0.5);
   border-top-color: var(--primary);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 8px 32px rgba(26,158,138,0.25);
 }
 .proof-kicker {
   display: inline-flex; align-items: center; gap: 8px;
