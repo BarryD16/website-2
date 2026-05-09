@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slack, Notion & ClickUp Setup for SMEs | Orchestrate Digital</title>
+  <meta name="description" content="Stop letting admin and scattered information slow your business down. We help North East SMEs set up and get real value from Slack, Notion and ClickUp.">
+  <meta property="og:title" content="Slack, Notion & ClickUp Setup for SMEs | Orchestrate Digital">
+  <meta property="og:description" content="Stop letting admin and scattered information slow your business down. We help North East SMEs set up and get real value from Slack, Notion and ClickUp.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchestratedigital.co.uk/business-tools-setup.html">
+  <meta property="og:site_name" content="Orchestrate Digital">
+  <link rel="canonical" href="https://orchestratedigital.co.uk/business-tools-setup.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .service-block { padding: 88px 0; position: relative; overflow: hidden; }
+    .service-layout { display:grid; grid-template-columns: 1.1fr 0.9fr; gap:72px; align-items:center; }
+    .service-num { font-family:'Poppins', sans-serif; font-size:0.75rem; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:2.5px; margin-bottom:10px; }
+    .service-title { font-size:1.95rem; margin-bottom:18px; }
+    .service-desc { color:var(--text-medium); font-size:0.97rem; line-height:1.8; margin-bottom:28px; }
+    .feature-list { list-style:none; margin-bottom:32px; }
+    .feature-list li { padding:11px 0; display:flex; align-items:flex-start; gap:12px; font-size:0.93rem; border-bottom:1px solid var(--border); }
+    .feature-list li:last-child { border-bottom:none; }
+    .check-icon { width:20px; height:20px; min-width:20px; background:var(--primary-light); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary); font-size:0.7rem; font-weight:700; margin-top:1px; }
+    .panel { background: linear-gradient(145deg, rgba(26,158,138,0.12), rgba(13,31,28,0.96)); border:1px solid rgba(26,158,138,0.24); border-radius: var(--radius-lg); padding: 34px; position: relative; overflow:hidden; }
+    .panel::before { content:''; position:absolute; top:-40px; right:-40px; width:180px; height:180px; background: radial-gradient(circle, rgba(155,232,255,0.12) 0%, transparent 70%); }
+    .panel-badge { display:inline-block; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.08); color: white; font-size:0.76rem; padding: 7px 12px; border-radius: 999px; margin-bottom: 18px; }
+    .panel h3 { font-size: 1.35rem; margin-bottom: 10px; }
+    .panel p { color: var(--text-medium); margin-bottom: 18px; line-height: 1.8; }
+    .panel ul { list-style:none; }
+    .panel li { padding: 10px 0; color: var(--text-medium); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .panel li:last-child { border-bottom:none; }
+
+    /* ===== PINCH POINTS ===== */
+    .pinch-section { background: #060E0D; padding: 88px 0; }
+    .pinch-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 48px; }
+    .pinch-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md); padding: 28px; }
+    .pinch-before { color: #FF6B6B; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .pinch-before::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF6B6B; flex-shrink: 0; }
+    .pinch-card h3 { font-size: 1rem; color: var(--text-dark); margin-bottom: 10px; line-height: 1.4; }
+    .pinch-card p { color: var(--text-medium); font-size: 0.9rem; line-height: 1.7; margin-bottom: 18px; }
+    .pinch-fix { background: rgba(26,158,138,0.12); border: 1px solid rgba(26,158,138,0.25); border-radius: 8px; padding: 14px; }
+    .pinch-fix-label { color: var(--primary); font-size: 0.78rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .pinch-fix-label::before { content: '✓'; }
+    .pinch-fix p { color: var(--text-medium); font-size: 0.88rem; line-height: 1.65; margin: 0; }
+
+    /* ===== TOOL BREAKDOWN ===== */
+    .tools-section { background: var(--bg); padding: 88px 0; }
+    .tool-block { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--border); }
+    .tool-block:last-child { border-bottom: none; }
+    .tool-block.reverse { direction: rtl; }
+    .tool-block.reverse > * { direction: ltr; }
+    .tool-logo { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .tool-name { font-size: 1.6rem; font-weight: 700; margin-bottom: 12px; }
+    .tool-tagline { color: var(--primary); font-size: 0.88rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 16px; }
+    .tool-desc { color: var(--text-medium); font-size: 0.96rem; line-height: 1.85; margin-bottom: 24px; }
+    .tool-uses { list-style: none; }
+    .tool-uses li { padding: 9px 0; display: flex; align-items: flex-start; gap: 10px; font-size: 0.91rem; color: var(--text-medium); border-bottom: 1px solid var(--border); }
+    .tool-uses li:last-child { border-bottom: none; }
+    .tool-uses li::before { content: '→'; color: var(--primary); font-weight: 700; margin-top: 1px; flex-shrink: 0; }
+    .tool-visual { background: linear-gradient(145deg, rgba(26,158,138,0.10), rgba(13,31,28,0.95)); border: 1px solid rgba(26,158,138,0.2); border-radius: var(--radius-lg); padding: 32px; }
+    .tool-visual-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); margin-bottom: 16px; }
+    .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .ba-col h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .ba-col.bad h4 { color: #FF6B6B; }
+    .ba-col.good h4 { color: var(--primary); }
+    .ba-item { font-size: 0.84rem; color: var(--text-medium); padding: 7px 10px; border-radius: 6px; margin-bottom: 7px; line-height: 1.45; }
+    .ba-col.bad .ba-item { background: rgba(255,107,107,0.08); border: 1px solid rgba(255,107,107,0.15); }
+    .ba-col.good .ba-item { background: rgba(26,158,138,0.08); border: 1px solid rgba(26,158,138,0.18); }
+
+    .faq-wrap { display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .faq-card { background: var(--white); border:1px solid var(--border); border-radius: var(--radius-md); padding: 24px; }
+    .faq-card h3 { font-size: 1rem; margin-bottom: 10px; }
+    .faq-card p { color: var(--text-medium); font-size: 0.92rem; line-height: 1.7; }
+
+    @media (max-width: 960px) {
+      .service-layout, .tool-block, .faq-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .tool-block.reverse { direction: ltr; }
+      .pinch-grid { grid-template-columns: 1fr; }
+      .before-after { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Do we need all three tools — Slack, Notion and ClickUp?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. We start by understanding where the biggest friction is in your business and recommend only the tools that will actually help. Many businesses start with one and add others when they are ready."}},
+      {"@type":"Question","name":"Will our team actually use these tools after setup?","acceptedAnswer":{"@type":"Answer","text":"That is exactly what we focus on. Setup is the easy part. We train your team in plain English, build habits around the tools, and make sure adoption sticks — not just the first week."}},
+      {"@type":"Question","name":"How long does it take to set up and get running?","acceptedAnswer":{"@type":"Answer","text":"It depends on the size of your business and which tools you need, but most setups are practical and phased so your team is not overwhelmed. We keep things proportionate to your size and pace."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg>
+        </div>
+        <div style="line-height:1.15;">
+          <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:var(--text-dark);">Digital</span></div>
+          <div style="font-size:0.6rem;color:var(--text-light);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="3" fill="none"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="2" fill="none"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1.5" fill="none"/></svg>
+      </div>
+    </div>
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Business Tools Setup</div>
+      <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">Business Tools Setup &amp; Training</div>
+      <h1>Stop doing the chores. Start running your business.</h1>
+      <p>We help small businesses get Slack, Notion and ClickUp working properly — so your team spends less time on admin and more time on the work that actually matters.</p>
+    </div>
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,28 C360,54 1080,0 1440,28 L1440,54 L0,54 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="service-block">
+    <div class="container">
+      <div class="service-layout">
+        <div class="reveal">
+          <div class="service-num">Business Tools</div>
+          <h2 class="service-title">The right tools, set up properly, with a team that actually uses them</h2>
+          <p class="service-desc">Most small businesses are running on a mix of WhatsApp groups, email chains, spreadsheets and shared drives that no one can find anything in. Work gets repeated, things fall through the cracks, and you end up managing the mess instead of the business.</p>
+          <p class="service-desc">Slack, Notion and ClickUp solve these problems — but only when they're set up in a way that fits how you actually work, and when your team understands why they're better. That's exactly what we help with.</p>
+          <ul class="feature-list">
+            <li><div class="check-icon">✓</div>Understand which tools your business actually needs</li>
+            <li><div class="check-icon">✓</div>Set everything up properly from day one — structured around your workflows</li>
+            <li><div class="check-icon">✓</div>Train your team in plain English so adoption sticks</li>
+            <li><div class="check-icon">✓</div>Connect tools together to eliminate double-handling and manual updates</li>
+            <li><div class="check-icon">✓</div>Free up hours every week that are currently spent on unnecessary admin</li>
+          </ul>
+          <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary">Book a Discovery Call →</a>
+            <a href="services.html" class="btn btn-outline">Back to All Services</a>
+          </div>
+        </div>
+        <div class="panel reveal reveal-delay-1">
+          <div class="panel-badge">What you walk away with</div>
+          <h3>A business that runs on tools, not chasing</h3>
+          <p>After working with us, your team has a clear, consistent way of communicating, storing information and tracking work — without the daily friction.</p>
+          <ul>
+            <li>One place for all communication — no more lost messages</li>
+            <li>A single source of truth for docs, processes and knowledge</li>
+            <li>Tasks and projects tracked so nothing gets dropped</li>
+            <li>A team that knows how to use the tools confidently</li>
+            <li>Less time in your inbox. More time in your business.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PINCH POINTS -->
+  <section class="pinch-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Common Pinch Points</div>
+        <h2 class="section-title">The daily chores that are <span class="gradient-text">slowing you down</span></h2>
+        <p class="section-subtitle">These are the problems we hear from almost every small business we work with. They feel normal — but they don't have to be.</p>
+      </div>
+      <div class="pinch-grid">
+        <div class="pinch-card reveal">
+          <div class="pinch-before">The problem</div>
+          <h3>"Everything is in emails, WhatsApp and someone's head"</h3>
+          <p>Critical information is scattered across inboxes, group chats and people who might not be there tomorrow. Finding anything takes longer than doing it.</p>
+          <div class="pinch-fix">
+            <div class="pinch-fix-label">How we fix it</div>
+            <p>We set up Notion as your team's single source of truth — one place for processes, decisions, documents and knowledge that anyone can find in seconds.</p>
+          </div>
+        </div>
+        <div class="pinch-card reveal reveal-delay-1">
+          <div class="pinch-before">The problem</div>
+          <h3>"I don't know what everyone is working on or if it'll get done"</h3>
+          <p>Tasks are agreed in meetings or over messages, then disappear. Following up takes more time than the work itself. Things get dropped without anyone realising.</p>
+          <div class="pinch-fix">
+            <div class="pinch-fix-label">How we fix it</div>
+            <p>We set up ClickUp so every task has an owner, a deadline and a status — visible to the whole team at a glance. No more chasing, no more missed deadlines.</p>
+          </div>
+        </div>
+        <div class="pinch-card reveal reveal-delay-2">
+          <div class="pinch-before">The problem</div>
+          <h3>"Our communication is all over the place — email, text, WhatsApp, calls"</h3>
+          <p>Work conversations happen everywhere, which means context gets lost, responses are slow, and the same thing gets said in five different places to five different people.</p>
+          <div class="pinch-fix">
+            <div class="pinch-fix-label">How we fix it</div>
+            <p>We set up Slack with the right channels, habits and integrations — so team communication is organised, searchable and keeps work conversations separate from personal ones.</p>
+          </div>
+        </div>
+        <div class="pinch-card reveal">
+          <div class="pinch-before">The problem</div>
+          <h3>"We bought the tools but nobody really uses them"</h3>
+          <p>You've tried tools before. They got set up, the team used them for a week, and then everyone quietly went back to doing things the old way.</p>
+          <div class="pinch-fix">
+            <div class="pinch-fix-label">How we fix it</div>
+            <p>We train your team in plain English, set up the tools around real workflows rather than generic templates, and build in habits that make adoption stick long term.</p>
+          </div>
+        </div>
+        <div class="pinch-card reveal reveal-delay-1">
+          <div class="pinch-before">The problem</div>
+          <h3>"I spend half my day on admin instead of actually running the business"</h3>
+          <p>Chasing updates, reformatting information, re-explaining things, forwarding emails — it all adds up to hours every week that should be going elsewhere.</p>
+          <div class="pinch-fix">
+            <div class="pinch-fix-label">How we fix it</div>
+            <p>We connect your tools together and automate the repetitive handoffs — so information flows where it needs to go without anyone having to move it manually.</p>
+          </div>
+        </div>
+        <div class="pinch-card reveal reveal-delay-2">
+          <div class="pinch-before">The problem</div>
+          <h3>"When someone leaves, we lose everything they knew"</h3>
+          <p>Processes, contacts, supplier details, how things work — it all lives in one person's head. When they go, so does the knowledge, and the next person starts from scratch.</p>
+          <div class="pinch-fix">
+            <div class="pinch-fix-label">How we fix it</div>
+            <p>We help you build a proper knowledge base in Notion so the way your business works is documented, findable and doesn't depend on any single person staying forever.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOL BREAKDOWN -->
+  <section class="tools-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">The Tools</div>
+        <h2 class="section-title">Three tools that work together — <span class="gradient-text">set up for your business</span></h2>
+        <p class="section-subtitle">Each one solves a specific problem. Together they give your team a clear, consistent way to communicate, store knowledge and get work done.</p>
+      </div>
+
+      <!-- SLACK -->
+      <div class="tool-block reveal">
+        <div>
+          <div class="tool-logo" style="background:#4A154B;">
+            <svg width="32" height="32" viewBox="0 0 54 54" fill="none"><path d="M19.7 33.3c0 2.7-2.2 4.9-4.9 4.9s-4.9-2.2-4.9-4.9 2.2-4.9 4.9-4.9H19.7v4.9Z" fill="#E01E5A"/><path d="M22.2 33.3c0-2.7 2.2-4.9 4.9-4.9s4.9 2.2 4.9 4.9v12.3c0 2.7-2.2 4.9-4.9 4.9s-4.9-2.2-4.9-4.9V33.3Z" fill="#E01E5A"/><path d="M27.1 19.7c-2.7 0-4.9-2.2-4.9-4.9S24.4 9.9 27.1 9.9s4.9 2.2 4.9 4.9V19.7H27.1Z" fill="#36C5F0"/><path d="M27.1 22.2c2.7 0 4.9 2.2 4.9 4.9s-2.2 4.9-4.9 4.9H14.8c-2.7 0-4.9-2.2-4.9-4.9s2.2-4.9 4.9-4.9H27.1Z" fill="#36C5F0"/><path d="M40.7 27.1c0 2.7-2.2 4.9-4.9 4.9s-4.9-2.2-4.9-4.9V14.8c0-2.7 2.2-4.9 4.9-4.9s4.9 2.2 4.9 4.9V27.1Z" fill="#2EB67D"/><path d="M38.2 31c2.7 0 4.9 2.2 4.9 4.9s-2.2 4.9-4.9 4.9-4.9-2.2-4.9-4.9V31H38.2Z" fill="#2EB67D"/><path d="M31 20.5c0-2.7 2.2-4.9 4.9-4.9s4.9 2.2 4.9 4.9-2.2 4.9-4.9 4.9H31v-4.9Z" fill="#ECB22E"/><path d="M31 17.7c0 2.7-2.2 4.9-4.9 4.9s-4.9-2.2-4.9-4.9V5.4C21.2 2.7 23.4.5 26.1.5s4.9 2.2 4.9 4.9v12.3Z" fill="#ECB22E"/></svg>
+          </div>
+          <div class="tool-name">Slack</div>
+          <div class="tool-tagline">Replace the noise with organised, searchable conversation</div>
+          <p class="tool-desc">Slack is a team messaging platform that replaces the endless back-and-forth of email and WhatsApp for work. Conversations are organised into channels — by team, project or topic — so the right people see the right messages, and nothing important gets buried.</p>
+          <ul class="tool-uses">
+            <li>Keep work communication out of personal WhatsApp and cluttered inboxes</li>
+            <li>Create channels for teams, clients and projects so conversations stay organised</li>
+            <li>Search your entire conversation history — no more "who said what and when"</li>
+            <li>Connect with other tools so updates flow in automatically</li>
+            <li>Works on desktop and mobile so remote and on-site teams stay aligned</li>
+          </ul>
+        </div>
+        <div class="tool-visual reveal reveal-delay-1">
+          <div class="tool-visual-label">Before &amp; After Slack</div>
+          <div class="before-after">
+            <div class="ba-col bad">
+              <h4>Before</h4>
+              <div class="ba-item">WhatsApp group with 200 unread messages</div>
+              <div class="ba-item">Important update buried in an email thread</div>
+              <div class="ba-item">"Did anyone see what Mike said about the order?"</div>
+              <div class="ba-item">Mixing personal and work messages all day</div>
+            </div>
+            <div class="ba-col good">
+              <h4>After</h4>
+              <div class="ba-item">Channels for each team and project</div>
+              <div class="ba-item">Searchable history — find anything in seconds</div>
+              <div class="ba-item">Pinned messages for important updates</div>
+              <div class="ba-item">Work conversations separate and organised</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTION -->
+      <div class="tool-block reverse reveal">
+        <div>
+          <div class="tool-logo" style="background:#fff; border: 1px solid var(--border);">
+            <svg width="30" height="30" viewBox="0 0 100 100" fill="none"><path d="M6.5 7.8C10.5 11 12.2 10.8 19.5 10.3L80.2 6.5c1.4 0 .3-1.3-.3-1.5L69.6 1.5C67.6.7 64.4.3 61.4.5L3.1 4.9C.8 5.1 0 6.4 0 7.8v87.5c0 1.4.5 2.8 2.3 4.1l18.6 13.5c2 1.4 3.5 2 7.7 1.7V22.8L73 17c.3 0 .7-.5.7-1.4V9.5c0-1.4-.5-1.7-1-1.7H6.5V7.8Z" fill="#000"/><path d="M73 17L28.6 22.8v96.7c5.5-1 6.8-3.3 6.8-6V28.5l37.6-5.2V95c0 2.8-1.3 4.8-6.2 5.7l17.3-1.5c5.5-.5 7-3.5 7-7V13.4c0-2.8-1.3-5.2-4.6-5.6L73 17Z" fill="#000" opacity=".3"/></svg>
+          </div>
+          <div class="tool-name">Notion</div>
+          <div class="tool-tagline">One place for everything your business knows and does</div>
+          <p class="tool-desc">Notion is your team's shared brain — a flexible workspace where you store processes, documents, meeting notes, client information, wikis and anything else that currently lives in scattered Google Docs, shared drives or someone's memory. When it's set up properly, it becomes the first place anyone looks for anything.</p>
+          <ul class="tool-uses">
+            <li>Build a company wiki so processes and policies are always findable</li>
+            <li>Store client notes, meeting summaries and project docs in one place</li>
+            <li>Create onboarding guides so new starters get up to speed faster</li>
+            <li>Replace scattered Google Docs with a single, well-organised workspace</li>
+            <li>Protect business knowledge so it doesn't leave when people do</li>
+          </ul>
+        </div>
+        <div class="tool-visual reveal reveal-delay-1">
+          <div class="tool-visual-label">Before &amp; After Notion</div>
+          <div class="before-after">
+            <div class="ba-col bad">
+              <h4>Before</h4>
+              <div class="ba-item">Process docs no one can find</div>
+              <div class="ba-item">Onboarding that takes weeks of hand-holding</div>
+              <div class="ba-item">Key knowledge walks out when staff leave</div>
+              <div class="ba-item">5 versions of the same document</div>
+            </div>
+            <div class="ba-col good">
+              <h4>After</h4>
+              <div class="ba-item">Everything in one searchable place</div>
+              <div class="ba-item">New starters self-serve from day one</div>
+              <div class="ba-item">Knowledge stays in the business forever</div>
+              <div class="ba-item">One source of truth for the whole team</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLICKUP -->
+      <div class="tool-block reveal">
+        <div>
+          <div class="tool-logo" style="background:#7B68EE;">
+            <svg width="32" height="32" viewBox="0 0 800 800" fill="none"><path d="M400 100L150 400l100 80 150-185 150 185 100-80L400 100Z" fill="#fff"/><path d="M400 100L150 400l100 80 150-185 150 185 100-80L400 100Z" fill="url(#cu)" opacity=".9"/><defs><linearGradient id="cu" x1="150" y1="400" x2="650" y2="400" gradientUnits="userSpaceOnUse"><stop stop-color="#8930FD"/><stop offset="1" stop-color="#49CCF9"/></linearGradient></defs><path d="M250 480l100 80 50-60 50 60 100-80-150-185-150 185Z" fill="#fff" opacity=".7"/></svg>
+          </div>
+          <div class="tool-name">ClickUp</div>
+          <div class="tool-tagline">See everything, track everything, drop nothing</div>
+          <p class="tool-desc">ClickUp is a project and task management platform that gives your whole team a shared view of what's being worked on, who's responsible and when things are due. It replaces the spreadsheet to-do lists, sticky notes and verbal agreements that lead to things being forgotten — and replaces the need to chase people for updates.</p>
+          <ul class="tool-uses">
+            <li>Assign tasks with owners and deadlines so accountability is clear</li>
+            <li>Track projects from start to finish with real-time visibility</li>
+            <li>Eliminate the weekly "what's everyone working on?" meeting</li>
+            <li>Set up recurring tasks so regular admin never gets forgotten</li>
+            <li>View work as a list, board, calendar or Gantt — whatever suits your style</li>
+          </ul>
+        </div>
+        <div class="tool-visual reveal reveal-delay-1">
+          <div class="tool-visual-label">Before &amp; After ClickUp</div>
+          <div class="before-after">
+            <div class="ba-col bad">
+              <h4>Before</h4>
+              <div class="ba-item">Tasks agreed verbally, then forgotten</div>
+              <div class="ba-item">Chasing people for updates every day</div>
+              <div class="ba-item">No idea what's overdue until it's a problem</div>
+              <div class="ba-item">Spreadsheet to-do lists no one updates</div>
+            </div>
+            <div class="ba-col good">
+              <h4>After</h4>
+              <div class="ba-item">Every task has an owner and a deadline</div>
+              <div class="ba-item">Status visible to the whole team at a glance</div>
+              <div class="ba-item">Overdue tasks flagged automatically</div>
+              <div class="ba-item">Less time in meetings, more time doing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="service-block" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2 class="section-title">Helpful answers before you decide <span class="gradient-text">what to do next</span></h2>
+        <p class="section-subtitle">Plain-English answers to common questions about getting started with these tools.</p>
+      </div>
+      <div class="faq-wrap">
+        <div class="faq-card reveal">
+          <h3>Do we need all three tools?</h3>
+          <p>Not necessarily. We start by understanding where the biggest friction is in your business and recommend only what will actually help. Many businesses start with one tool and add others when they're ready.</p>
+        </div>
+        <div class="faq-card reveal reveal-delay-1">
+          <h3>Will our team actually use them?</h3>
+          <p>That's exactly what we focus on. Setup is the easy part. We train your team in plain English, build habits around real workflows, and make sure adoption sticks — not just for the first week.</p>
+        </div>
+        <div class="faq-card reveal reveal-delay-2">
+          <h3>How long does setup take?</h3>
+          <p>It depends on the size of your business and which tools you need, but we keep everything practical and phased so your team isn't overwhelmed. Everything is proportionate to your size and pace.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">Real Client Work</div>
+        <h2 class="section-title">How we've helped <span class="gradient-text">local businesses</span></h2>
+        <p class="section-subtitle">A few examples of how we've helped businesses save time, reduce missed opportunities and work smarter.</p>
+      </div>
+      <div class="proof-grid">
+        <article class="proof-card reveal">
+          <div class="proof-kicker"><span class="proof-kicker-dot"></span>Trades &amp; Home Services</div>
+          <h3>AI receptionist for a local gas engineer</h3>
+          <p>A self-employed gas engineer was missing calls throughout the day while out on jobs — losing potential customers with no way to follow up. We built an AI phone agent that handles incoming calls when he's unavailable, asks the right questions and sends him a clear daily summary of every contact made.</p>
+          <ul>
+            <li><strong>What we built:</strong> AI voice receptionist that qualifies callers and captures job details</li>
+            <li><strong>The result:</strong> no more missed opportunities — he ends every day knowing exactly who called and what they need</li>
+          </ul>
+        </article>
+        <article class="proof-card reveal reveal-delay-1">
+          <div class="proof-kicker"><span class="proof-kicker-dot"></span>Hospitality &amp; Food Service</div>
+          <h3>Smarter stock and social media for a local café</h3>
+          <p>A local café was over-ordering slow-selling items, struggling to keep up with online reviews, and missing out on social engagement. We built two connected AI tools: a weather-aware stock ordering system and an AI review analyst that drafts ready-to-approve responses.</p>
+          <ul>
+            <li><strong>What we built:</strong> AI stock ordering with weather forecasting + AI review response drafter</li>
+            <li><strong>The result:</strong> less waste, smarter ordering and a significant improvement in social media engagement</li>
+          </ul>
+        </article>
+        <article class="proof-card reveal reveal-delay-2">
+          <div class="proof-kicker"><span class="proof-kicker-dot"></span>Hair &amp; Beauty</div>
+          <h3>Automated social media and appointment reminders for a hair salon</h3>
+          <p>A busy hair salon wanted a more consistent social media presence but didn't have time to manage posts and respond to reviews manually. We set up automated social content, AI-drafted review responses and an appointment reminder system that led to a significant drop in no-shows.</p>
+          <ul>
+            <li><strong>What we built:</strong> automated social posts, AI review responses and smart appointment reminders</li>
+            <li><strong>The result:</strong> a much stronger online presence and a large reduction in missed appointments</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="harmonics-waves" aria-hidden="true">
+      <div class="harmonics-waves-inner slow">
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+        <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M 0,100 C 200,20 400,20 600,100 C 800,180 1000,180 1200,100" stroke="white" stroke-width="2" fill="none" opacity="0.25"/><path d="M 0,100 C 100,30 200,30 300,100 C 400,170 500,170 600,100 C 700,30 800,30 900,100 C 1000,170 1100,170 1200,100" stroke="#FFD580" stroke-width="1.5" fill="none" opacity="0.2"/><path d="M 0,100 C 75,45 150,45 225,100 C 300,155 375,155 450,100 C 525,45 600,45 675,100 C 750,155 825,155 900,100 C 975,45 1050,45 1125,100 C 1175,148 1200,100 1200,100" stroke="#9BE8FF" stroke-width="1" fill="none" opacity="0.18"/></svg>
+      </div>
+    </div>
+    <div class="container reveal">
+      <h2>Ready to stop managing the mess?</h2>
+      <p>Book a free discovery conversation and we'll work out exactly which tools your business needs and what a practical setup looks like.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-white">Book a Discovery Call →</a>
+        <a href="services.html" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.4);">See All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom:18px; display:flex;">
+            <div class="logo-icon"><svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg></div>
+            <div style="line-height:1.15;">
+              <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:white;">Digital</span></div>
+              <div style="font-size:0.6rem;color:rgba(255,255,255,0.4);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+            </div>
+          </a>
+          <p>Helping small and medium-sized businesses across North East England adopt AI and digital technology to improve performance and productivity.</p>
+        </div>
+        <div class="footer-links"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-links"><h4>Services</h4><ul><li><a href="ai-training-for-businesses.html">AI Training</a></li><li><a href="chatgpt-copilot-training.html">AI Tools Training</a></li><li><a href="digital-transformation-consulting.html">Digital Transformation</a></li><li><a href="business-tools-setup.html">Business Tools Setup</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Orchestrate Digital. All rights reserved.</span><span><a href="tel:07824116493" style="color:inherit;text-decoration:none;">07824 116493</a>&nbsp;·&nbsp;<a href="mailto:hello@orchestratedigital.co.uk" style="color:inherit;text-decoration:none;">hello@orchestratedigital.co.uk</a>&nbsp;·&nbsp;orchestratedigital.co.uk</span></div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } }), {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
