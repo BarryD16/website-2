@@ -6,19 +6,22 @@ leads*.html
 airtable-config.json
 *-config.json
 
-# Logs & reports
-*.md
-!README.md
+# Logs & reports (keep blog posts tracked)
+daily-run-log*.md
+reply-watcher-report*.md
 
 # Email drafts
 email_drafts*.txt
 email-drafts*.md
 draft-emails*.md
 followup_emails*.md
-reply-watcher-report*.md
 
 # Archives & zips
 *.zip
+
+# Build output
+_site/
+node_modules/
 
 # OS files
 .DS_Store
