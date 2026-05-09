@@ -99,6 +99,24 @@
     }
     .founder-card { padding: 34px; }
     .cred-card { padding: 28px; }
+    .founder-photo-row { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+    .founder-photo {
+      width: 90px; height: 90px; min-width: 90px;
+      border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 4px rgba(26,158,138,0.15);
+    }
+    .founder-photo-placeholder {
+      width: 90px; height: 90px; min-width: 90px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      border: 3px solid var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; color: var(--primary);
+    }
+    .founder-name { font-size: 1.2rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+    .founder-role { font-size: 0.85rem; color: var(--primary); font-weight: 600; letter-spacing: 0.5px; }
     .cred-list { list-style: none; margin-top: 10px; }
     .cred-list li {
       display: flex; gap: 12px; align-items: flex-start;
@@ -346,10 +364,18 @@
       <div class="founder-layout">
         <div class="founder-card reveal">
           <div class="section-label">Founder-Led Support</div>
-          <h2 class="section-title">Work directly with Barry Divers</h2>
-          <p style="color:var(--text-medium); margin-bottom:16px; line-height:1.85;">Orchestrate Digital is led by Barry Divers, who works directly with organisations that want straightforward support around AI adoption, digital skills, process improvement and responsible use.</p>
-          <p style="color:var(--text-medium); margin-bottom:16px; line-height:1.85;">The approach is deliberately practical: understand where the organisation is now, identify the most useful opportunities, build confidence in the tools, and help people take sensible next steps without overwhelm.</p>
-          <p style="color:var(--text-medium); line-height:1.85;">That means clear conversations, tailored support and recommendations shaped around real operational needs rather than generic playbooks.</p>
+          <div class="founder-photo-row">
+            <img src="images/barry.jpg" alt="Barry Divers, Founder of Orchestrate Digital" class="founder-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="founder-photo-placeholder" style="display:none;">BD</div>
+            <div>
+              <div class="founder-name">Barry Divers</div>
+              <div class="founder-role">Founder, Orchestrate Digital</div>
+            </div>
+          </div>
+          <h2 class="section-title">You work directly with me — not a team of account managers</h2>
+          <p style="color:var(--text-medium); margin-bottom:16px; line-height:1.85;">I started Orchestrate Digital because I kept seeing the same thing: AI tools that could genuinely help small businesses, but advice and training that was either too technical, too expensive, or built around the needs of much larger organisations.</p>
+          <p style="color:var(--text-medium); margin-bottom:16px; line-height:1.85;">Everything I do is practical and grounded in the reality of running a smaller business. That means honest conversations about what's actually useful, training your team can apply straight away, and support that fits around how you actually work — not a generic playbook.</p>
+          <p style="color:var(--text-medium); line-height:1.85;">I work across North East England, North Yorkshire and Cumbria — on site, remotely, or a mix of both — with businesses and community organisations that want to get real value from AI without the jargon or the overwhelm.</p>
           <div class="impact-strip">
             <div class="impact-item">
               <h3>Practical from the start</h3>
@@ -702,7 +728,7 @@
         <div class="footer-links"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div class="footer-links"><h4>Services</h4><ul><li><a href="services.html#ai">AI Adoption &amp; Training</a></li><li><a href="services.html#transformation">Digital Transformation</a></li><li><a href="services.html#workshops">Workshops &amp; Events</a></li><li><a href="services.html#consultancy">1-to-1 Consultancy</a></li></ul></div>
       </div>
-      <div class="footer-bottom"><span>&copy; 2026 Orchestrate Digital. All rights reserved.</span><span><a href="tel:07824116493" style="color:inherit;text-decoration:none;">07824 116493</a> <span>orchestratedigital.co.uk</span>nbsp;·<span>orchestratedigital.co.uk</span>nbsp; orchestratedigital.co.uk</span></div>
+      <div class="footer-bottom"><span>&copy; 2026 Orchestrate Digital. All rights reserved.</span><span><a href="tel:07824116493" style="color:inherit;text-decoration:none;">07824 116493</a>&nbsp;·&nbsp;orchestratedigital.co.uk</span></div>
     </div>
   </footer>
 
