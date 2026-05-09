@@ -8,7 +8,23 @@ const SITE_FILES = [
   'index.html','about.html','services.html','contact.html',
   'ai-governance-policy-support.html','ai-training-for-businesses.html',
   'chatgpt-copilot-training.html','community-ai-training.html',
-  'digital-transformation-consulting.html','style.css'
+  'digital-transformation-consulting.html','style.css','robots.txt'
+];
+
+const BASE_URL = 'https://orchestratedigital.co.uk';
+
+// Static pages for sitemap (path, priority, changefreq)
+const STATIC_PAGES = [
+  { path: '/',                                    priority: '1.0', changefreq: 'weekly'  },
+  { path: '/services.html',                       priority: '0.9', changefreq: 'monthly' },
+  { path: '/about.html',                          priority: '0.7', changefreq: 'monthly' },
+  { path: '/contact.html',                        priority: '0.8', changefreq: 'monthly' },
+  { path: '/blog/',                               priority: '0.9', changefreq: 'weekly'  },
+  { path: '/ai-training-for-businesses.html',     priority: '0.8', changefreq: 'monthly' },
+  { path: '/digital-transformation-consulting.html', priority: '0.8', changefreq: 'monthly' },
+  { path: '/chatgpt-copilot-training.html',       priority: '0.8', changefreq: 'monthly' },
+  { path: '/community-ai-training.html',          priority: '0.7', changefreq: 'monthly' },
+  { path: '/ai-governance-policy-support.html',   priority: '0.8', changefreq: 'monthly' },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -134,7 +150,23 @@ function renderPost(post) {
   <meta property="og:description" content="${(post.description || '').replace(/"/g, '&quot;')}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://orchestratedigital.co.uk/blog/${post.slug}.html">
+  <meta property="og:site_name" content="Orchestrate Digital">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="${post.title} | Orchestrate Digital">
+  <meta name="twitter:description" content="${(post.description || '').replace(/"/g, '&quot;')}">
   <link rel="canonical" href="https://orchestratedigital.co.uk/blog/${post.slug}.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "${post.title.replace(/"/g, '\\"')}",
+    "description": "${(post.description || '').replace(/"/g, '\\"')}",
+    "datePublished": "${new Date(post.date).toISOString().split('T')[0]}",
+    "author": {"@type": "Organization", "name": "Orchestrate Digital", "url": "https://orchestratedigital.co.uk"},
+    "publisher": {"@type": "Organization", "name": "Orchestrate Digital", "url": "https://orchestratedigital.co.uk"},
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://orchestratedigital.co.uk/blog/${post.slug}.html"}
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -310,5 +342,32 @@ if (fs.existsSync(postsDir)) {
 // Sort newest first, write index
 posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 fs.writeFileSync('_site/blog/index.html', renderBlogIndex(posts));
+
+// ── Generate sitemap.xml ──────────────────────────────────────────────────────
+const today = new Date().toISOString().split('T')[0];
+const staticEntries = STATIC_PAGES.map(p => `
+  <url>
+    <loc>${BASE_URL}${p.path}</loc>
+    <changefreq>${p.changefreq}</changefreq>
+    <priority>${p.priority}</priority>
+    <lastmod>${today}</lastmod>
+  </url>`).join('');
+
+const postEntries = posts.map(p => `
+  <url>
+    <loc>${BASE_URL}/blog/${p.slug}.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>${new Date(p.date).toISOString().split('T')[0]}</lastmod>
+  </url>`).join('');
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${staticEntries}
+${postEntries}
+</urlset>`;
+
+fs.writeFileSync('_site/sitemap.xml', sitemap);
+console.log(`  ✓ sitemap.xml (${STATIC_PAGES.length + posts.length} URLs)`);
 
 console.log(`\nBuild complete — ${posts.length} post(s) generated.`);
