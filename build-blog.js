@@ -121,7 +121,7 @@ const FOOTER = `
       </div>
       <div class="footer-bottom">
         <span>&copy; ${new Date().getFullYear()} Orchestrate Digital. All rights reserved.</span>
-        <span>orchestratedigital.co.uk</span>
+        <span><a href="tel:07824116493" style="color:inherit;text-decoration:none;">07824 116493</a> &nbsp;·&nbsp; orchestratedigital.co.uk</span>
       </div>
     </div>
   </footer>`;
