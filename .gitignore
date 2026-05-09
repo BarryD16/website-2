@@ -1,6 +1,7 @@
 # Data & leads files
 *.csv
 leads*.html
+logo-concepts.html
 
 # Config & API keys
 airtable-config.json
