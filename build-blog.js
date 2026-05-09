@@ -8,7 +8,8 @@ const SITE_FILES = [
   'index.html','about.html','services.html','contact.html',
   'ai-governance-policy-support.html','ai-training-for-businesses.html',
   'chatgpt-copilot-training.html','community-ai-training.html',
-  'digital-transformation-consulting.html','style.css','robots.txt'
+  'digital-transformation-consulting.html','style.css','robots.txt',
+  'googlee5b9f85818d9ffd8.html'
 ];
 
 const BASE_URL = 'https://orchestratedigital.co.uk';
