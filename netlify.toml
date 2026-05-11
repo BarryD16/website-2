@@ -4,3 +4,15 @@
 
 [build.environment]
   NODE_VERSION = "18"
+
+[[redirects]]
+  from = "http://orchestratedigital.co.uk/*"
+  to = "https://orchestratedigital.co.uk/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.orchestratedigital.co.uk/*"
+  to = "https://orchestratedigital.co.uk/:splat"
+  status = 301
+  force = true
