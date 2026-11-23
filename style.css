@@ -803,3 +803,7 @@ footer::before {
   .bridge-steps, .myweek-layout { grid-template-columns: 1fr; }
   .myweek-layout { gap: 36px; }
 }
+
+/* Page hero: sit the wave on the bottom edge and match the dark page background */
+.page-hero .wave-bottom { position: absolute; left: 0; right: 0; bottom: -1px; margin: 0; z-index: 1; }
+.page-hero .wave-bottom path { fill: var(--bg); }

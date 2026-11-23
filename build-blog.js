@@ -116,8 +116,10 @@ const FOOTER = `
         <div class="footer-links">
           <h4>Services</h4>
           <ul>
+            <li><a href="/ai-that-does-the-job.html">AI That Does the Job</a></li>
+            <li><a href="/ai-tone-of-voice-training.html">AI That Sounds Like You</a></li>
+            <li><a href="/websites-you-can-run-yourself.html">Websites You Can Run Yourself</a></li>
             <li><a href="/ai-training-for-businesses.html">AI Training for Businesses</a></li>
-            <li><a href="/digital-transformation-consulting.html">Digital Transformation</a></li>
             <li><a href="/chatgpt-copilot-training.html">AI Tools Training</a></li>
             <li><a href="/ai-governance-policy-support.html">AI Governance &amp; Policy Support</a></li>
           </ul>
