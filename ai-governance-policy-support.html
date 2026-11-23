@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>AI Safety &amp; Policy Support for Small Businesses | Orchestrate Digital</title>
-  <meta name="description" content="Light-touch, proportionate AI policy and governance for small businesses. GDPR, the EU AI Act, sensible boundaries. No corporate over-engineering.">
+  <meta name="description" content="Light-touch AI policy and governance for small businesses, updated for the 2026 UK data law changes on automated decisions. Sensible boundaries, no corporate over-engineering.">
   <meta property="og:title" content="AI Safety &amp; Policy Support for Small Businesses | Orchestrate Digital">
-  <meta property="og:description" content="Light-touch, proportionate AI policy and governance for small businesses. GDPR, the EU AI Act, sensible boundaries. No corporate over-engineering.">
+  <meta property="og:description" content="Light-touch AI policy and governance for small businesses, updated for the 2026 UK data law changes on automated decisions. Sensible boundaries, no corporate over-engineering.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orchestratedigital.co.uk/ai-governance-policy-support.html">
   <meta property="og:site_name" content="Orchestrate Digital">
@@ -38,17 +38,18 @@
     .faq-card { background: var(--white); border:1px solid var(--border); border-radius: var(--radius-md); padding: 24px; }
     .faq-card h3 { font-size: 1rem; margin-bottom: 10px; }
     .faq-card p { color: var(--text-medium); font-size: 0.92rem; line-height: 1.7; }
+    .change-grid { display:grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
+    .change-kicker { font-size:0.72rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color: var(--h-gold); margin-bottom:10px; }
+    .change-grid .faq-card p { font-size:0.94rem; }
+    .change-note { max-width:760px; margin:28px auto 0; text-align:center; color: var(--text-light); font-size:0.88rem; line-height:1.7; }
     @media (max-width: 960px) {
+      .change-grid { grid-template-columns: 1fr; }
       .service-layout, .faq-wrap { grid-template-columns: 1fr; gap: 28px; }
     }
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[{"@type": "Question", "name": "Do small businesses really need AI governance?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes, even if it is light-touch. A simple framework often prevents confusion and helps teams use tools more consistently."}},{"@type": "Question", "name": "Can you help us write an internal AI policy?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Policy support can be practical and proportionate, built around your workflows, risk tolerance and team needs."}},{"@type": "Question", "name": "Is this separate from AI training?", "acceptedAnswer": {"@type": "Answer", "text": "It can be delivered separately, but it often works best alongside training so expectations and good habits are reinforced together."}}]
-  }
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do small businesses really need an AI policy?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes, but a short, sensible one. Even a single page of clear rules stops confusion, gives your team confidence, and protects you if something goes wrong. It matters more once AI is doing jobs on its own rather than just drafting."}}, {"@type": "Question", "name": "Has the law changed?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Since February 2026 UK law allows more automated decisions about people, with safeguards: tell them, let them have their say, offer a real person to review it, and let them challenge it. The ICO is also writing a code of practice on AI. We keep your policy in line as things settle."}}, {"@type": "Question", "name": "Can you write the policy for us?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We'll write the draft, talk it through with you, and adjust until it fits. Built around your workflows, your risk tolerance and your team. Not a generic template."}}]}
   </script>
 </head>
 <body>
@@ -92,7 +93,7 @@
       <div class="breadcrumbs"><a href="index.html">Home</a> / <a href="services.html">Services</a> / AI Governance & Policy Support</div>
       <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">AI Governance & Policy Support</div>
       <h1>AI safety and policy support, sized for small businesses</h1>
-      <p>Use AI without falling foul of GDPR, the EU AI Act or your own customers. We draft the policy, set sensible boundaries, and train your team to use AI responsibly. Proportionate to your size, not corporate over-engineering.</p>
+      <p>Now that AI can do whole jobs, not just drafts, the rules about who signs off matter more. We draft the policy, set sensible boundaries, and keep you on the right side of UK data law and your own customers. Proportionate to your size, not corporate over-engineering.</p>
     </div>
     <div class="wave-bottom">
       <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
@@ -108,10 +109,13 @@
           <div class="service-num">Service 04</div>
           <h2 class="service-title">AI safety and policy support</h2>
           <p class="service-desc">Most small businesses don't need a fifty-page governance framework. They need a short, sensible policy that tells the team what's OK, what isn't, and what to do if they're not sure. That's what we write. Proportionate to your size, not corporate over-engineering.</p>
+          <p class="service-desc">It matters more now that AI can chase invoices, answer the phone and reply to customers on its own. A good policy says which jobs AI can do by itself, which need a person to sign off, and what customers are told.</p>
           <ul class="feature-list">
             <li><div class="check-icon">✓</div>A practical, plain English AI policy your team will actually read</li>
 <li><div class="check-icon">✓</div>Clear rules on what to use AI for and what to keep human</li>
 <li><div class="check-icon">✓</div>Sensible data and confidentiality boundaries that fit your business</li>
+<li><div class="check-icon">✓</div>Clear sign-off rules for AI that does jobs on its own, so a person stays in charge of what matters</li>
+<li><div class="check-icon">✓</div>Plain wording for telling customers and callers when they're dealing with AI</li>
 <li><div class="check-icon">✓</div>Trust with staff, clients and customers as you bring AI in</li>
 <li><div class="check-icon">✓</div>Policy that connects to your training and rollout, not a separate document gathering dust</li>
           </ul>
@@ -128,11 +132,46 @@
             <li><strong>Approved tools</strong> and the jobs they're OK for</li>
             <li><strong>Data and confidentiality:</strong> what never goes into an AI tool</li>
             <li><strong>Quality and accuracy:</strong> what gets a human check before it goes out</li>
+            <li><strong>AI that acts on its own:</strong> what it can send, post or decide, and who signs off</li>
+            <li><strong>Being upfront:</strong> how customers know when they're talking to AI</li>
             <li><strong>Who to go to</strong> with questions or concerns</li>
             <li><strong>A simple review cycle</strong> so the policy stays current</li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="service-block" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">What's changed in 2026</div>
+        <h2 class="section-title">The rules have moved. <span class="gradient-text">Here's what matters for a small business.</span></h2>
+        <p class="section-subtitle">Plain English, no scare stories. Most of this is good news, as long as you put a few sensible safeguards in place. Last reviewed November 2026.</p>
+      </div>
+      <div class="change-grid">
+        <div class="faq-card reveal">
+          <div class="change-kicker">UK · in force since 5 February 2026</div>
+          <h3>AI can make more decisions, with safeguards</h3>
+          <p>The Data (Use and Access) Act replaced the old near-ban on fully automated decisions. You can now let AI make significant decisions about people, such as screening job applicants or setting a price for someone, as long as you tell them, let them have their say, offer a real person to review it, and let them challenge it. "Real person" means someone who can actually change the outcome, not someone who just clicks approve. Stricter rules still apply where health or other sensitive data is involved.</p>
+        </div>
+        <div class="faq-card reveal reveal-delay-1">
+          <div class="change-kicker">UK · coming</div>
+          <h3>The ICO is writing an AI code of practice</h3>
+          <p>Since May 2026 the law has required the ICO, the UK's data regulator, to write a statutory code of practice on AI and automated decisions. No draft has been published yet, and in October it asked for evidence on AI agents (AI that takes actions, not just writes text). Now is a good time to write down what your AI does and who checks it, before the code arrives rather than after.</p>
+        </div>
+        <div class="faq-card reveal">
+          <div class="change-kicker">EU · only if you sell into Europe</div>
+          <h3>The EU AI Act's heaviest rules have been pushed back</h3>
+          <p>The strictest "high-risk" rules (for things like AI in hiring or education) now start on 2 December 2027, not August 2026. For most businesses round here, the EU AI Act only matters if you have customers in the EU. If you do, one rule already applies: since 2 August 2026, people must be told when they're interacting with an AI system.</p>
+        </div>
+        <div class="faq-card reveal reveal-delay-1">
+          <div class="change-kicker">Good practice · everywhere</div>
+          <h3>Tell callers they're talking to AI</h3>
+          <p>If an AI answers your phone or your web chat, say so up front and give people an easy way to reach a person or ask for a call back. It's what customers expect, it fits the rules above, and it builds trust rather than spending it. We build that into the AI phone agents we set up.</p>
+        </div>
+      </div>
+      <p class="change-note reveal">This is a plain English summary, not legal advice. If you're making significant decisions about people with AI, we'll help you put the safeguards in place and point you to specialist advice where you need it.</p>
     </div>
   </section>
 
@@ -146,15 +185,15 @@
       <div class="faq-wrap">
         <div class="faq-card reveal">
           <h3>Do small businesses really need an AI policy?</h3>
-          <p>Usually yes, but a short, sensible one. Even a single page of clear rules stops confusion, gives your team confidence, and protects you if something goes wrong. It doesn't need to be heavy.</p>
+          <p>Usually yes, but a short, sensible one. Even a single page of clear rules stops confusion, gives your team confidence, and protects you if something goes wrong. It matters more once AI is doing jobs on its own rather than just drafting.</p>
         </div>
-<div class="faq-card reveal reveal-delay-1">
+        <div class="faq-card reveal reveal-delay-1">
+          <h3>Has the law changed?</h3>
+          <p>Yes. Since February 2026 UK law allows more automated decisions about people, with safeguards: tell them, let them have their say, offer a real person to review it, and let them challenge it. The ICO is also writing a code of practice on AI. We keep your policy in line as things settle.</p>
+        </div>
+        <div class="faq-card reveal reveal-delay-2">
           <h3>Can you write the policy for us?</h3>
-          <p>Yes. We'll write the draft, talk it through with you, and adjust until it fits. Built around your workflows, your risk tolerance, your team. Not a generic template.</p>
-        </div>
-<div class="faq-card reveal reveal-delay-2">
-          <h3>Is this separate from AI training?</h3>
-          <p>It can be, but it often works best alongside training so the rules and the habits land together. People understand and follow a policy much better when they've seen what it's protecting against.</p>
+          <p>Yes. We'll write the draft, talk it through with you, and adjust until it fits. Built around your workflows, your risk tolerance and your team. Not a generic template.</p>
         </div>
       </div>
     </div>
@@ -174,7 +213,7 @@
           <p>A self-employed gas engineer was missing calls throughout the day while out on jobs, losing customers with no way to follow up. We built an AI phone agent that handles his incoming calls when he's unavailable, asks the right questions to understand what each customer needs, and sends him a clear daily summary of every contact made.</p>
           <ul>
             <li><strong>What we built:</strong> AI voice receptionist that qualifies callers and captures job details</li>
-            <li><strong>The result:</strong> no more missed opportunities — he ends every day knowing exactly who called and what they need</li>
+            <li><strong>The result:</strong> no more missed opportunities. He ends every day knowing exactly who called and what they need</li>
           </ul>
         </article>
         <article class="proof-card reveal reveal-delay-1">
