@@ -14,6 +14,7 @@ collections:
     fields:
       - { label: "Title",       name: "title",       widget: "string" }
       - { label: "Publish Date", name: "date",        widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, default: "" }
+      - { label: "Last Reviewed", name: "updated", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "Optional. Set when you check or update an older post; shows as 'Last reviewed' on the page." }
       - { label: "Description", name: "description", widget: "string",   hint: "One-sentence summary shown in Google search results and on the blog listing page." }
       - { label: "Topic Tag",   name: "tag",         widget: "select",
           options: ["AI Training","AI Governance","Digital Transformation","AI Tools","Productivity","AI & Business"] }
