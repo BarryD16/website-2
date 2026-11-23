@@ -8,7 +8,7 @@ const SITE_FILES = [
   'index.html','about.html','services.html','contact.html',
   'ai-governance-policy-support.html','ai-training-for-businesses.html',
   'chatgpt-copilot-training.html','community-ai-training.html',
-  'digital-transformation-consulting.html','business-tools-setup.html',
+  'digital-transformation-consulting.html','business-tools-setup.html','ai-that-does-the-job.html','ai-tone-of-voice-training.html','websites-you-can-run-yourself.html',
   'style.css','robots.txt','googlee5b9f85818d9ffd8.html'
 ];
 
@@ -27,6 +27,9 @@ const STATIC_PAGES = [
   { path: '/community-ai-training.html',          priority: '0.7', changefreq: 'monthly' },
   { path: '/ai-governance-policy-support.html',   priority: '0.8', changefreq: 'monthly' },
   { path: '/business-tools-setup.html',           priority: '0.8', changefreq: 'monthly' },
+  { path: '/ai-that-does-the-job.html',           priority: '0.9', changefreq: 'monthly' },
+  { path: '/ai-tone-of-voice-training.html',      priority: '0.8', changefreq: 'monthly' },
+  { path: '/websites-you-can-run-yourself.html',  priority: '0.8', changefreq: 'monthly' },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
