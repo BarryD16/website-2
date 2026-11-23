@@ -1,100 +1,121 @@
 ---
 title: "10 business tasks SMEs can automate safely with AI"
 date: 2026-05-09
-description: "Practical examples of where AI saves real time in small businesses — covering drafting, admin, research, customer communications and internal productivity — without introducing unnecessary risk."
+updated: 2026-11-23
+description: "Ten jobs small businesses can hand to AI right now, from chasing invoices to replying to reviews. For each one: the quick win, what it looks like set up properly, and how to keep it safe."
 tag: "Productivity"
 ---
 
-One of the most common questions business owners ask when they start looking at AI is: "What can I actually use it for?" The honest answer is that AI is most useful for tasks that are repetitive, time-consuming, or require a first draft that a human then refines. 
+The question we get asked most is "what can I actually use AI for?" The honest answer is the jobs that come round every week, that you could do in your sleep, and that you'd quite happily never do again.
 
-Here are ten tasks where small businesses are genuinely saving time with AI right now — along with practical notes on how to use each one safely.
+When we first wrote this list in May, most of it was about getting a decent first draft. Six months on, most of these jobs can be set up to run on their own, in your voice, with you signing off. So for each one we've added what the step up looks like.
 
-## 1. Drafting emails and responses
+## 1. Chasing overdue invoices
 
-Writing emails is one of the highest-volume tasks in most businesses. AI tools like ChatGPT, Claude or Copilot can produce a solid first draft from a brief description of what you want to say — "reply to this customer complaint, acknowledge the issue, offer a call to discuss".
+Very few of us enjoy this part of running a business. However, it's the job AI is genuinely good at.
 
-**Time saved:** Drafting a detailed email that might take 15 minutes can be reduced to a 2-minute review and edit.
+**Quick win:** ask AI to write a polite but firm reminder you can paste into an email.
 
-**Safe use note:** Always read the draft before sending. AI doesn't know your relationship with the recipient, your tone, or any context beyond what you've given it.
+**Set up properly:** AI checks your accounts (Xero, QuickBooks and the like) every Monday, finds who's overdue, drafts a reminder for each one in your voice, and waits for your OK before anything goes.
 
-## 2. Summarising long documents
+**Keep it safe:** never let it agree payment plans or waive fees. That's your call.
 
-Reading through a 40-page report, a lengthy contract, or a stack of meeting notes takes time. AI can summarise the key points in seconds. You can also ask specific questions — "what are the payment terms in this contract?" or "what action points came out of this meeting?"
+## 2. Following up new enquiries
 
-**Time saved:** Significant for document-heavy roles — legal, procurement, management, HR.
+The enquiry that never got a reply is often the most expensive email in the business.
 
-**Safe use note:** Don't rely on an AI summary for anything with serious consequences (legal decisions, financial commitments) without reading the relevant sections yourself. Summaries can miss nuance.
+**Quick win:** paste in the enquiry and ask for a friendly reply that books a call.
 
-## 3. Writing job adverts and HR documentation
+**Set up properly:** every morning, AI drafts a follow-up for each new enquiry, so nobody slips through the net. I run this in my own business, and I read every one before it's sent.
 
-Drafting a job advert, updating a job description, writing an induction checklist, or producing an employee handbook section — these are tasks that take disproportionate time relative to their complexity. AI can produce a well-structured first draft quickly.
+**Keep it safe:** don't let it promise prices or dates it can't know.
 
-**Time saved:** A job advert that might take an hour to write from scratch can be drafted in minutes and refined in another ten.
+## 3. Answering missed calls
 
-**Safe use note:** Check that any HR documentation complies with current UK employment law. AI can be out of date on legislation and won't flag changes automatically.
+If you're up a ladder or under a sink, you can't answer the phone, and the customer rings the next name on the list.
 
-## 4. Creating social media content
+**Quick win:** a voicemail greeting that tells people when you'll call back, and actually calling back.
 
-Keeping up a consistent social media presence is time-consuming, especially for smaller businesses where one person is doing everything. AI can generate post ideas, write captions, suggest hashtags, and adapt a single piece of content for different platforms.
+**Set up properly:** an AI receptionist answers, asks the right questions and sends you a summary of every caller. We built one for a gas engineer who now ends every day knowing exactly who rang and what they need.
 
-**Time saved:** A week's worth of posts can be drafted in 20–30 minutes rather than spread across several days.
+**Keep it safe:** it should say it's AI at the start and offer a call back from a real person.
 
-**Safe use note:** Don't post AI content without reading it. Generic or off-brand posts can do more harm than no posts. Edit to match your voice.
+## 4. Replying to reviews
 
-## 5. Responding to online reviews
+Replies to Google reviews matter for trust and for local search, and they're the first thing to slip when you're busy.
 
-Replying to Google reviews — positive and negative — is important for local SEO and reputation management, but it's easy to let it slip. AI can draft a reply based on the review content, which you then personalise and post.
+**Quick win:** paste in a review and ask for a reply.
 
-**Time saved:** A review reply that might take 10 minutes of thought can be drafted in 30 seconds.
+**Set up properly:** AI reads new reviews each morning and drafts replies in your voice, ready to approve.
 
-**Safe use note:** Never post an AI response to a negative review without carefully editing it. A generic or tone-deaf reply to a complaint can make things significantly worse.
+**Keep it safe:** read replies to bad reviews twice. A tone-deaf reply to a complaint is worse than no reply.
 
-## 6. Research and competitor analysis
+## 5. Writing in your voice, not AI's
 
-Gathering information on a topic — industry trends, competitor positioning, pricing benchmarks — is time-consuming when done manually. AI can compress a lot of initial research into a structured summary, which you then verify and build on.
+Most of us can spot AI writing straight away, and so can your customers.
 
-**Time saved:** An initial research task that might take a morning can often be reduced to an hour of verification and refinement.
+**Quick win:** paste in a couple of your own emails and ask AI to match the style.
 
-**Safe use note:** AI tools can produce plausible-sounding but inaccurate information, particularly on specific facts, statistics and recent events. Verify anything you plan to use in a proposal or client-facing document.
+**Set up properly:** a written tone of voice guide (the words you use, the ones you never would, even your punctuation) saved into your AI tools, so every draft starts out sounding like you. It's how every post on this site is written.
 
-## 7. Producing meeting agendas and follow-ups
+**Keep it safe:** you still decide what to say. The guide only changes how it's said.
 
-Before a meeting: paste in the context and ask AI to draft an agenda. After a meeting: paste in your rough notes and ask it to produce a clean summary with action points and owners. Both tasks are straightforward and well-suited to AI.
+## 6. A morning brief
 
-**Time saved:** Agenda drafting and note tidying that used to take 30+ minutes per meeting can be done in a few minutes.
+Starting the day by working out what the day is takes longer than it should.
 
-**Safe use note:** Review the action points carefully — AI can misread priorities or miss something said informally that everyone present understood to be important.
+**Quick win:** paste in your diary and to-do list and ask what matters most today.
 
-## 8. Writing product or service descriptions
+**Set up properly:** a short brief lands in your inbox every weekday, pulling together your diary, your inbox and your customer list, including the one person worth calling today. Mine also says so when there isn't a strong one, rather than making one up.
 
-Whether it's your website, a price list, a brochure or a proposal template — describing what you do clearly and compellingly takes effort. AI can produce well-structured descriptions from bullet points about what a service includes.
+**Keep it safe:** keep customer details inside business accounts, not free tools.
 
-**Time saved:** A services page or brochure section that might take a day to write can be drafted in an hour and refined from there.
+## 7. Social media posts
 
-**Safe use note:** Make sure the output accurately reflects what you actually offer. AI will fill gaps with plausible-sounding detail that may not be true.
+Keeping up a steady presence is hard when one person is doing everything.
 
-## 9. Translating or adapting content for different audiences
+**Quick win:** ask for a week of post ideas and captions.
 
-You might need the same information written differently for different audiences — a technical explanation for a specialist client versus a plain-English version for a general audience. AI handles this kind of adaptation well.
+**Set up properly:** AI plans a month of posts from your diary and photos, in your voice, and queues them for your approval. For a hair salon we helped, automated posts gave them a much steadier presence, although the biggest win turned out to be AI appointment reminders cutting their no-shows.
 
-**Time saved:** Rewriting content for a different audience, which can be surprisingly time-consuming, can be done in minutes.
+**Keep it safe:** read everything before it goes out. Generic posts can do more harm than no posts.
 
-**Safe use note:** If accuracy matters (instructions, safety information, anything technical), have a subject-matter expert review the adapted version before it goes out.
+## 8. Summarising long documents
 
-## 10. Internal knowledge base and FAQ drafting
+Contracts, reports and long email threads all take time to read properly.
 
-Writing up answers to common customer questions, creating internal process guides, or documenting how things are done in your business — these tasks tend to get deprioritised because they're important but not urgent. AI makes them much faster to produce.
+**Quick win:** ask for the key points, or a specific answer ("what are the payment terms?").
 
-**Time saved:** A 10-question FAQ or a process document can be drafted from bullet points in 15–20 minutes rather than an afternoon.
+**Set up properly:** inside Microsoft 365 or Google Workspace, AI can summarise a thread or a meeting where the files already live, without anything being copied and pasted.
 
-**Safe use note:** Internal documents produced with AI still need human review and sign-off. A process guide that's wrong because it was never checked can create problems further down the line.
+**Keep it safe:** for anything legal or financial, read the relevant section yourself. Summaries miss nuance.
 
-## Getting started
+## 9. Keeping your website up to date
 
-The best approach is to pick one or two tasks from the list above that you're doing regularly and try automating them for a week. You'll quickly develop a sense of where AI genuinely saves you time and where it needs more effort than it's worth.
+An out-of-date website quietly costs you work, usually because changing it means emailing someone and waiting.
 
-The consistent theme across all ten tasks is the same: AI produces a useful first draft, a human adds judgement, context and accuracy, and the final result is better than if either had worked alone.
+**Quick win:** ask AI to rewrite a tired page or draft a news post.
+
+**Set up properly:** a website you can update yourself, from a simple editor or just by asking AI, with a preview before anything goes live. That's how this site is run, including AI checking the prices on our own blog against each provider's page.
+
+**Keep it safe:** always check the preview, and keep every version so you can go back.
+
+## 10. Process guides and FAQs
+
+Writing down how things are done is important but never urgent, so it never gets done.
+
+**Quick win:** talk it through into a voice recorder or paste in rough notes, and ask AI to turn them into a step-by-step guide.
+
+**Set up properly:** voice notes recorded on the go end up as tidy notes in a shared folder, ready to become guides and FAQs.
+
+**Keep it safe:** have whoever actually does the job check the guide before anyone relies on it.
+
+## Try this on Monday
+
+Pick one job from this list that you do every week and try the quick win for a week. If it saves you time, that's the one worth setting up properly. Start small, keep a person signing off, and only then think about the next one.
+
+The theme across all ten is the same. AI takes care of the mundane, a person adds the judgement, and you get to focus on the work that actually matters.
 
 ---
 
-*We run AI training sessions for business teams across North East England, North Yorkshire and Cumbria — practical, hands-on sessions focused on the tasks that matter to your business. [Get in touch](/contact.html) to find out more.*
+*If you'd rather not figure out the setting-up part on your own, give me a shout. Twenty minutes on a call, no pitch, no jargon, no sales nonsense. Tell me two things in your week that drain your time and I'll tell you honestly which of these could take them off your plate. [Get in touch](/contact.html).*

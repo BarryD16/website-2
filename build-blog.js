@@ -250,7 +250,7 @@ ${PAGE_SCRIPT}
 // ── Blog index template ───────────────────────────────────────────────────────
 function renderBlogIndex(posts) {
   const cards = posts.length === 0
-    ? `<p style="color:var(--text-medium);text-align:center;padding:48px 0;">No articles yet — check back soon.</p>`
+    ? `<p style="color:var(--text-medium);text-align:center;padding:48px 0;">No articles yet. Check back soon.</p>`
     : posts.map((p, i) => `
         <article class="blog-index-card reveal${i > 0 ? ' reveal-delay-' + Math.min(i, 3) : ''}">
           <div class="bic-tag">${p.tag || 'AI & Business'}</div>
@@ -299,7 +299,7 @@ ${NAV}
     <div class="container">
       <div class="section-label">Insights &amp; Guides</div>
       <h1 style="font-size:clamp(2rem,5vw,3rem);font-weight:800;line-height:1.15;color:var(--text-dark);margin:12px 0 16px;">Practical AI guidance for <span class="gradient-text">North East businesses</span></h1>
-      <p style="font-size:1.05rem;color:var(--text-medium);max-width:620px;line-height:1.7;">Plain-English articles on AI adoption, governance and digital transformation — written for business owners, not tech teams.</p>
+      <p style="font-size:1.05rem;color:var(--text-medium);max-width:620px;line-height:1.7;">Plain-English articles on AI adoption, governance and digital transformation, written for business owners, not tech teams.</p>
     </div>
   </section>
 
