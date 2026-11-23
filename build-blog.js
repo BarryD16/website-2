@@ -164,6 +164,7 @@ function renderPost(post) {
     "headline": "${post.title.replace(/"/g, '\\"')}",
     "description": "${(post.description || '').replace(/"/g, '\\"')}",
     "datePublished": "${new Date(post.date).toISOString().split('T')[0]}",
+    "dateModified": "${new Date(post.updated || post.date).toISOString().split('T')[0]}",
     "author": {"@type": "Organization", "name": "Orchestrate Digital", "url": "https://orchestratedigital.co.uk"},
     "publisher": {"@type": "Organization", "name": "Orchestrate Digital", "url": "https://orchestratedigital.co.uk"},
     "mainEntityOfPage": {"@type": "WebPage", "@id": "https://orchestratedigital.co.uk/blog/${post.slug}.html"}
@@ -192,6 +193,10 @@ function renderPost(post) {
     .blog-content a:hover { opacity: 0.8; }
     .blog-content blockquote { border-left: 3px solid var(--primary); margin: 32px 0; padding: 16px 24px; background: rgba(26,158,138,0.06); border-radius: 0 8px 8px 0; }
     .blog-content blockquote p { margin: 0; color: var(--text-dark); font-style: italic; font-size: 1.05rem; }
+    .blog-content table { display: block; overflow-x: auto; width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 0.92rem; }
+    .blog-content th, .blog-content td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(26,158,138,0.18); color: var(--text-medium); line-height: 1.55; min-width: 130px; }
+    .blog-content th { color: var(--text-dark); font-weight: 600; background: rgba(26,158,138,0.08); }
+    .blog-content td:first-child { color: var(--text-dark); font-weight: 600; }
     .blog-content hr { border: none; border-top: 1px solid rgba(26,158,138,0.2); margin: 40px 0; }
     .blog-back { display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; font-size: 0.9rem; text-decoration: none; margin-bottom: 40px; transition: opacity 0.2s; }
     .blog-back:hover { opacity: 0.75; }
@@ -209,6 +214,7 @@ ${NAV}
       <div class="blog-meta">
         <span class="blog-tag">${post.tag || 'AI & Business'}</span>
         <span class="blog-date">${formatDate(post.date)}</span>
+        ${post.updated ? `<span class="blog-date">Last reviewed ${formatDate(post.updated)}</span>` : ''}
       </div>
       <h1 class="blog-title">${post.title}</h1>
       ${post.description ? `<p class="blog-description">${post.description}</p>` : ''}
@@ -360,7 +366,7 @@ const postEntries = posts.map(p => `
     <loc>${BASE_URL}/blog/${p.slug}.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>${new Date(p.date).toISOString().split('T')[0]}</lastmod>
+    <lastmod>${new Date(p.updated || p.date).toISOString().split('T')[0]}</lastmod>
   </url>`).join('');
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
