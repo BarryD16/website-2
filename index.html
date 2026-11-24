@@ -481,9 +481,9 @@
     <div class="container">
       <div class="hero-layout">
         <div class="hero-text reveal">
-          <div class="section-label" id="heroLabel">Small business AI, from round here</div>
-          <h1 id="heroH1">AI for businesses without an IT department. <span class="gradient-text">(Usually, the IT department is you.)</span></h1>
-          <p class="hero-sub" id="heroSub">Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters.</p>
+          <div class="section-label">Small business AI, from round here</div>
+          <h1>AI for businesses without an IT department. <span class="gradient-text">(Usually, the IT department is you.)</span></h1>
+          <p class="hero-sub">Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters.</p>
           <div class="btn-group">
             <a href="services.html" class="btn btn-primary">See how we help →</a>
             <a href="book.html" class="btn btn-outline">Book a free chat</a>
@@ -1328,36 +1328,5 @@
   </script>
 
 
-  <!-- HERO OPTIONS PREVIEW (temporary: remove once an option is chosen) -->
-  <script>
-    (function () {
-      const v = new URLSearchParams(location.search).get('v');
-      const O = {
-              "a": [
-                      "Small business AI, from round here",
-                      "AI for businesses without an IT department. <span class=\"gradient-text\">Which is most of us round here.</span>",
-                      "Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters."
-              ],
-              "b": [
-                      "Small business AI, from round here",
-                      "AI for businesses without an IT department. <span class=\"gradient-text\">(Usually, the IT department is you.)</span>",
-                      "Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters."
-              ],
-              "c": [
-                      "Small business AI, from round here",
-                      "No IT department? <span class=\"gradient-text\">Good. This is built for you.</span>",
-                      "Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters."
-              ]
-      };
-      if (!O[v]) return;
-      document.getElementById('heroLabel').textContent = O[v][0];
-      document.getElementById('heroH1').innerHTML = O[v][1];
-      document.getElementById('heroSub').textContent = O[v][2];
-      const tag = document.createElement('div');
-      tag.textContent = 'Preview: version ' + v.toUpperCase();
-      tag.style.cssText = 'position:fixed;bottom:16px;left:16px;z-index:9999;background:#FFD580;color:#060E0D;font:700 13px Inter,sans-serif;padding:8px 14px;border-radius:999px;';
-      document.body.appendChild(tag);
-    })();
-  </script>
 </body>
 </html>
