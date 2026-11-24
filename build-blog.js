@@ -8,7 +8,7 @@ const SITE_FILES = [
   'index.html','about.html','services.html','contact.html',
   'ai-governance-policy-support.html','ai-training-for-businesses.html',
   'chatgpt-copilot-training.html','community-ai-training.html',
-  'digital-transformation-consulting.html','business-tools-setup.html','ai-that-does-the-job.html','ai-tone-of-voice-training.html','websites-you-can-run-yourself.html',
+  'digital-transformation-consulting.html','business-tools-setup.html','ai-that-does-the-job.html','ai-tone-of-voice-training.html','websites-you-can-run-yourself.html','book.html','free-ai-policy-template.html','missed-call-calculator.html','ai-help-darlington.html','ai-help-county-durham.html','ai-help-teesside.html','ai-help-newcastle-tyneside.html','ai-help-north-yorkshire.html',
   'style.css','robots.txt','googlee5b9f85818d9ffd8.html'
 ];
 
@@ -30,6 +30,14 @@ const STATIC_PAGES = [
   { path: '/ai-that-does-the-job.html',           priority: '0.9', changefreq: 'monthly' },
   { path: '/ai-tone-of-voice-training.html',      priority: '0.8', changefreq: 'monthly' },
   { path: '/websites-you-can-run-yourself.html',  priority: '0.8', changefreq: 'monthly' },
+  { path: '/book.html',                           priority: '0.9', changefreq: 'monthly' },
+  { path: '/free-ai-policy-template.html',        priority: '0.7', changefreq: 'monthly' },
+  { path: '/missed-call-calculator.html',         priority: '0.7', changefreq: 'monthly' },
+  { path: '/ai-help-darlington.html',             priority: '0.7', changefreq: 'monthly' },
+  { path: '/ai-help-county-durham.html',          priority: '0.7', changefreq: 'monthly' },
+  { path: '/ai-help-teesside.html',               priority: '0.7', changefreq: 'monthly' },
+  { path: '/ai-help-newcastle-tyneside.html',     priority: '0.7', changefreq: 'monthly' },
+  { path: '/ai-help-north-yorkshire.html',        priority: '0.7', changefreq: 'monthly' },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -111,6 +119,9 @@ const FOOTER = `
             <li><a href="/about.html">About</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/book.html">Book a chat</a></li>
+            <li><a href="/free-ai-policy-template.html">Free AI policy template</a></li>
+            <li><a href="/missed-call-calculator.html">Missed call calculator</a></li>
           </ul>
         </div>
         <div class="footer-links">
@@ -234,7 +245,7 @@ ${NAV}
         <div class="blog-cta">
           <h3>Want help putting this into practice?</h3>
           <p>We work with SMEs across North East England, North Yorkshire and Cumbria. Book a free, no-obligation conversation.</p>
-          <a href="/contact.html" class="btn btn-primary">Book a Free Chat &rarr;</a>
+          <a href="/book.html" class="btn btn-primary">Book a Free Chat &rarr;</a>
         </div>
       </div>
     </div>

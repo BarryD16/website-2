@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Free AI Policy Template for Small Businesses | Orchestrate Digital</title>
+  <meta name="description" content="A free, plain English one-page AI policy template for UK small businesses: approved tools, what never goes into AI, sign-off rules for AI that acts on its own, and being upfront with customers.">
+  <meta property="og:title" content="Free AI Policy Template for Small Businesses | Orchestrate Digital">
+  <meta property="og:description" content="A free, plain English one-page AI policy template for UK small businesses: approved tools, what never goes into AI, sign-off rules for AI that acts on its own, and being upfront with customers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://orchestratedigital.co.uk/free-ai-policy-template.html">
+  <meta property="og:site_name" content="Orchestrate Digital">
+  <link rel="canonical" href="https://orchestratedigital.co.uk/free-ai-policy-template">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .std-block { padding: 80px 0; position: relative; }
+    .faq-wrap { display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .faq-card { background: var(--white); border:1px solid var(--border); border-radius: var(--radius-md); padding: 24px; }
+    .faq-card h3 { font-size: 1rem; margin-bottom: 10px; }
+    .faq-card p { color: var(--text-medium); font-size: 0.92rem; line-height: 1.7; }
+    .card { background: var(--white); border:1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; }
+    .muted { color: var(--text-medium); line-height: 1.8; }
+    @media (max-width: 960px) { .faq-wrap { grid-template-columns: 1fr; } }
+    .gate { max-width: 640px; margin: 0 auto; }
+    .gate form { display:grid; gap:14px; margin-top: 18px; }
+    .gate label { font-size:0.85rem; color: var(--text-medium); display:block; margin-bottom:6px; }
+    .gate input { width:100%; padding: 12px 14px; border-radius: var(--radius-sm); border:1px solid var(--border); background: var(--bg); color: var(--text-dark); font-size: 1rem; font-family: inherit; }
+    .gate .fine { font-size:0.82rem; color: var(--text-light); }
+    .tpl { max-width: 820px; margin: 0 auto; display:none; }
+    .tpl.show { display:block; }
+    .tpl-doc { background:#fff; color:#1E2D3A; border-radius: var(--radius-md); padding: 48px 52px; line-height:1.7; }
+    .tpl-doc h2 { color:#0B6E60; font-size:1.6rem; margin-bottom:6px; }
+    .tpl-doc h3 { color:#0B6E60; font-size:1.08rem; margin:26px 0 8px; }
+    .tpl-doc p, .tpl-doc li { font-size:0.96rem; color:#2c3e48; }
+    .tpl-doc ul { padding-left: 20px; margin: 6px 0 0; }
+    .tpl-doc .fill { background:#FFF4D6; padding: 0 4px; border-radius:3px; }
+    .tpl-doc .tpl-meta { color:#5A6E7C; font-size:0.88rem; margin-bottom:18px; }
+    .tpl-actions { display:flex; gap:12px; flex-wrap:wrap; margin: 0 0 22px; }
+    @media print {
+      header, footer, .page-hero, .gate, .tpl-actions, .cta-banner, .no-print { display:none !important; }
+      body { background:#fff; }
+      .std-block { padding:0; }
+      .tpl { display:block !important; max-width:none; }
+      .tpl-doc { padding:0; border-radius:0; }
+    }
+    @media (max-width: 700px) { .tpl-doc { padding: 28px 22px; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg>
+        </div>
+        <div style="line-height:1.15;">
+          <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:var(--text-dark);">Digital</span></div>
+          <div style="font-size:0.6rem;color:var(--text-light);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+        </div>
+      </a>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="services.html" >Services</a></li>
+        <li><a href="about.html" >About</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumbs"><a href="index.html">Home</a> / Free AI policy template</div>
+      <div class="section-label" style="background:rgba(255,255,255,0.18); color:white;">Free template</div>
+      <h1>A one-page AI policy you can use this week</h1>
+      <p>What your team can use AI for, what never goes into it, and what AI is allowed to do on its own. Written in plain English for small businesses, ready to fill in.</p>
+    </div>
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1440 54" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,28 C360,54 1080,0 1440,28 L1440,54 L0,54 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="std-block">
+    <div class="container">
+      <div class="gate card reveal" id="gate">
+        <div class="section-label">Get the template</div>
+        <h2 class="section-title" style="font-size:1.5rem;">Pop your email in and it's yours</h2>
+        <p class="muted">The template opens straight away on this page, ready to print or save as a PDF. I might drop you one email to check it was useful, and that's it. No newsletter, no sales sequence.</p>
+        <form id="tplForm" name="policy-template" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="policy-template">
+          <p hidden><label>Don't fill this in: <input name="bot-field"></label></p>
+          <div><label for="tFirst">First name</label><input id="tFirst" name="firstName" required></div>
+          <div><label for="tEmail">Email</label><input id="tEmail" name="email" type="email" required></div>
+          <div><label for="tBiz">Business name (optional)</label><input id="tBiz" name="business"></div>
+          <button class="btn btn-primary" type="submit" id="tplBtn">Show me the template →</button>
+          <p class="fine">We'll never share your details or add you to a mailing list.</p>
+        </form>
+      </div>
+
+      <div class="tpl" id="tpl">
+        <div class="tpl-actions">
+          <button class="btn btn-primary" onclick="window.print()">Print or save as PDF</button>
+          <a class="btn btn-outline" href="/blog/what-uk-smes-need-in-an-ai-policy.html">Read the guide that goes with it</a>
+        </div>
+        <div class="tpl-doc" id="policyDoc">
+            <h2>AI use policy</h2>
+            <p class="tpl-meta"><span class="fill">[Business name]</span> · Last reviewed <span class="fill">[date]</span> · Owner: <span class="fill">[name]</span></p>
+            <p>This policy explains how we use AI tools in <span class="fill">[Business name]</span>: what's fine, what isn't, and who to ask. It applies to everyone who works with us, including part-timers and freelancers. If you're not sure, ask before you use it, not after.</p>
+
+            <h3>1. The tools we use</h3>
+            <p>We've approved these AI tools for work: <span class="fill">[e.g. ChatGPT Business, Microsoft Copilot, Claude Team]</span>. Use your work account, not a personal or free one, for anything to do with customers. Anyone wanting to try a new AI tool for work checks with <span class="fill">[name]</span> first.</p>
+
+            <h3>2. What AI can help with</h3>
+            <ul>
+              <li>Drafting emails, posts, quotes and documents for a person to check</li>
+              <li>Summarising long documents, emails and meeting notes</li>
+              <li>Research and ideas, which we check before relying on</li>
+              <li><span class="fill">[add jobs specific to your business]</span></li>
+            </ul>
+
+            <h3>3. What never goes into an AI tool</h3>
+            <ul>
+              <li>Customers' personal details unless the tool is on our approved list for that job</li>
+              <li>Bank details, card numbers, passwords or login codes</li>
+              <li>Health information or anything else sensitive about a person</li>
+              <li><span class="fill">[anything confidential to your business or your clients]</span></li>
+            </ul>
+
+            <h3>4. A person checks before it goes out</h3>
+            <p>AI makes mistakes and says them confidently. Anything AI produces for a customer, whether an email, quote, post or reply to a review, is read by a person before it's sent. The person who sends it is responsible for it.</p>
+
+            <h3>5. AI that does jobs on its own</h3>
+            <p>Some jobs run automatically. For each one we write down what it does, what it's allowed to do without asking, and who checks it.</p>
+            <ul>
+              <li>Jobs AI can do on its own: <span class="fill">[e.g. sort enquiries, draft follow-ups for approval]</span></li>
+              <li>Jobs that need a person to sign off first: <span class="fill">[e.g. sending invoice reminders, replying to reviews]</span></li>
+              <li>Never: agree refunds or discounts, promise dates or prices, or make a decision about someone's job, credit or account</li>
+              <li><span class="fill">[name]</span> checks what the automated jobs have done every <span class="fill">[week / month]</span></li>
+            </ul>
+
+            <h3>6. Being upfront with customers</h3>
+            <p>If an AI answers our phone or web chat, it says so at the start and offers a way to reach a person. If we ever use AI to make a significant decision about someone, we tell them, let them have their say, offer a person to review it and let them challenge it. For emails and posts drafted with AI, our position is: <span class="fill">[e.g. we don't label them, but a person always writes or checks them]</span>.</p>
+
+            <h3>7. If something goes wrong</h3>
+            <p>If you think customer information has gone somewhere it shouldn't, or AI has sent something it shouldn't have, tell <span class="fill">[name]</span> straight away. Nobody gets into trouble for owning up quickly.</p>
+
+            <h3>8. Reviewing this policy</h3>
+            <p>We look at this policy every six months, or sooner if we start using AI for something new or the rules change. Next review: <span class="fill">[date]</span>.</p>
+            <p style="margin-top:26px; font-size:0.82rem; color:#5A6E7C;">Template from Orchestrate Digital (orchestratedigital.co.uk). A plain English starting point, not legal advice.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container reveal">
+      <h2>Rather we wrote it with you?</h2>
+      <p>We'll sit down with you, work out what your AI should and shouldn't do, and write a policy that fits how your business actually works. Twenty minutes on a call, no pitch, no jargon, no sales nonsense.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="book.html" class="btn btn-white">Book a 20-minute chat →</a>
+        <a href="services.html" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.4);">See all services</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="margin-bottom:18px; display:flex;">
+            <div class="logo-icon"><svg width="48" height="28" viewBox="0 0 120 60" fill="none">
+            <path d="M 0,30 C 10,14 20,14 30,30 C 40,46 50,46 60,30 C 70,14 80,14 90,30 C 100,46 110,46 120,30" stroke="#9BE8FF" stroke-width="1.2" fill="none" opacity="0.45"/>
+            <path d="M 0,30 C 15,8 30,8 45,30 C 60,52 75,52 90,30 C 105,8 115,8 120,30" stroke="#FFD580" stroke-width="1.6" fill="none" opacity="0.55"/>
+            <path d="M 0,30 C 30,1 60,1 60,30 C 60,59 90,59 120,30" stroke="white" stroke-width="3" fill="none"/>
+            <circle cx="30" cy="1"  r="3" fill="white"/>
+            <circle cx="90" cy="59" r="3" fill="white"/>
+          </svg></div>
+            <div style="line-height:1.15;">
+              <div><strong style="color:var(--primary);">Orchestrate</strong> <span style="color:white;">Digital</span></div>
+              <div style="font-size:0.6rem;color:rgba(255,255,255,0.4);font-weight:500;letter-spacing:0.6px;margin-top:1px;">North East England</div>
+            </div>
+          </a>
+          <p>Helping small businesses across North East England, North Yorkshire and Cumbria get AI taking care of the mundane, so you can focus on what matters.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="book.html">Book a chat</a></li>
+            <li><a href="free-ai-policy-template.html">Free AI policy template</a></li>
+            <li><a href="missed-call-calculator.html">Missed call calculator</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Popular Services</h4>
+          <ul>
+            <li><a href="ai-that-does-the-job.html">AI That Does the Job</a></li>
+            <li><a href="ai-tone-of-voice-training.html">AI That Sounds Like You</a></li>
+            <li><a href="websites-you-can-run-yourself.html">Websites You Can Run Yourself</a></li>
+            <li><a href="ai-training-for-businesses.html">AI Training for Businesses</a></li>
+            <li><a href="chatgpt-copilot-training.html">AI Tools Training</a></li>
+            <li><a href="ai-governance-policy-support.html">AI Governance &amp; Policy Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Orchestrate Digital. All rights reserved.</span>
+        <span><a href="tel:07824116493" style="color:inherit;text-decoration:none;">07824 116493</a>&nbsp;·&nbsp;<a href="mailto:hello@orchestratedigital.co.uk" style="color:inherit;text-decoration:none;">hello@orchestratedigital.co.uk</a>&nbsp;·&nbsp;orchestratedigital.co.uk</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+    const obs = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.hero .reveal').forEach(el => {
+      setTimeout(() => el.classList.add('visible'), 100);
+    });
+
+    (function () {
+      const form = document.getElementById('tplForm');
+      const show = () => { document.getElementById('gate').style.display = 'none'; document.getElementById('tpl').classList.add('show'); try { localStorage.setItem('od_tpl', '1'); } catch (e) {} };
+      try { if (localStorage.getItem('od_tpl') === '1') show(); } catch (e) {}
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = document.getElementById('tplBtn');
+        btn.textContent = 'Opening…'; btn.disabled = true;
+        fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+          .then(show).catch(show);
+      });
+    })();
+  </script>
+
+</body>
+</html>

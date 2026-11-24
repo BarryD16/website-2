@@ -807,3 +807,22 @@ footer::before {
 /* Page hero: sit the wave on the bottom edge and match the dark page background */
 .page-hero .wave-bottom { position: absolute; left: 0; right: 0; bottom: -1px; margin: 0; z-index: 1; }
 .page-hero .wave-bottom path { fill: var(--bg); }
+
+/* Promise band (homepage, services, booking, local pages) */
+.promise-band { padding: 72px 0; background: #060E0D; border-top: 1px solid rgba(26,158,138,0.12); border-bottom: 1px solid rgba(26,158,138,0.12); }
+.promise-inner { max-width: 820px; margin: 0 auto; text-align: center; }
+.promise-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #060E0D; background: var(--h-gold); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; }
+.promise-inner h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: 16px; }
+.promise-inner p { color: var(--text-medium); font-size: 1.05rem; line-height: 1.8; margin-bottom: 12px; }
+.promise-inner p strong { color: var(--text-dark); }
+.promise-inner .promise-small { font-size: 0.9rem; color: var(--text-light); }
+
+/* Decision fatigue section (homepage) */
+.decisions-section { background: #091412; padding: 88px 0; }
+.decisions-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.decisions-layout p { color: var(--text-medium); line-height: 1.85; margin-bottom: 16px; font-size: 1.02rem; }
+.decision-stack { display: flex; flex-direction: column; gap: 10px; }
+.decision-chip { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 13px 18px; color: var(--text-medium); font-style: italic; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.decision-chip span.tag { font-style: normal; font-size: 0.74rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.8px; white-space: nowrap; }
+.decision-total { margin-top: 8px; background: linear-gradient(135deg, rgba(255,213,128,0.14), rgba(255,213,128,0.04)); border: 1px solid rgba(255,213,128,0.35); border-radius: 12px; padding: 16px 18px; color: var(--text-dark); font-weight: 600; }
+@media (max-width: 900px) { .decisions-layout { grid-template-columns: 1fr; gap: 32px; } }
