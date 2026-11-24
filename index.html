@@ -481,9 +481,9 @@
     <div class="container">
       <div class="hero-layout">
         <div class="hero-text reveal">
-          <div class="section-label" id="heroLabel">Small business AI, North East</div>
-          <h1 id="heroH1">Most AI help is built for big business. <span class="gradient-text">Ours is built for yours.</span></h1>
-          <p class="hero-sub" id="heroSub">AI that takes care of the mundane, so you can focus on what matters. It answers the phone, chases invoices in your own voice and preps your week. We set it up for you, and coach you until it's second nature.</p>
+          <div class="section-label" id="heroLabel">Small business AI, from round here</div>
+          <h1 id="heroH1">AI for businesses without an IT department. <span class="gradient-text">(Usually, the IT department is you.)</span></h1>
+          <p class="hero-sub" id="heroSub">Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters.</p>
           <div class="btn-group">
             <a href="services.html" class="btn btn-primary">See how we help →</a>
             <a href="book.html" class="btn btn-outline">Book a free chat</a>
@@ -1333,22 +1333,28 @@
     (function () {
       const v = new URLSearchParams(location.search).get('v');
       const O = {
-        '1': ['Small business AI, North East',
-              'Most AI help is built for big business. <span class="gradient-text">Ours is built for yours.</span>',
-              "AI that takes care of the mundane, so you can focus on what matters. It answers the phone, chases invoices in your own voice and preps your week. We set it up for you, and coach you until it's second nature."],
-        '4': ['Small business AI, North East',
-              'Most AI advice is written for someone else. <span class="gradient-text">Ours is written for you.</span>',
-              "For the café owner, the plumber and the salon down the road. AI that takes care of the mundane, so you can focus on what matters. We set it up for you, in your own voice, and coach you until it's second nature."],
-        '5': ['Small business AI, North East',
-              'AI for businesses without an IT department. <span class="gradient-text">We take care of the mundane.</span>',
-              "Most AI help is built for big companies with tech teams. Ours is built for sole traders, family firms and small teams, so you can focus on what matters. We set it up for you, in your own voice, and coach you until it's second nature."]
+              "a": [
+                      "Small business AI, from round here",
+                      "AI for businesses without an IT department. <span class=\"gradient-text\">Which is most of us round here.</span>",
+                      "Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters."
+              ],
+              "b": [
+                      "Small business AI, from round here",
+                      "AI for businesses without an IT department. <span class=\"gradient-text\">(Usually, the IT department is you.)</span>",
+                      "Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters."
+              ],
+              "c": [
+                      "Small business AI, from round here",
+                      "No IT department? <span class=\"gradient-text\">Good. This is built for you.</span>",
+                      "Most AI help is built for big companies with tech teams. Ours is built for the cafés, garages, salons and family firms that keep the North East ticking over. We take care of the mundane and set it up in your own voice, so you can focus on what matters."
+              ]
       };
       if (!O[v]) return;
       document.getElementById('heroLabel').textContent = O[v][0];
       document.getElementById('heroH1').innerHTML = O[v][1];
       document.getElementById('heroSub').textContent = O[v][2];
       const tag = document.createElement('div');
-      tag.textContent = 'Preview: option ' + v;
+      tag.textContent = 'Preview: version ' + v.toUpperCase();
       tag.style.cssText = 'position:fixed;bottom:16px;left:16px;z-index:9999;background:#FFD580;color:#060E0D;font:700 13px Inter,sans-serif;padding:8px 14px;border-radius:999px;';
       document.body.appendChild(tag);
     })();
